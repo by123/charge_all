@@ -1,0 +1,11 @@
+{
+    "applinks" : {
+        "apps":[],
+        "Details": [ 
+           {
+                "appID": "9KM5889Z75.com.jifung.td",
+                "paths": [ "*" ]
+           }
+        ]
+    }
+}
