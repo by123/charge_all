@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FFCE00</color>
+    <color name="colorPrimaryDark">#FFCE00</color>
+    <color name="colorAccent">#FFCE00</color>
+    <color name="textColorPrimary">#353648</color>
+    <color name="windowBackground">#F4F4F6</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="btn">#FFCE00</color>
+    <color name="tv_hint">#DEDEDE</color>
+    <color name="tv_black">#FF353648</color>
+    <color name="tv_color">#757685</color>
+    <color name="black">#17181E</color>
+    <color name="item_back">#F4F4F6</color>
+
+
+    <color name="hyperlink">#76ADF0</color>
+
+    <color name="txtv_item_next">#0a0a0a</color>
+    <color name="txtv_item_black">#cacaca</color>
+
+    <color name="text_secondary">#bdbdbd</color>
+    <color name="whitelist_btn">#DEC188</color>
+    <color name="view">#ff353648</color>
+
+    <color name="withdraw_text">#ff353648</color>
+
+
+    <color name="tabIndicator">#FFCE00</color>
+    <color name="whiteAndBlack">@color/tv_black</color>
+    <color name="redAndBlack">@color/tv_black</color>
+
+
+    <color name="text_disable">@color/white</color>
+    <color name="text_enable">@color/tv_black</color>
+
+</resources>

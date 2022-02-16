@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View"/>
+
+        <variable
+                name="fragment"
+                type="com.xhd.td.ui.home.AbstractTotalFragment"/>
+
+        <variable
+                name="viewModel"
+                type="com.xhd.td.vm.home.TotalVM"/>
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <include layout="@layout/title_bar"/>
+        <TextView
+                android:id="@+id/tv_merchant_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="10dp"
+                android:text="@{fragment.MMerchantName + fragment.MMerchantId}"
+                android:textColor="@color/tv_black"
+                android:textSize="@dimen/sp_16"
+                android:textStyle="bold"
+                android:visibility="@{fragment.MIsCurrentMerchant?View.GONE:View.VISIBLE}"
+                app:layout_constraintTop_toBottomOf="@+id/toolBar"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+
+        <TextView
+                android:id="@+id/tv_date_range"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                android:text="日期范围"
+                android:textColor="@color/text_secondary"
+                android:textSize="@dimen/sp_14"
+                android:visibility="@{fragment.MIsCurrentMerchant?View.VISIBLE:View.GONE}"
+                app:layout_constraintTop_toBottomOf="@+id/tv_merchant_info"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+
+        <RadioGroup
+                android:id="@+id/radio_group_time"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:visibility="@{fragment.MIsCurrentMerchant?View.VISIBLE:View.GONE}"
+                app:layout_constraintTop_toTopOf="@+id/tv_date_range"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_date_range"
+                app:layout_constraintStart_toEndOf="@+id/tv_date_range">
+            <RadioButton
+                    android:id="@+id/btn_0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="今日"
+                    android:textSize="12sp"
+                    android:textColor="@drawable/selector_date_radio"
+                    android:gravity="center"
+                    android:layout_marginStart="10dp"
+                    android:button="@null"
+                    android:paddingTop="5dp"
+                    android:checked="true"
+                    android:paddingBottom="5dp"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:background="@drawable/selector_date_radio"
+            />
+            <RadioButton
+                    android:id="@+id/btn_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="最近7天"
+                    android:textSize="12sp"
+                    android:textColor="@drawable/selector_date_radio"
+                    android:gravity="center"
+                    android:layout_marginStart="10dp"
+                    android:button="@null"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:background="@drawable/selector_date_radio"
+            />
+            <RadioButton
+                    android:id="@+id/btn_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="最近30天"
+                    android:textSize="12sp"
+                    android:textColor="@drawable/selector_date_radio"
+                    android:gravity="center"
+                    android:layout_marginStart="10dp"
+                    android:button="@null"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:background="@drawable/selector_date_radio"
+            />
+        </RadioGroup>
+
+        <TextView
+                android:id="@+id/tv_start_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/sp_15"
+                android:layout_marginStart="15dp"
+
+                android:drawableEnd="@drawable/arrow_down"
+                android:drawablePadding="4dp"
+                android:gravity="center"
+                android:text="起始时间"
+                android:textColor="@color/tv_black"
+                android:textSize="@dimen/sp_14"
+                app:layout_constraintTop_toBottomOf="@+id/tv_date_range"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+        <TextView
+                android:id="@+id/tv_connector"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="至"
+                android:textColor="@color/text_secondary"
+                android:textSize="@dimen/sp_14"
+                android:layout_marginStart="5dp"
+                app:layout_constraintTop_toTopOf="@+id/tv_start_time"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_start_time"
+                app:layout_constraintStart_toEndOf="@+id/tv_start_time"/>
+
+        <TextView
+                android:id="@+id/tv_end_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableEnd="@drawable/arrow_down"
+                android:drawablePadding="4dp"
+                android:layout_marginStart="5dp"
+                android:text="终止时间"
+                android:textColor="@color/tv_black"
+                android:textSize="@dimen/sp_14"
+                app:layout_constraintTop_toTopOf="@+id/tv_start_time"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_start_time"
+                app:layout_constraintStart_toEndOf="@+id/tv_connector"/>
+
+        <View
+                android:id="@+id/line"
+                android:layout_width="0dp"
+                android:layout_height="0.5dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/tv_hint"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_start_time"
+        />
+
+
+        <!--<include-->
+        <!--layout="@layout/layout_pb"-->
+        <!--app:pbEnable="@{viewModel.isLoading}"/>-->
+
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/line"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+            <com.google.android.material.appbar.AppBarLayout
+                    android:id="@+id/appBarLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:elevation="0dp"
+                    android:background="@color/white">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_scrollFlags="scroll|enterAlways">
+
+
+                    <TextView
+                            android:id="@+id/tv_total_content"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="激活设备总数 "
+                            android:gravity="center_vertical"
+                            android:paddingTop="15dp"
+                            android:paddingBottom="15dp"
+                            android:paddingStart="16dp"
+                            android:textColor="@color/tv_color"
+                            android:textSize="@dimen/sp_14"
+                            android:lineSpacingExtra="5dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"/>
+
+                    <View
+                            android:id="@+id/view_top"
+                            android:layout_width="match_parent"
+                            android:layout_height="15dp"
+                            android:background="@color/item_back"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/tv_total_content"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.appbar.AppBarLayout>
+
+
+            <!--<androidx.core.widget.NestedScrollView-->
+            <!--android:id="@+id/scroll_view"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:background="@color/white"-->
+            <!--android:fillViewport="true"-->
+
+            <!--app:layout_constraintStart_toStartOf="parent"-->
+            <!--app:layout_constraintEnd_toEndOf="parent"-->
+            <!--app:layout_constraintTop_toBottomOf="@+id/line_2"-->
+            <!--app:layout_constraintBottom_toBottomOf="parent">-->
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:focusableInTouchMode="true"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+                <!--这句代码会导致，里面的内容无法保持获得焦点，比如无法点击输入-->
+                <!--android:descendantFocusability="blocksDescendants"-->
+
+                <RadioGroup
+                        android:id="@+id/radio_group_subordinate_type"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginStart="@dimen/sp_15"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent">
+                    <RadioButton
+                            android:id="@+id/radio_btn_subordinate_type_1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="直属拓展"
+                            android:textSize="12sp"
+                            android:textColor="@drawable/selector_subordinate_type_radio"
+                            android:gravity="center"
+                            android:checked="true"
+                            android:button="@null"
+                            android:paddingTop="5dp"
+                            android:paddingBottom="5dp"
+                            android:paddingStart="10dp"
+                            android:paddingEnd="10dp"
+                            android:background="@drawable/selector_subordinate_type_radio"
+                    />
+                    <RadioButton
+                            android:id="@+id/radio_btn_subordinate_type_2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="下级拓展"
+                            android:textSize="12sp"
+                            android:textColor="@drawable/selector_subordinate_type_radio"
+                            android:gravity="center"
+                            android:layout_marginStart="@dimen/sp_15"
+                            android:button="@null"
+                            android:paddingTop="5dp"
+                            android:paddingBottom="5dp"
+                            android:paddingStart="10dp"
+                            android:paddingEnd="10dp"
+                            android:background="@drawable/selector_subordinate_type_radio"/>
+
+                </RadioGroup>
+
+
+                <androidx.appcompat.widget.SearchView
+                        android:id="@+id/search_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="36dp"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginEnd="100dp"
+                        android:background="#f4f4f6"
+                        app:closeIcon="@drawable/icon_close"
+                        app:defaultQueryHint="请输入商户名称"
+                        app:iconifiedByDefault="false"
+                        app:layout_constraintTop_toBottomOf="@+id/radio_group_subordinate_type"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:queryBackground="@null"
+                        app:queryHint="请输入商户名称/商户号/联系人"
+                        app:searchIcon="@drawable/icon_search"
+                        app:showDividers="none"/>
+
+
+                <View
+                        android:id="@+id/view_search_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:background="@color/item_back"
+                        android:layout_marginTop="15dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/search_view"/>
+
+                <!--注意这里android:layout_height="wrap_content"，
+                如果设置为match_parent，会出现NestedScrollView无法滑动，只会滑动XRecyclerView-->
+                <cn.droidlover.xrecyclerview.XRecyclerContentLayout
+                        android:id="@+id/recyclerContentLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+
+                        android:background="@color/white"
+                        app:layout_constraintTop_toBottomOf="@+id/view_search_view"
+                        app:layout_constraintBottom_toBottomOf="parent"
+
+                        app:x_emptyLayoutId="@layout/view_stub_empty"
+                        app:x_loadingLayoutId="@layout/view_stub_loading"
+                        app:loadingVisibility="@{viewModel.isLoading?View.VISIBLE:View.GONE}"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+
+                />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+            <!--</androidx.core.widget.NestedScrollView>-->
+
+            <!--<include-->
+            <!--layout="@layout/layout_pb"-->
+            <!--app:pbEnable="@{viewModel.isLoading}"/>-->
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

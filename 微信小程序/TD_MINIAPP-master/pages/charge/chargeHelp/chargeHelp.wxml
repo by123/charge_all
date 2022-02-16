@@ -1,0 +1,7 @@
+<!--pages/charge/chargeHelp/chargeHelp.wxml-->
+<view class="charge-help-list" bindtap="onPageTap">
+  <view class="charge-help-item">1. 如果充电器二维码上方位置不亮红灯，请您检查下电源插座是否已通电或者换一个插座。
+  </view>
+  <view class="charge-help-item">2. 如果充电器全部灯都亮，请您换一个充电器，或者等待一段时间后再次使用
+  </view>
+</view>

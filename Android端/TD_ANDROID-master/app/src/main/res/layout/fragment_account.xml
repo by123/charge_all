@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View"/>
+
+        <variable
+                name="fragment"
+                type="com.xhd.td.ui.mine.AccountFragment"/>
+
+        <variable
+                name="viewModel"
+                type="com.xhd.td.vm.mine.AccountVM"/>
+
+
+        <variable
+                name="UserModel"
+                type="com.xhd.td.model.UserModel"/>
+
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".ui.mine.AccountFragment">
+
+        <include layout="@layout/title_bar"/>
+
+
+        <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/toolBar">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                <TextView
+                        android:id="@+id/tv_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp"
+                        android:background="@color/item_back"
+                        android:gravity="bottom"
+                        android:paddingStart="16dp"
+                        android:paddingBottom="8dp"
+                        android:text="商户信息"
+                        android:textColor="@color/tv_black"
+                        android:textSize="@dimen/sp_14"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        />
+
+                <TextView
+                        android:id="@+id/item1"
+                        style="@style/info_item"
+                        android:gravity="center_vertical"
+                        android:text="账户类型"
+                        android:visibility="@{UserModel.roleType == 8?View.GONE:View.VISIBLE}"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_title"
+                        app:layout_constraintStart_toStartOf="parent"/>
+
+                <TextView
+                        android:id="@+id/tv_account_type_value"
+                        style="@style/info_item_value"
+
+                        android:visibility="@{UserModel.roleType == 8?View.GONE:View.VISIBLE}"
+                        app:layout_constraintBottom_toBottomOf="@+id/item1"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/item1" />
+
+                <View
+                        android:id="@+id/line1"
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:background="@color/tv_hint"
+                        android:visibility="@{UserModel.roleType == 8?View.GONE:View.VISIBLE}"
+                        app:layout_constraintBottom_toBottomOf="@+id/item1" />
+
+                <TextView
+                        android:id="@+id/item2"
+                        style="@style/info_item"
+                        android:gravity="center_vertical"
+                        android:text="账户编号"
+                        android:visibility="@{UserModel.roleType == 8?View.GONE:View.VISIBLE}"
+                        app:layout_constraintTop_toBottomOf="@+id/item1" />
+
+                <TextView
+                        style="@style/info_item_value"
+                        android:text="@{UserModel.mchBean.mchId}"
+                        android:visibility="@{UserModel.roleType == 8?View.GONE:View.VISIBLE}"
+                        app:layout_constraintBottom_toBottomOf="@+id/item2"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/item2" />
+
+                <View
+                        android:id="@+id/line2"
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:background="@color/tv_hint"
+                        android:visibility="@{UserModel.roleType == 8?View.GONE:View.VISIBLE}"
+                        app:layout_constraintBottom_toBottomOf="@+id/item2" />
+
+                <TextView
+                        android:id="@+id/item3"
+                        style="@style/info_item"
+                        android:gravity="center_vertical"
+                        android:text="账户名称"
+                        android:visibility="@{UserModel.roleType == 8?View.GONE:View.VISIBLE}"
+                        app:layout_constraintTop_toBottomOf="@+id/item2" />
+
+                <TextView
+                        style="@style/info_item_value"
+                        android:text="@{UserModel.mchBean.mchName}"
+                        android:visibility="@{UserModel.roleType == 8?View.GONE:View.VISIBLE}"
+                        app:layout_constraintBottom_toBottomOf="@+id/item3"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/item3" />
+
+                <View
+                        android:id="@+id/line3"
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:background="@color/tv_hint"
+                        android:visibility="@{UserModel.roleType == 8?View.GONE:View.VISIBLE}"
+                        app:layout_constraintBottom_toBottomOf="@+id/item3" />
+
+                <TextView
+                        android:id="@+id/item4"
+                        style="@style/info_item"
+                        android:gravity="center_vertical"
+                        android:text="用户姓名"
+                        app:layout_constraintTop_toBottomOf="@+id/item3" />
+
+                <TextView
+                        style="@style/info_item_value"
+                        android:text="@{UserModel.roleType == 8?UserModel.userBean.name:UserModel.mchBean.contactUser}"
+                        app:layout_constraintBottom_toBottomOf="@+id/item4"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/item4" />
+
+                <View
+                        android:id="@+id/line4"
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:background="@color/tv_hint"
+                        app:layout_constraintBottom_toBottomOf="@+id/item4" />
+
+                <TextView
+                        android:id="@+id/item5"
+                        style="@style/info_item"
+                        android:gravity="center_vertical"
+                        android:text="用户电话"
+                        app:layout_constraintTop_toBottomOf="@+id/item4" />
+
+                <TextView
+                        style="@style/info_item_value"
+                        android:text="@{UserModel.roleType == 8?UserModel.userBean.mobile:UserModel.mchBean.contactPhone}"
+                        app:layout_constraintBottom_toBottomOf="@+id/item5"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/item5" />
+
+                <View
+                        android:id="@+id/line41"
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:background="@color/tv_hint"
+                        app:layout_constraintBottom_toBottomOf="@+id/item5" />
+
+                <TextView
+                        android:id="@+id/tv_industry"
+                        style="@style/info_item"
+                        android:gravity="center_vertical"
+                        android:text="所属行业"
+                        app:layout_constraintTop_toBottomOf="@+id/item5" />
+
+                <TextView
+                        android:id="@+id/tv_industry_value"
+                        style="@style/info_item_value"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_industry"
+                        app:layout_constraintTop_toTopOf="@+id/tv_industry" />
+
+                <View
+                        android:id="@+id/line5"
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:background="@color/tv_hint"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_industry" />
+
+                <TextView
+                        android:id="@+id/item6"
+                        style="@style/info_item"
+                        android:layout_width="wrap_content"
+                        android:gravity="center_vertical"
+                        android:text="位置地域"
+                        android:visibility="@{UserModel.roleType == 8?View.GONE:View.VISIBLE}"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_industry" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_address_value_value"
+                        style="@style/info_item_value"
+                        android:layout_width="0dp"
+                        android:layout_marginStart="@dimen/dp16"
+                        android:autoSizeMinTextSize="@dimen/sp_12"
+                        android:maxLines="2"
+                        android:text="@{UserModel.mchBean.province!= null?UserModel.mchBean.province+UserModel.mchBean.city+UserModel.mchBean.area+UserModel.mchBean.detailAddr:``}"
+                        android:visibility="@{UserModel.roleType == 8?View.GONE:View.VISIBLE}"
+                        app:autoSizeMaxTextSize="@dimen/sp_16"
+                        app:layout_constraintBottom_toBottomOf="@+id/item6"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/item6"
+                        app:layout_constraintLeft_toRightOf="@+id/item6"
+                />
+
+                <View
+                        android:id="@+id/line9"
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:background="@color/tv_hint"
+                        app:layout_constraintBottom_toBottomOf="@+id/item6" />
+
+                <androidx.constraintlayout.widget.Group
+                        android:id="@+id/tpVi"
+                        android:visibility="@{UserModel.roleType == 8?View.GONE:View.VISIBLE}"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:constraint_referenced_ids="item11,line9,kkkk" />
+
+                <TextView
+                        android:id="@+id/item11"
+                        style="@style/info_item"
+                        android:gravity="center_vertical"
+                        android:text="结算周期"
+                        app:layout_constraintTop_toBottomOf="@+id/line9" />
+
+                <TextView
+                        android:id="@+id/kkkk"
+                        style="@style/info_item_value"
+                        android:text="@{@string/T_ups+UserModel.mchBean.settementPeriod}"
+                        app:layout_constraintBottom_toBottomOf="@+id/item11"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/item11" />
+
+
+                <View
+                        android:id="@+id/line6"
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:background="@color/tv_hint"
+                        app:layout_constraintBottom_toBottomOf="@+id/line9" />
+
+                <View
+                        android:id="@+id/line20"
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:background="@color/tv_hint"
+                        app:layout_constraintBottom_toBottomOf="@+id/item11" />
+
+                <TextView
+                        android:id="@+id/item7"
+                        style="@style/info_item"
+                        android:gravity="center_vertical"
+                        android:text="账号创建日期"
+                        app:layout_constraintTop_toBottomOf="@+id/line20" />
+
+                <TextView
+                        android:id="@+id/tv_account_create_time"
+                        style="@style/info_item_value"
+
+                        app:layout_constraintBottom_toBottomOf="@+id/item7"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/item7" />
+
+
+                <!--<TextView-->
+                        <!--android:id="@+id/title_dev"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="50dp"-->
+                        <!--android:background="@color/tv_hint"-->
+                        <!--android:gravity="bottom"-->
+                        <!--android:paddingLeft="16dp"-->
+                        <!--android:paddingBottom="4dp"-->
+                        <!--android:text="设备信息"-->
+                        <!--android:textColor="@color/tv_black"-->
+                        <!--android:visibility="invisible"-->
+                        <!--app:layout_constraintTop_toBottomOf="@+id/item7" />-->
+
+                <!--<TextView-->
+                        <!--android:id="@+id/item8"-->
+                        <!--style="@style/info_item"-->
+                        <!--android:gravity="center_vertical"-->
+                        <!--android:text="设备总数"-->
+                        <!--android:visibility="invisible"-->
+                        <!--app:layout_constraintTop_toBottomOf="@+id/title_dev" />-->
+
+                <!--<TextView-->
+                        <!--style="@style/info_item_value"-->
+                        <!--android:text="0"-->
+                        <!--android:visibility="invisible"-->
+                        <!--app:layout_constraintBottom_toBottomOf="@+id/item8"-->
+                        <!--app:layout_constraintRight_toRightOf="parent"-->
+                        <!--app:layout_constraintTop_toTopOf="@+id/item8" />-->
+
+                <!--<View-->
+                        <!--android:id="@+id/line8"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="0.5dp"-->
+                        <!--android:layout_marginLeft="16dp"-->
+                        <!--android:layout_marginRight="16dp"-->
+                        <!--android:background="@color/tv_hint"-->
+                        <!--android:visibility="invisible"-->
+                        <!--app:layout_constraintBottom_toBottomOf="@+id/item8" />-->
+
+                <!--<TextView-->
+                        <!--android:id="@+id/item9"-->
+                        <!--style="@style/info_item"-->
+                        <!--android:gravity="center_vertical"-->
+                        <!--android:text="设备投放数"-->
+                        <!--android:visibility="invisible"-->
+                        <!--app:layout_constraintTop_toBottomOf="@+id/item8" />-->
+
+                <!--<TextView-->
+                        <!--style="@style/info_item_value"-->
+                        <!--android:text="0"-->
+                        <!--android:visibility="invisible"-->
+                        <!--app:layout_constraintBottom_toBottomOf="@+id/item9"-->
+                        <!--app:layout_constraintRight_toRightOf="parent"-->
+                        <!--app:layout_constraintTop_toTopOf="@+id/item9" />-->
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+
+        <include
+                layout="@layout/layout_pb"
+                app:pbEnable="@{viewModel.isLoading}"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

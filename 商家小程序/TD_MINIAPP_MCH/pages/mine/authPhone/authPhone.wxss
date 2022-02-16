@@ -1,0 +1,93 @@
+/* pages/mine/authPhone/authPhone.wxss */
+
+.auth-container {
+  padding: 0 60rpx;
+}
+
+.auth-phone-text {
+  margin-top: 20rpx;
+  font-size: 30rpx;
+  line-height: 42rpx;
+}
+
+.auth-phone-number {
+  font-size: 40rpx;
+  line-height: 56rpx;
+  margin-top: 10rpx;
+  font-weight: 500;
+}
+
+.auth-phone-contact {
+  margin-top: 20rpx;
+  font-size: 28rpx;
+  line-height: 40rpx;
+}
+
+.auth-phone-contact image {
+  width: 32rpx;
+  height: 32rpx;
+  margin-left: 20rpx;
+  vertical-align: -6rpx;
+}
+
+.auth-input-group {
+  margin-top: 56rpx;
+  display: flex;
+  padding: 0 10rpx;
+}
+
+.auth-input-group input {
+  line-height: 84rpx;
+  font-size: 60rpx;
+  color: #353648;
+  border-bottom: 1rpx solid #353648;
+  width: 60rpx;
+  height: 85rpx;
+  text-align: center;
+  flex: 1;
+  margin-left: 50rpx;
+}
+
+.input {
+  line-height: 84rpx;
+  font-size: 60rpx;
+  height: 85rpx;
+  letter-spacing: 20px;
+}
+
+.auth-input-group input:first-child {
+  margin-left: 0;
+}
+
+.auth-get {
+  margin-top: 40rpx;
+  line-height: 42rpx;
+  font-size: 30rpx;
+  text-align: right;
+  color: #76ADF0;
+}
+
+.auth-btn {
+  width: 690rpx;
+  margin: 480rpx auto 0;
+  transition: all .2s;
+}
+
+.focus {
+  margin-top: 220rpx;
+}
+
+.tip {
+  padding-bottom: 30rpx;
+  font-size: 30rpx;
+  text-align: center;
+}
+
+.hidden-input {
+  height: 0px;
+  min-height: 0;
+  overflow: hidden;
+  opacity: 1;
+  color: #fff;
+}
+

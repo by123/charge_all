@@ -1,0 +1,34 @@
+/* pages/order/detail/detail.wxss */
+page {
+  background: #F4F4F6;
+}
+
+.detail-wrap {
+  margin-top: 20rpx;
+  padding-bottom: 100rpx;
+}
+
+.card-wrap {
+  margin-bottom: 30rpx;
+}
+
+.order-cancel {
+  font-size: 30rpx;
+  text-align: center;
+  margin-top: 52rpx;
+}
+
+.order-cancel view {
+  display: inline-block;
+}
+
+.order-cancel image {
+  width: 26rpx;
+  height: 26rpx;
+  vertical-align: middle;
+}
+
+.refund-wrap {
+  width: 300rpx;
+  margin: 52rpx auto 0;
+}

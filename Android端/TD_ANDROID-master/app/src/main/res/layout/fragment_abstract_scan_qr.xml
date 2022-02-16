@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+        <import type="android.view.View" />
+        <import type="cn.bingoogolapple.qrcode.core.QRCodeView" />
+        <import type="com.xhd.td.ui.home.AbstractScanQRFragment"/>
+        <import type="com.xhd.td.vm.home.AbstractScanQrVM"/>
+        <import type="com.xhd.td.ui.home.ScanActivateDeviceFragment"/>
+
+        <variable
+                name="fragment"
+                type="AbstractScanQRFragment" />
+
+        <variable
+                name="viewModel"
+                type="AbstractScanQrVM" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                       xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                       xmlns:tools="http://schemas.android.com/tools"
+                                                       android:layout_width="match_parent"
+                                                       android:layout_height="match_parent">
+
+        <cn.bingoogolapple.qrcode.zxing.ZXingView
+                android:id="@+id/zxing_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:qrcv_animTime="1000"
+                app:qrcv_barCodeTipText="将条码放入框内，即可自动扫描"
+                app:qrcv_barcodeRectHeight="120dp"
+                app:qrcv_borderColor="@android:color/white"
+                app:qrcv_borderSize="1dp"
+                app:qrcv_cornerColor="@android:color/white"
+                app:qrcv_cornerDisplayType="center"
+                app:qrcv_cornerLength="20dp"
+                app:qrcv_cornerSize="3dp"
+                app:qrcv_customScanLineDrawable="@drawable/icon_scan_line"
+                app:qrcv_isBarcode="false"
+                app:qrcv_isOnlyDecodeScanBoxArea="true"
+                app:qrcv_isScanLineReverse="true"
+                app:qrcv_isShowDefaultGridScanLineDrawable="false"
+                app:qrcv_isShowDefaultScanLineDrawable="true"
+                app:qrcv_isShowLocationPoint="false"
+                app:qrcv_isShowTipBackground="true"
+                app:qrcv_isShowTipTextAsSingleLine="false"
+                app:qrcv_isTipTextBelowRect="false"
+                app:qrcv_maskColor="#cc25262E"
+                app:qrcv_rectWidth="240dp"
+                app:qrcv_scanLineColor="@color/colorPrimaryDark"
+                app:qrcv_scanLineMargin="0dp"
+                app:qrcv_scanLineSize="0.5dp"
+                app:qrcv_tipTextColor="@android:color/white"
+                app:qrcv_tipTextSize="12sp"
+                app:qrcv_toolbarHeight="?attr/actionBarSize"
+                app:qrcv_topOffset="64dp"
+                app:qrcv_verticalBias="-1"
+                tools:layout_editor_absoluteY="0dp"
+                tools:layout_editor_absoluteX="0dp"/>
+
+
+        <TextView
+                android:id="@+id/tv_taxi_group"
+                style="@style/tv_scan"
+                android:text="秋名山车队"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:drawableStart="@drawable/ic_scan_taxi"
+                android:drawablePadding="5dp"
+                android:visibility="gone"
+                app:layout_constraintVertical_bias="0.12"/>
+
+
+        <ImageView
+                android:id="@+id/img_back"
+                style="@style/back_style"
+                android:onClick="@{()->fragment.close()}"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:text="扫码激活设备"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_18"
+                app:layout_constraintBottom_toBottomOf="@+id/img_back"
+                app:layout_constraintLeft_toRightOf="@+id/img_back"
+                app:layout_constraintTop_toTopOf="@+id/img_back" />
+
+
+        <TextView
+                android:id="@+id/tv_select_pic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="16dp"
+                android:text="相册"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_16"
+                app:layout_constraintBottom_toBottomOf="@+id/img_back"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/img_back" />
+
+
+        <TextView
+                android:id="@+id/tv_scan_tip"
+                style="@style/tv_scan"
+                android:layout_marginTop="444dp"
+                android:text="已激活设备"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/zxing_view" />
+
+        <TextView
+                android:id="@+id/tv_activate_device_num"
+                style="@style/tv_scan"
+                android:textSize="@dimen/sp_48"
+                android:visibility="gone"
+                app:layout_constraintLeft_toLeftOf="@+id/tv_scan_tip"
+                app:layout_constraintRight_toRightOf="@+id/tv_scan_tip"
+                app:layout_constraintTop_toBottomOf="@+id/tv_scan_tip"
+                tools:visibility="visible"/>
+
+        <Button
+                android:id="@+id/btn_finish"
+                style="@style/btn_scan_finish"
+                android:layout_marginBottom="20dp"
+                android:text="结束"
+                android:onClick="@{()->fragment.close()}"
+                android:visibility="gone"
+                tools:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_activate_device_num" />
+
+        <TextView
+                android:id="@+id/tv_flashing"
+                style="@style/tv_scan"
+                android:layout_marginTop="300dp"
+                android:drawableTop="@{fragment.flashingType==1?@drawable/flashing_close:@drawable/flashing_open}"
+                android:drawablePadding="4dp"
+                android:text="@{fragment.flashingType==1?@string/open_flashing_hint:@string/close_flashing_hint}"
+                android:textSize="@dimen/sp_16"
+                android:visibility="@{fragment.flashingType!=1?View.VISIBLE:QRCodeView.isDarkEnv?View.VISIBLE:View.GONE}"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

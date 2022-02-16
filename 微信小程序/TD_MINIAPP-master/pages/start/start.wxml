@@ -1,0 +1,24 @@
+<view class="container">
+  <!-- <view class='startpage' hidden='{{hiddenUI}}'>
+    <image class='start_image' src="{{img_about}}"></image>
+    <view class='start_txt'>{{productName}}</view>
+    <view class='start_line'></view>
+    <view class="start_title_view">
+      <view class='start_main_title'>登陆后{{productName}}充电将获得以下权限</view>
+      <view class='start_sub_title'>· 获得您的公开信息(昵称、头像、地理位置等）</view>
+    </view>
+    <button type='primary' lang="zh_CN" bindtap="onGotUserInfo" class='start_login_btn'>确认登录</button> 
+  </view> -->
+
+  <image class="img_luncher" src="{{img_lunch}}" hidden='{{hiddenLuncherUI}}' mode='aspectFill'></image>
+
+  <view style="width:100%;position:fixed;bottom:0;" hidden='{{hiddenLuncherUI}}' >
+    <ad-fullview data-id="adfullview" showPage="2" bind:adSkip="onAdSkip" bind:adShow="onAdShow" bind:adClick="onAdClick" id='adfullview'></ad-fullview>
+  </view>
+
+  <view style="background-color: #ccc;">
+    <canvas style="width: 32px; height: 32px;margin-left:275px;margin-top:130px;backgroud:red;" canvas-id="secondCanvas" bindtap="onSkipTap" hidden="{{canvasHidden}}"></canvas>
+  </view>
+
+
+</view>

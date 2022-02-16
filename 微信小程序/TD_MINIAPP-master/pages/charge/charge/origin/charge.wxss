@@ -1,0 +1,262 @@
+.charge_page {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.charge_body {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.charge_ad{
+  width: 100%;
+}
+
+.charge_ad_img {
+  margin-top: 20rpx;
+  background-color: #fff;
+  width: 92%;
+  height: 240rpx;
+  box-shadow: 0 0 6px 0 #dedede;
+  border-radius: 2px;
+}
+
+.charge_title_view {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 30rpx;
+}
+
+.charge_title_view .time {
+  color: #353648;
+  font-size: 40rpx;
+  line-height: 56rpx;
+  font-weight: bold;
+   margin-left: 4%;
+}
+
+.charge_title_view .history {
+  color: #353648;
+  margin-right: 4%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  
+}
+
+.charge_title_view .history .txt {
+  font-size: 30rpx;
+  line-height: 56rpx;
+}
+
+.charge_title_view .history .img {
+  width: 24rpx;
+  height: 24rpx;
+  margin-left: 10rpx;
+}
+
+.charge_listview {
+  width: 100%;
+  margin-top: 20rpx;
+  height: 640rpx;
+}
+
+.charge_item {
+  width: 92%;
+  margin-left: 4%;
+  margin-right: 4%;
+  height: 140rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 30rpx;
+  border: 0 solid #f4f4f6;
+  box-shadow: 0 0 6px 0 #dedede;
+  border-radius: 2px;
+}
+
+.active {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #ffce00;
+}
+
+.imagetime {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.imagetime .showimage {
+  width: 40rpx;
+  height: 40rpx;
+  margin-left: 40rpx;
+}
+
+.imagetime .time {
+  color: #535573;
+  font-weight: bold;
+  font-size: 40rpx;
+  line-height: 56rpx;
+  margin-left: 12rpx;
+}
+
+.priceimage {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.lineview {
+  height: 70rpx;
+  border-left: 1px dashed #f4f4f6;
+}
+
+.priceview {
+  height: 140rpx;
+  width: auto;
+  margin-left: 60rpx;
+  display: flex;
+  position: relative;
+  
+}
+
+.price {
+  color: #757685;
+  font-size: 40rpx;
+  margin-right: 60rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.selectimage {
+  width: 40rpx;
+  height: 40rpx;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+/* .selectimage{
+  width: 90rpx;
+  height: 90rpx;
+  margin-top: -50rpx;
+  margin-right: -25rpx;
+} */
+
+.charge_bottom {
+  width: 100%;
+  display: flex;
+  bottom: 0;
+  flex-direction: column;
+  position: fixed;
+}
+
+.charge_bottom .tips {
+  margin-left: 30rpx;
+  margin-bottom: 10rpx;
+  color: #535573;
+  font-size: 30rpx;
+  line-height: 42rpx;
+}
+
+.charge_bottom_view {
+  background-color: white;
+  height: 110rpx;
+  border-top: 1px solid #dedede;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.charge_bottom_view .price_view {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.charge_bottom_view .price_view .total_price {
+  margin-left: 30rpx;
+  color: #353648;
+  font-size: 40rpx;
+}
+
+.charge_bottom_view .price_view .deposit_price {
+  margin-left: 18rpx;
+  color: #757685;
+  font-size: 24rpx;
+}
+
+.pay_btn {
+  width: 280rpx;
+  height: 110rpx;
+  border-radius: 0;
+  margin: 0;
+  padding: 0;
+  background-color: #dedede;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+}
+
+.pay_btn_active {
+  color: #353648;
+  background-color: #ffce00;
+}
+
+button:after {
+  border: none;
+}
+
+input {
+  outline: none;
+  border: none;
+  list-style: none;
+}
+
+/* 充电帮助 */
+
+.charge_help {
+  position: relative;
+  font-size: 28rpx;
+  color: #757685;
+  letter-spacing: -0.68rpx;
+  line-height: 40rpx;
+  width: 100%;
+  padding: 0 30rpx;
+  margin-top: 60rpx;
+  box-sizing: border-box;
+}
+
+.charge_help_arrow {
+  width: 26rpx;
+  height: 26rpx;
+  position: absolute;
+  right: 30rpx;
+  top: 6rpx;
+}
+
+
+/*小红电*/
+.active_red{
+  border-style: solid;
+  border-width: 1px;
+  border-color: #353648;
+}
+
+.pay_btn_active_red{
+  color: #ffffff;
+  background-color: #FD5750;
+}

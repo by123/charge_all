@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View"/>
+
+        <variable
+                name="viewModel"
+                type="com.xhd.td.vm.login.LoginVM"/>
+
+        <variable
+                name="fragment"
+                type="com.xhd.td.ui.login.LoginFragment"/>
+
+        <variable
+                name="loginBean"
+                type="com.xhd.td.model.bean.LoginBean"/>
+
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white">
+
+        <ImageView
+                android:id="@+id/img_login_logo"
+                android:layout_width="120dp"
+                android:layout_height="38dp"
+                android:layout_marginTop="56dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_login_logo"
+                android:visibility="gone"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+                android:id="@+id/title1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:text="你好，"
+                android:layout_marginTop="56dp"
+                android:textColor="@color/tv_black"
+                android:textSize="@dimen/sp_30"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+                android:id="@+id/title2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/login_title"
+                android:textColor="@color/tv_black"
+                android:textSize="@dimen/sp_30"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="@+id/title1"
+                app:layout_constraintTop_toBottomOf="@+id/title1"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/input_layout_account"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginRight="16dp"
+                android:hint="请输入账号"
+                android:textColorHint="@color/tv_hint"
+                app:errorEnabled="true"
+                app:layout_constraintTop_toBottomOf="@id/title2">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/edit_account"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edit_selector"
+                    android:inputType="text"
+                    android:text="@={viewModel.name}"
+                    android:maxLines="1"
+                    android:textColor="@color/tv_black"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/input_layout_pwd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginRight="16dp"
+                android:hint="请输入密码"
+                android:textColorHint="@color/tv_hint"
+                app:errorEnabled="true"
+                app:passwordToggleEnabled="true"
+                app:layout_constraintTop_toBottomOf="@+id/input_layout_account">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/edit_pwd"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edit_selector"
+                    android:inputType="textPassword"
+                    android:text="@={viewModel.pwd1}"
+                    android:maxLines="1"
+                    android:textColor="@color/tv_black"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+                android:id="@+id/btn_activate"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:enabled="@{viewModel.name!=null&amp;&amp;viewModel.pwd1.length()>5 &amp;&amp;viewModel.checkbox }"
+                android:onClick="@{()->viewModel.login(viewModel.name,viewModel.pwd1)}"
+                android:text="登录"
+                android:textSize="18sp"
+                android:background="@drawable/selector_btn_login"
+                android:textColor="@color/select_text_color"
+                app:layout_constraintBottom_toTopOf="@+id/tv_forget_pwd"
+                app:layout_constraintTop_toBottomOf="@+id/input_layout_account"
+                app:layout_constraintVertical_chainStyle="packed"/>
+
+
+        <CheckBox
+                android:id="@+id/checkbox_user_protocol"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="13dp"
+                android:checked="@={viewModel.checkbox}"
+                android:text="已同意"
+                android:textSize="@dimen/sp_16"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_forget_pwd"
+                app:layout_constraintTop_toTopOf="@+id/tv_forget_pwd"/>
+
+        <TextView
+                android:id="@+id/tv_user_protocol"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{()->fragment.toUserProtocol()}"
+                android:text="用户协议"
+                android:textColor="@color/hyperlink"
+                android:textSize="@dimen/sp_16"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/checkbox_user_protocol"
+                app:layout_constraintBottom_toBottomOf="@+id/checkbox_user_protocol"
+                app:layout_constraintStart_toEndOf="@+id/checkbox_user_protocol"/>
+
+        <TextView
+                android:id="@+id/tv_forget_pwd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="20dp"
+                android:onClick="@{()->fragment.forgetPwd()}"
+                android:text="忘记密码"
+                android:textColor="@color/hyperlink"
+                android:textSize="@dimen/sp_16"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_activate"/>
+
+        <ProgressBar
+                android:id="@+id/progress_login"
+                style="@android:style/Widget.DeviceDefault.Light.ProgressBar.Large"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="@{viewModel.isLoading ? View.VISIBLE : View.GONE}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:visibility="visible"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

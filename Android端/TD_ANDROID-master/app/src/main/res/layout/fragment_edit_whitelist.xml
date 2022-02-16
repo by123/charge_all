@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <import type="android.view.View"/>
+
+        <variable
+                name="fragment"
+                type="com.xhd.td.ui.whitelist.EditWhitelistFragment"/>
+        <variable
+                name="viewModel"
+                type="com.xhd.td.vm.whitelist.WhitelistVM"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <include layout="@layout/title_bar"/>
+
+
+        <TextView
+                android:id="@+id/tv_whitelist_name"
+                style="@style/info_item"
+                android:gravity="center_vertical"
+                android:text="客户姓名"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/edit_whitelist_name_value"
+                app:layout_constraintBottom_toBottomOf="@+id/edit_whitelist_name_value"/>
+
+        <EditText
+                style="@style/info_item_value"
+                android:id="@+id/edit_whitelist_name_value"
+                tools:text="中国新疆维吾尔自治区中中治区中国新疆维吾尔自治区中治区"
+                android:maxLines="5"
+                android:minHeight="50dp"
+                android:layout_width="260dp"
+                android:gravity="end|center_vertical"
+                android:background="@null"
+                android:text="@{fragment.MWhitelist.userName}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/toolBar"/>
+
+
+        <View
+                android:id="@+id/line_whitelist_name"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@color/tv_hint"
+                app:layout_constraintBottom_toBottomOf="@+id/edit_whitelist_name_value"/>
+
+
+        <TextView
+                android:id="@+id/tv_whitelist_range"
+                style="@style/info_item"
+                android:gravity="center_vertical"
+                android:text="使用范围"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_whitelist_range_value"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_whitelist_range_value"/>
+
+        <com.xhd.td.view.TextImageView
+                android:id="@+id/tv_whitelist_range_value"
+                style="@style/info_item_value"
+                android:maxLines="5"
+                android:minHeight="50dp"
+                android:layout_width="260dp"
+                android:gravity="end|center_vertical"
+                android:drawableEnd="@drawable/ic_arrow_normal"
+                android:drawablePadding="8dp"
+                android:text="点击重选"
+                app:drawableEndHeight="12dp"
+                app:drawableEndWidth="12dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/line_whitelist_name"/>
+
+
+        <View
+                android:id="@+id/line_whitelist_range"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@color/tv_hint"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_whitelist_range_value"/>
+
+
+        <TextView
+                android:id="@+id/tv_whitelist_time"
+                style="@style/info_item"
+                android:gravity="center_vertical"
+                android:text="使用时长"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_whitelist_time_value"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_whitelist_time_value"/>
+
+        <com.xhd.td.view.TextImageView
+                android:id="@+id/tv_whitelist_time_value"
+                style="@style/info_item_value"
+                tools:text="1小时"
+                android:maxLines="5"
+                android:minHeight="50dp"
+                android:layout_width="260dp"
+                android:gravity="end|center_vertical"
+                android:drawableEnd="@drawable/ic_arrow_normal"
+                android:drawablePadding="8dp"
+                app:drawableEndHeight="12dp"
+                app:drawableEndWidth="12dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/line_whitelist_range"/>
+
+
+        <View
+                android:id="@+id/line_whitelist_time"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@color/tv_hint"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_whitelist_time_value"/>
+
+
+        <Button
+                android:id="@+id/btn_confirm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:background="#DEC188"
+                android:text="确定"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_18"/>
+
+        <include
+                layout="@layout/layout_pb"
+                app:pbEnable="@{viewModel.isLoading}"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,26 @@
+<view class='.container' bindtap="onPageTap">
+  <view class='view_card'>
+     <image class='img_vip' src="{{img_vip}}" mode='aspectFill'></image>
+     <open-data class="img_head" type="userAvatarUrl" mode='aspectFill'></open-data>
+     <open-data type="userNickName" class="txt_nickname"></open-data>
+  </view>
+  <view class='view_title'>
+     <view class='line'/>
+      <view class='txt_title'>在以下商户免费充电</view>
+      <view class='line'/>
+  </view>
+  
+     <!-- 列表 -->
+    <scroll-view scroll-y="true" class='listview_wt' style='height:{{listHeight}}px' bindscrolltolower="onReachBottom">
+      <view wx:for="{{items}}" wx:key="key" bindtap='onItemTap' data-name="{{item}}">     
+        <view class='txt_mch_name'>{{item.mchName}}</view>
+        <view class='view_address'>
+          <image class='img_address' src="{{img_scope}}" mode='aspectFill'></image>
+          <view class='txt_mch_address'>{{item.detailAddr == null || item.detailAddr == "" ? "暂无详细地址" : item.detailAddr}}</view>
+        </view>
+      </view>
+    </scroll-view>
+
+   <image class='img_arrow' src="{{img_arrow}}" mode='aspectFill' hidden="{{!hasMore}}"></image>
+
+</view>

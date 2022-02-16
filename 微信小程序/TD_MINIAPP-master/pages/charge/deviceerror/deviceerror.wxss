@@ -1,0 +1,50 @@
+.page_deviceerror{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.img_noactive{
+  width: 200rpx;
+  height: 200rpx;
+  margin-top: 140rpx;
+}
+
+.text_noactive{
+  margin-top: 30rpx;
+  color: #757685;
+  font-size: 32rpx;
+  line-height: 44rpx;
+}
+
+.text_contact{
+  margin-top: 10rpx;
+  color: #757685;
+  font-size: 32rpx;
+  line-height: 44rpx;
+}
+
+.btn_backhome{
+  background-color: #FFCE00;
+  color: #353648;
+  font-size: 36rpx;
+  margin-top: 40rpx;
+  width: 240rpx;
+  height: 84rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn_backhome_red{
+  background-color: #FD5750;
+  color: #ffffff;
+  font-size: 36rpx;
+  margin-top: 40rpx;
+  width: 240rpx;
+  height: 84rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

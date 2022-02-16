@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+
+    <data>
+        <import type="com.xhd.td.model.bean.MchBean" />
+        <import type="com.xhd.td.utils.ExtUtilsKt" />
+
+
+        <import type="com.xhd.td.adapter.mine.ManageAgentAdapter" />
+        <variable
+                name="adapter"
+                type="ManageAgentAdapter" />
+
+        <import type="android.view.View" />
+
+        <variable
+                name="bean"
+                type="MchBean" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+            android:id="@+id/agentRVTopView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="8dp"
+            android:background="@color/white"
+            android:paddingBottom="16dp">
+
+        <TextView
+                android:id="@+id/tv_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:text="代理商类型"
+                android:textColor="@color/tv_color"
+                android:textSize="@dimen/sp_15"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+                android:id="@+id/tv_type_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="16dp"
+                android:text="@{ExtUtilsKt.gradeNameForMchTypeAndLevel(bean.mchType,bean.level)}"
+                android:textColor="@color/tv_black"
+                android:textSize="@dimen/sp_15"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_type"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_type"/>
+
+
+        <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:text="代理商名称"
+                android:textColor="@color/tv_color"
+                android:textSize="@dimen/sp_15"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_type"/>
+
+        <TextView
+                android:id="@+id/tv_name_value"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="16dp"
+                android:ellipsize="end"
+                android:gravity="right"
+                android:lines="1"
+                android:maxLines="1"
+                android:text="@{bean.mchName}"
+                android:textColor="@color/tv_black"
+                android:textSize="@dimen/sp_15"
+                app:layout_constrainedWidth="true"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_name"
+                app:layout_constraintLeft_toRightOf="@+id/tv_name"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_name"/>
+
+
+        <TextView
+                android:id="@+id/tv_account"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:text="代理商账号"
+                android:textColor="@color/tv_color"
+                android:textSize="@dimen/sp_15"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_name"/>
+
+        <TextView
+                android:id="@+id/tv_account_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="16dp"
+                android:text="@{bean.mchId}"
+                android:textColor="@color/tv_black"
+                android:textSize="@dimen/sp_15"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_account"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_account"/>
+
+
+        <TextView
+                android:id="@+id/person"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:text="联系人"
+                android:textColor="@color/tv_color"
+                android:textSize="@dimen/sp_15"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_account"/>
+
+        <TextView
+                android:id="@+id/person_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="16dp"
+                android:text="@{bean.contactUser}"
+                android:textColor="@color/tv_black"
+                android:textSize="@dimen/sp_15"
+                app:layout_constraintBottom_toBottomOf="@+id/person"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/person"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

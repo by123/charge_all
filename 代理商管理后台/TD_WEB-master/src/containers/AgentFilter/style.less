@@ -1,0 +1,48 @@
+
+.search-container {
+  display: inline-block;
+  margin-left: 10px;
+  position: relative;
+  max-width: 300px;
+  flex: 1;
+  min-width: 100px;
+  height: 32px;
+  line-height: 32px;
+
+  .ant-input {
+    display: block;
+  }
+
+  .ant-list-item {
+    cursor: pointer;
+    &:hover {
+      background-color: #fffee6;
+    }
+  }
+
+  .search-list {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    // width: 100%;
+    background: #fff;
+    z-index: 1000;
+    max-height: 400px;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    .ant-list-item-content-single {
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+      width: 100%;
+    }
+  }
+}
+
+.agent-filter-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+

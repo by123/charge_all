@@ -1,0 +1,33 @@
+<!--pages/mine/reset/action/action.wxml-->
+<view class="action-wrapper light-font-color">
+  <view class="action-top">操作指引</view>
+  <view class="video-wrap">
+    <video id="actionVideo" src="{{videoSrc}}" controls class="video"></video>
+  </view>
+  <view class="action-section action-step-one">
+    <view class="section-head base-font-color">第一步</view>
+    <view class="section-content">
+      <view class="section-content-text">请在充电器输入密码，并等待按键指示灯闪烁一次</view>
+      <view class="step-one-code base-font-color">
+        <text>{{code1}}</text>
+        <text>{{code2}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="action-section action-step-two">
+    <view class="section-head">第二步</view>
+    <view class="section-content">
+      <view class="section-content-text">请点击确认重置按钮，完成设备密码重置</view>
+    </view>
+    <view class="step-two-btn">
+      <MyButton customStyle="width: 240rpx;" bind:btnTap="handleReset">确认重置</MyButton>
+    </view>
+  </view>
+  <view class="action-tips">
+    <view>提示：</view>
+    <view>1、请在30秒内完成密码输入</view>
+    <view>2、重置密码输入正确后，按键指示灯将闪烁一次</view>
+    <view>3、充电器操作完成后，一定要在本页面点“确认重置”</view>
+  </view>
+  <view class="action-help">如需更多帮助，<text bindtap="handleContact">请联系客服</text></view>
+</view>

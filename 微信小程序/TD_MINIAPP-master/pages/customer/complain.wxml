@@ -1,0 +1,36 @@
+<!-- 我要投诉 -->
+<view class="complain" bindtap="onPageTap">
+    <view class="phone">
+        <label for="" class="flex phone-text"><text style="color:#F85429;">*</text>  手机号码</label>
+        <input placeholder="请输入您的手机号码" auto-focus class="flex phone-ipt" placeholder-style="color: #DEDEDE;" maxlength="11" bindinput="onphoneVal" value="{{phoneVal}}" style="margin-right:{{phoneStyle}}rpx"/>
+
+        <image src="{{img_delete}}" mode='aspectFill' wx:if="{{!isEmpty}}" class="delete-img" bindtap="emptyPhoneVal"/>
+    </view>
+    <!-- <view style="width:92.1%;margin:5rpx auto 0;color:red;" wx:if="{{phoneVal==='' && noPhoneVal}}">请输入您的手机号码</view>
+    <view style="width:92.1%;margin:5rpx auto 0;color:red;" wx:if="{{truePhone}}">请输入正确的手机号</view> -->
+
+    <view class="textarea-section">
+        <text class="point">*</text>
+        <textarea placeholder="   请输入您遇到的问题" placeholder-style="color:#DEDEDE;" class="complain-textarea" maxlength="200" bindinput = "meetProblem"/>
+    </view>
+    <!-- <view style="width:92.1%;margin:0 auto 20rpx;color:red;">请输入您遇到的问题</view> -->
+    
+    <!-- <view class="upload-picture-wrapper">
+        <scroll-view class="scroll-view_H" scroll-x style="width: 100%;white-space: nowrap;">
+            <view class="get-picture" bindtap="onChooseimage" wx:if="{{tempFilePathsArr.length<5}}">
+                <image src="upload-picture.png" alt="" class="picture-img"></image>
+                <view style="text-align:center;">获取图片</view>
+            </view>
+            
+            <view wx:for='{{tempFilePathsArr}}' wx:for-index='index' wx:for-item='item' wx:key="index" class="picture-item upload-picture">
+                <image src="delete.png" mode='aspectFill' class="delete-img picture-delete" bindtap="deletePicture" wx:key="index" id="{{index}}"/>
+                <image src="{{item}}" mode="aspecFill" class="upload-picture"/>
+            </view>
+            
+        </scroll-view>
+        
+
+        <view class="complain-tips">请上传充电线二维码处照片，照片限制5张</view>
+    </view> -->
+    <view class="{{product == 0 ? 'complain_page_btn' : 'complain_page_btn_red'}}" bindtap="submitComplainMessage">提交</view>
+</view>

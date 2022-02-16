@@ -1,0 +1,41 @@
+<!--pages/order/detail/detail.wxml-->
+<view class="detail-wrap">
+  <view class="card-wrap" wx:if="{{orderData}}">
+    <!-- <Card dataSource="{{orderData}}"></Card> -->
+    <Card dataSource="{{orderData}}" />
+  </view>
+
+  <view class="card-wrap" wx:if="{{profitData}}">
+    <Card dataSource="{{profitData}}"></Card>
+  </view>
+
+  <view class="card-wrap" wx:if="{{tradeData}}">
+    <Card dataSource="{{tradeData}}"></Card>
+  </view>
+
+  <view class="card-wrap" wx:if="{{depositData}}">
+    <Card dataSource="{{depositData}}"></Card>
+  </view>
+
+  <view class="card-wrap" wx:if="{{refundData}}">
+    <Card dataSource="{{refundData}}"></Card>
+  </view>
+
+
+  <Card dataSource="{{deviceData}}" wx:if="{{deviceData}}"></Card>
+
+  <!-- <view class="order-cancel light-font-color" wx:if="{{orderState === 1}}">
+    <view bindtap="onCancel">
+      取消订单
+      <image src="../../../images/i_arrow_right.png"></image>
+    </view>
+  </view>
+
+  <view class="order-cancel light-font-color" wx:if="{{orderState === 1}}">
+    <MyButton loading="{{loading}}" full="true" disable="{{disable}}" bind:btnTap="handleRetuenDeposit">退押金</MyButton>
+  </view> -->
+
+  <view class="refund-wrap light-font-color" wx:if="{{(orderState === 3 || orderState === 2) && canRefund}}">
+    <MyButton full="true" bind:btnTap="handleRefund">退款</MyButton>
+  </view>
+</view>

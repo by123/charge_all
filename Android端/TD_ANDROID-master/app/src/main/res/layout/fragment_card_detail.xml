@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View"/>
+
+        <variable
+                name="fragment"
+                type="com.xhd.td.ui.mine.bank.CardDetailFragment"/>
+
+        <import type="com.xhd.td.model.bean.Bank" />
+        <variable
+                name="bean"
+                type="Bank" />
+
+        <variable
+                name="isCompany"
+                type="Boolean"/>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            tools:context=".ui.mine.bank.CardDetailFragment">
+
+        <include layout="@layout/title_bar"/>
+
+        <TextView
+                android:id="@+id/cardType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:text="账户类型："
+                android:textColor="@color/tv_color"
+                android:textSize="@dimen/sp_15"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/toolBar" />
+
+        <TextView
+                android:id="@+id/cardTypeValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="16dp"
+
+                android:textColor="@color/tv_black"
+                android:textSize="@dimen/sp_15"
+                app:layout_constraintBottom_toBottomOf="@+id/cardType"
+                app:layout_constraintRight_toRightOf="parent" />
+
+        <View
+                android:id="@+id/line1"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@color/tv_hint"
+                app:layout_constraintTop_toBottomOf="@+id/cardType" />
+
+        <View
+                android:id="@+id/line2"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginLeft="16dp"
+
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@color/tv_hint"
+                app:layout_constraintTop_toBottomOf="@+id/cardName" />
+
+        <View
+                android:id="@+id/line3"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@color/tv_hint"
+                android:visibility="@{bean.isPublic() == 2?View.GONE:View.VISIBLE }"
+                app:layout_constraintTop_toBottomOf="@+id/corpCard" />
+
+        <View
+                android:id="@+id/line4"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@color/tv_hint"
+                android:visibility="@{bean.isPublic() == 2?View.GONE:View.VISIBLE }"
+                app:layout_constraintTop_toBottomOf="@+id/bankCard" />
+
+        <View
+                android:id="@+id/line5"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@color/tv_hint"
+                app:layout_constraintTop_toBottomOf="@+id/subCard" />
+
+        <TextView
+                android:id="@+id/cardName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+
+                android:textColor="@color/tv_color"
+                android:textSize="@dimen/sp_15"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/line1" />
+
+        <TextView
+                android:id="@+id/cardNameValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="16dp"
+                android:text="@{bean.accountName}"
+                android:textColor="@color/tv_black"
+                android:textSize="@dimen/sp_15"
+                app:layout_constraintBottom_toBottomOf="@+id/cardName"
+                app:layout_constraintRight_toRightOf="parent" />
+
+        <TextView
+                android:id="@+id/corpCard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:text="@{isCompany?@string/bank_duigong:@string/bank_persion}"
+                android:visibility="@{bean.isPublic() == 2?View.GONE:View.VISIBLE }"
+                android:textColor="@color/tv_color"
+                android:textSize="@dimen/sp_15"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/line2" />
+
+        <TextView
+                android:id="@+id/corpCardValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="16dp"
+                android:text="@{bean.bankId}"
+                android:visibility="@{bean.isPublic() == 2?View.GONE:View.VISIBLE }"
+                android:textColor="@color/tv_black"
+                android:textSize="@dimen/sp_15"
+                app:layout_constraintBottom_toBottomOf="@+id/corpCard"
+                app:layout_constraintRight_toRightOf="parent" />
+
+        <TextView
+                android:id="@+id/bankCard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:text="开户银行："
+                android:visibility="@{bean.isPublic() == 2?View.GONE:View.VISIBLE }"
+                android:textColor="@color/tv_color"
+                android:textSize="@dimen/sp_15"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/line3" />
+
+        <TextView
+                android:id="@+id/bankCardValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="16dp"
+                android:text="@{bean.bankName}"
+                android:visibility="@{bean.isPublic() == 2?View.GONE:View.VISIBLE }"
+                android:textColor="@color/tv_black"
+                android:textSize="@dimen/sp_15"
+                app:layout_constraintBottom_toBottomOf="@+id/bankCard"
+                app:layout_constraintRight_toRightOf="parent" />
+
+        <TextView
+                android:id="@+id/subCard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:text="支行名称："
+                android:textColor="@color/tv_color"
+                android:textSize="@dimen/sp_15"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/line4" />
+
+        <TextView
+                android:id="@+id/subCardValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="16dp"
+                android:text="@{bean.bankBranch}"
+                android:textColor="@color/tv_black"
+                android:textSize="@dimen/sp_15"
+                app:layout_constraintBottom_toBottomOf="@+id/subCard"
+                app:layout_constraintRight_toRightOf="parent" />
+
+        <TextView
+                android:id="@+id/subCardName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:text="开户行所在地："
+                android:textColor="@color/tv_color"
+                android:textSize="@dimen/sp_15"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/line5" />
+
+        <androidx.constraintlayout.widget.Group
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="@{isCompany?View.VISIBLE:View.GONE}"
+                app:constraint_referenced_ids="line6,line5,line4,subCardName,subCardNameValue,subCard,subCardValue" />
+
+        <TextView
+                android:id="@+id/subCardNameValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="16dp"
+                android:text="@{bean.cityName}"
+                android:textColor="@color/tv_black"
+                android:textSize="@dimen/sp_15"
+                app:layout_constraintBottom_toBottomOf="@+id/subCardName"
+                app:layout_constraintRight_toRightOf="parent" />
+
+
+        <View
+                android:id="@+id/line6"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@color/tv_hint"
+                app:layout_constraintTop_toBottomOf="@+id/subCardName" />
+
+
+        <TextView
+                android:id="@+id/tv_modify_card_tip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="如需修改或删除银行卡，请联系平台或上级代理商"
+                android:textColor="#bdbdbd"
+                android:visibility="visible"
+                android:textSize="10sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/line6" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

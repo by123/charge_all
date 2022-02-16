@@ -1,0 +1,157 @@
+<resources>
+
+    <string name="hint_max">最大退款金额为</string>
+    <string name="str_zuyong_time">选择起始时间</string>
+    <string name="current_device">"当前复位设备  "</string>
+    <string name="T_ups">"T+"</string>
+    <string name="open_flashing_hint">轻触打开电筒</string>
+    <string name="close_flashing_hint">轻触关闭电筒</string>
+    <string name="mine">账号：</string>
+    <string name="deviceHint">
+       提示：\n1、请再30秒内完成密码输入\n2、复位密码输入正确后，按键指示灯将闪烁一次\n3、充电器操作完成后，一定要在本页面点“确认密码重置”
+    </string>
+    <string name="with_draw_hint">到账时间：</string>
+
+    <string name="withdraw_amount_rule">单笔提现金额不得低于min元，不得大于max元</string>
+    <string name="withdraw_amount_min_rule">单笔提现金额不得低于min元</string>
+    <string-array name="array_provincial_agent">
+        <item>市代</item>
+        <item>区/县代</item>
+    </string-array>
+    <string-array name="array_municipal_agent">
+        <item>区/县代</item>
+    </string-array>
+
+
+    <string name="whitelist_instructions">1.设置免费充电使用范围
+    \n2.微信邀请客户
+    \n3.客户微信完成白名单授权
+    \n4.客户到指定门店免费充电
+    </string>
+    <!--<string-array name="instr_array">-->
+    <!--<item>宾馆/经济连锁酒店</item>-->
+    <!--<item>星级酒店</item>-->
+    <!--<item>中餐/茶馆</item>-->
+    <!--<item>西餐咖啡厅</item>-->
+    <!--<item>酒吧/KTV</item>-->
+    <!--<item>电影院</item>-->
+    <!--<item>洗浴/会所</item>-->
+    <!--<item>足疗按摩</item>-->
+    <!--<item>棋牌室</item>-->
+    <!--<item> 网吧网咖</item>-->
+    <!--<item> 美容行业</item>-->
+    <!--<item>培训机构</item>-->
+    <!--<item>医院</item>-->
+    <!--<item>综合商场</item>-->
+    <!--<item>其它</item>-->
+    <!--</string-array>-->
+    <string-array name="grade_array">
+        <item>"1 小时"</item>
+        <item>"2 小时"</item>
+        <item>"3 小时"</item>
+        <item>"4 小时"</item>
+        <item>"6 小时"</item>
+        <item>"8 小时"</item>
+        <item>"12 小时"</item>
+        <item>"24 小时"</item>
+    </string-array>
+    <string name="yuan">" 元"</string>
+    <string name="daizhifu">待支付金额</string>
+    <string name="dingdan">订单金额</string>
+    <string name="wechat">微信</string>
+    <string name="alipay">支付宝</string>
+    <string name="nullStr">无</string>
+    <string name="yuanlu">原路返回</string>
+    <string name="refundSuccess">退款成功</string>
+    <string name="refundFaith">退款失败</string>
+    <string name="refunding">退款中</string>
+    <string name="noRefund">未发起退款</string>
+
+
+    <string name="bank_personName">开卡人姓名</string>
+    <string name="bank_corpName">账户名称</string>
+    <string name="bank_duigong">银行对公账号</string>
+    <string name="bank_persion">银行卡号</string>
+    <string name="bank_hintCorpName">请输入账户名称</string>
+    <string name="bank_hintPersonName">请输入用户姓名</string>
+    <string name="bank_hintDuiGong">请输入银行对公账号</string>
+    <string name="bank_hintBank">请输入银行卡号</string>
+    <string name="person_card">个人账户</string>
+    <string name="company_card">对公账户</string>
+    <string name="errorResult">失败原因：</string>
+    <string-array name="searchOrderType">
+        <item>按商户</item>
+        <item>按订单</item>
+        <item>按设备</item>
+    </string-array>
+    <string name="percent">%</string>
+    <string name="detail">详情</string>
+    <string name="info">信息</string>
+    <string name="name">名称</string>
+    <string name="agent">代理人</string>
+    <string name="name1">姓名</string>
+    <string name="contactName">联系人</string>
+    <string name="phone">电话</string>
+    <string name="agentName">代理商账号</string>
+    <string name="tenantName">商户名称</string>
+
+    <string name="subInfo">子级代理商信息</string>
+    <string name="billing">计费规则</string>
+    <string name="shiDai">市代总数</string>
+    <string name="yajin">押金</string>
+    <string name="quxian">区/县代总数</string>
+    <string name="firstGrade">第一档</string>
+    <string name="totalAgent">商户总数</string>
+    <string name="second">第二档</string>
+    <string name="addDaili">添加代理商</string>
+    <string name="editDaili">编辑代理商</string>
+
+    <string name="addShanghu">添加商户</string>
+    <string name="editShanghu">编辑商户</string>
+
+    <string name="dailiName">代理商名称</string>
+    <string name="ins">所属行业</string>
+    <string name="zero">0.00</string>
+    <string name="zero2">0</string>
+
+    <string name="press_again_exit">再按一次退出</string>
+
+
+
+    <string name="what_is_taxi_business">1、什么是出租车业务</string>
+
+    <string name="answer_taxi_business">是指在出租车铺设充电设备，供乘客使用。</string>
+
+    <string name="taxi_business_process">2、出租车业务的开展流程</string>
+
+    <string name="taxi_business_process_first_title">第一步：创建分组</string>
+    <string name="taxi_business_process_first_content">可创建多个分组，不同的组设置不同的充电计费规则、司机分润比例等。</string>
+
+    <string name="taxi_business_process_second_title">第二步：添加设备到分组</string>
+    <string name="taxi_business_process_second_content">设备最终使用时，将按照所在分组的设备计费规则、分润比例等进行计费、分润。</string>
+
+    <string name="taxi_business_process_third_title">第三步：出售设备给司机</string>
+    <string name="taxi_business_process_third_content">司机通过扫描设备二维码，注册账户并激活设备。激活完成后，乘客就可以使用了。</string>
+
+
+    <string name="taxi_frozen_amount_instructions">设备冻结款是指从司机账户中冻结的设备成本费用，后期将转入代理商账户。如无需冻结，可设为0</string>
+
+
+    <string name="social_cancel">已取消</string>
+    <string name="social_share_error">分享失败</string>
+    <string name="social_error">获取信息失败</string>
+    <string name="social_qq_uninstall">QQ未安装</string>
+    <string name="social_qq_unionid_not_set">未申请unionId</string>
+    <string name="social_wx_uninstall">微信未安装</string>
+    <string name="social_wb_uninstall">微博未安装</string>
+    <string name="social_img_not_found">分享图片未找到</string>
+    <string name="social_wx_version_low_error">微信4.2以上才支持分享朋友圈，请升级微信</string>
+    <string name="social_error_appid_empty">appId或appSecret或redirectUrl为空</string>
+
+    <string name="withdraw_input_hint"><font size="16">请输入提现金额</font></string>
+    <string name="unbinding_device_hint"><font size="12">设备解绑后，将恢复成未绑定未激活状态，设备将无法使用，
+        请谨慎操作！</font></string>
+    <string name="profit_absolute">按绝对分润比例</string>
+    <string name="profit_relatively">按相对分润比例</string>
+
+</resources>

@@ -1,0 +1,33 @@
+/* pages/mine/reset/result/result.wxss */
+.result-wrapper {
+  text-align: center;
+}
+
+.result-content {
+  font-size: 32rpx;
+  line-height: 44rpx;
+}
+
+.result-content image {
+  width: 200rpx;
+  height: 200rpx;
+  margin-top: 142rpx;
+}
+
+.result-content .content-text {
+  margin-top: 22rpx;
+}
+
+.result-content .content-device {
+  margin-top: 40rpx;
+}
+
+.result-tip {
+  line-height: 48rpx;
+  margin-top: 164rpx;
+  font-size: 30rpx;
+}
+
+.result-tip text {
+  color: rgb(128, 179, 241);
+}

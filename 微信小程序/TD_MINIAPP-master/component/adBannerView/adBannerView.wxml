@@ -1,0 +1,16 @@
+<view class="bannerview">
+  <swiper autoplay="true" interval='5000' indicator-active-color="{{indicator_color}}" circular="true" class='adwiper' current="{{currentTab}}" bindchange="onSwipeAdTap" hidden="{{hiddenAd}}">
+    <block wx:for="{{adLists}}" wx:key="key" wx:for-item="data">
+      <swiper-item>
+        <view class='adview' bindtap='onAdDetailTap'>
+          <image class='adimg' src="{{data.adPicUrl}}"></image>
+        </view>
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="pointView">
+  <view class="points" wx:for="{{adLists}}" wx:key="key" wx:data-index="{{index}}">
+    <view class="point {{index == currentTab  ? '' : 'normal'}}"></view>
+  </view>
+  </view>
+</view>

@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "提现成功",
+  "usingComponents": {
+    "MyIcon": "/components/MyIcon/MyIcon",
+    "LoginModal": "/components/LoginModal/LoginModal"
+  }
+}

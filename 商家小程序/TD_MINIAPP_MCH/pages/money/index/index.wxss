@@ -1,0 +1,198 @@
+/* pages/money/index.wxss */
+
+.money-head .head-title {
+  font-weight: 500;
+  padding: 0 30rpx;
+  line-height: 82rpx;
+  font-size: 60rpx;
+}
+
+.head-card {
+  position: relative;
+  margin: 10rpx auto 0;
+  height: 402rpx;
+}
+
+.head-card image {
+  position: absolute;
+  left: 4rpx;
+  top: 0;
+  width: 742rpx;
+  height: 402rpx;
+}
+
+.head-card .card-main {
+  width: 690rpx;
+  margin: 0 auto;
+  padding: 50rpx 30rpx 0;
+}
+
+.money-head .head-item {
+  
+  text-align: left;
+  font-size: 24rpx;
+  line-height: 34rpx;
+  position: relative;
+}
+
+.head-item .item-name {
+ line-height: 42rpx;
+ font-size: 30rpx; 
+}
+
+.head-item .item-value {
+  margin-top: 2rpx;
+  font-size: 40rpx;
+  line-height: 52rpx;
+  font-weight: 500;
+}
+
+.head-item .withdrawal-value {
+  font-size: 60rpx;
+  line-height: 84rpx;
+  font-weight: 500;
+}
+
+.card-canWithdraw {
+  display: flex;
+}
+
+.card-canWithdraw .head-item {
+  flex: 1;
+}
+
+.card-canWithdraw .card-btn {
+  flex-basis: 200rpx;
+  margin-top: 30rpx;
+}
+
+.head-list {
+  display: flex;
+  margin-top: 28rpx;
+}
+
+.balance-item {
+  flex-basis: 180rpx;
+  padding-right: 30rpx;
+  position: relative;
+}
+
+.balance-item::after {
+  content: '';
+  width: 1rpx;
+  height: 36rpx;
+  background: #353648;
+  position: absolute;
+  right: 0;
+  top: 34rpx;
+}
+
+.total-item {
+  flex: 1;
+  padding-left: 60rpx;
+}
+
+.money-tabs {
+  font-size: 32rpx;
+  line-height: 44rpx;
+  display: flex;
+  padding: 0 149rpx;
+}
+
+.money-tabs .tab-item {
+  flex: 1;
+  text-align: center;
+}
+
+.money-tabs .active {
+  color: #353648;
+  position: relative;
+}
+
+.money-tabs .active:after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -12rpx;
+  margin-left: -50rpx;
+  width: 100rpx;
+  height: 8rpx;
+  background: #ffce00;
+}
+
+.money-filter {
+  display: flex;
+  margin: 48rpx 0 22rpx;
+  padding: 0 30rpx;
+}
+
+.filter {
+  flex: 1;
+  align-items: center;
+}
+
+.filter .picker {
+  font-size: 32rpx;
+  line-height: 44rpx;
+  color: #353648;
+  font-weight: 500;
+}
+
+.filter .picker image {
+  width: 26rpx;
+  height: 26rpx;
+  margin-left: 10rpx;
+  position: relative;
+  top: 3rpx;
+}
+
+.money-help {
+  flex-basis: 180rpx;
+  text-align: right;
+  height: 44rpx;
+  line-height: 44rpx;
+  font-size: 30rpx;
+}
+
+.money-help image {
+  vertical-align: middle;
+  margin-left: 16rpx;
+}
+
+.money-profit {
+  font-weight: 600;
+  padding: 0 30rpx;
+  font-size: 36rpx;
+  line-height: 50rpx;
+  margin: 40rpx 0 20rpx;
+}
+
+.money-profit-item {
+  margin-bottom: 32rpx;
+}
+
+.money-no-profit {
+  padding-top: 80rpx;
+  text-align: center;
+  font-size: 28rpx;
+}
+
+.money-no-profit image {
+  width: 200rpx;
+  height: 200rpx;
+}
+
+.withdrawal-fail {
+  line-height: 42rpx;
+  font-size: 30rpx;
+  text-align: right;
+  padding-top: 30rpx;
+  border-top: 1rpx solid #dedede;
+  margin-top: 20rpx;
+  margin-bottom: 10rpx;
+}
+
+.withdrawal-fail text {
+  vertical-align: middle;
+  margin-right: 15rpx;
+}

@@ -1,0 +1,105 @@
+/*******************************************/
+.view_card{
+  position: relative;
+  width: 100%;
+  height: 260rpx;
+  margin-top: 60rpx;
+  display: flex;
+  justify-content: center;
+}
+
+.view_card .img_vip{
+  position: absolute;
+  width: 690rpx;
+  height: 260rpx;
+}
+
+.view_card .img_head{
+  position: absolute;
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  background-color: white;
+  overflow:hidden;
+  display: block;
+  border: 2px solid #fff;
+  margin-top: 52rpx;
+}
+
+.view_card .txt_nickname{
+  position: absolute;
+  font-family: PingFangSC-Medium;
+  font-size: 32rpx;
+  color: #353648;
+  text-align: center;
+  margin-top: 162rpx;
+}
+
+/*******************************************/
+
+.view_title{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 60rpx;
+}
+
+.view_title .line{
+  height: 2px;
+  width: 60rpx;
+  border-top: 1px solid #DEDEDE;
+}
+
+.view_title .txt_title{
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #757685;
+}
+
+
+/*******************************************/
+
+
+.listview_wt{
+  width: 100%;
+  height: 600rpx;
+  margin-top: 40rpx;
+}
+
+.img_arrow{
+  width: 30rpx;
+  height: 30rpx;
+  margin-top: 30rpx;
+}
+
+
+.txt_mch_name{
+  font-family: PingFangSC-Medium;
+  font-size: 32rpx;
+  color: #353648;
+  margin-left: 30rpx;
+}
+
+.view_address{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 30rpx;
+  margin-top: 20rpx;
+  margin-bottom: 40rpx;
+}
+
+.view_address .img_address{
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.view_address .txt_mch_address{
+  font-family: PingFangSC-Regular;
+  font-size: 30rpx;
+  color: #757685;
+  margin-left: 12rpx;
+}

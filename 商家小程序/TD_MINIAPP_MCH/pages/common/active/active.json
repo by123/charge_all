@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "商户账户绑定",
+  "navigationBarBackgroundColor": "#FCE447",
+  "usingComponents": {
+    "LoginModal": "/components/LoginModal/LoginModal"
+  }
+}

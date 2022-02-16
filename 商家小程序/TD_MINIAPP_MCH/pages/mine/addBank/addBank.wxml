@@ -1,0 +1,84 @@
+<!--pages/mine/addBank/addBank.wxml-->
+<view>
+  <form class="form" >
+    <view class="form-list light-font-color">
+      <block wx:if="{{category === 'private'}}">
+        <view class="form-item">
+          <view class="item-name">开户人姓名</view>
+          <view class="item-input">
+            <input name="accountName" bindinput="handleInput" data-name="accountName" placeholder-class="input-class" placeholder="请输入开户人姓名"></input>
+          </view>
+        </view>
+        <view class="form-item no-margin">
+          <view class="item-name">银行卡号</view>
+          <view class="item-input">
+            <input name="bankId" placeholder-class="input-class" type="number" placeholder="请输入储蓄卡卡号" bindinput="handleInput" data-name="bankId"></input>
+          </view>
+        </view>
+      </block>
+      <block wx:if="{{category === 'public'}}">
+        <view class="form-item">
+          <view class="item-name">账户名称</view>
+          <view class="item-input">
+            <input name="accountName" placeholder-class="input-class" placeholder="请输入账户名称" bindinput="handleInput" data-name="accountName"></input>
+          </view>
+        </view>
+        <view class="form-item no-margin">
+          <view class="item-name">银行对公账号</view>
+          <view class="item-input">
+            <input name="bankId" placeholder-class="input-class" type="number" placeholder="请输入银行对公账号" bindinput="handleInput" data-name="bankId"></input>
+          </view>
+        </view>
+      </block>
+      <view class="form-item {{category === 'public' ? 'no-margin' : ''}}">
+        <view class="item-name">开户银行</view>
+        <view class="item-input" bindtap="checkBankCode">
+          <view class="">
+            <MyPicker visible="{{bankVisible}}" value="{{bankPickerIndex}}" dataSource="{{bankList}}" bind:pickerConfirm="handleBankChange" />
+          </view>
+        </view>
+      </view>
+      <block wx:if="{{category === 'public'}}">
+        <view class="form-item">
+          <view class="item-name">支行名称</view>
+          <view class="item-input">
+            <input name="bankBranch" placeholder-class="input-class" placeholder="请输入支行名称" bindinput="handleInput" data-name="bankBranch"></input>
+          </view>
+        </view>
+        <view class="form-item">
+          <view class="item-name">开户行所在地</view>
+          <view class="item-input" bindtap="showCityPicker">
+            <view class="">
+              <MyPicker visible="{{cityVisible}}" value="{{cityPickerIndex}}" dataSource="{{cityList}}" bind:pickerChange="handleCityChange" bind:pickerConfirm="handleCityConfirm" />
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+
+    <view class="form-submit">
+      <!-- <button class="btn-wrap" hover-class="hover-class" form-type="submit"> -->
+        <MyButton size="large" full="{{true}}" loading="{{loading}}" bind:btnTap="handleSubmit">保存</MyButton>
+      <!-- </button> -->
+    </view>
+    <view class="confirm-wrap" wx:if="{{isConfirm}}">
+      <view class="confirm-mask" catchtap="handleCancel"></view>
+      <view class="confirm-main" catchtap="catchTap">
+        <view class="confirm-title base-font-color">确认账户信息</view>
+        <view class="confirm-list">
+          <view class="confirm-item" wx:for="{{confirmList}}" wx:key="{{index}}">
+            <view class="item-name light-font-color">{{item.name}}</view>
+            <view class="item-value base-font-color">{{item.value}}</view>
+          </view>
+        </view>
+        <view class="confirm-btns">
+          <MyButton hollow="true" customStyle="width: 240rpx; margin-right:30rpx; height: 84rpx;" bind:btnTap="handleCancel">修改</MyButton>
+          
+            <MyButton customStyle="width: 240rpx; height: 84rpx;" bind:btnTap="handleSubmit">确认</MyButton>
+        </view>
+      </view>
+    </view>
+  </form>
+
+</view>
+<LoginModal />

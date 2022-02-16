@@ -1,0 +1,485 @@
+
+.chargecode_page{
+  width: 100%;
+}
+
+.chargecode_page .body{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  position: absolute; 
+}
+
+.chargecode_topview{
+  width: 100%;
+  height: 170rpx;
+}
+
+
+.chargecode_top_image{
+   width: 100%;
+   height: 372rpx;
+   position: absolute;
+   z-index: 2;
+}
+
+
+
+.chargecode_top{
+  width:92%;
+  background-color: white;
+  margin-left: 4%;
+  margin-right: 4%;
+  box-shadow: 0 0 6px 0 #DEDEDE;
+  border-radius: 2px;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 3;
+}
+
+.chargecode_top .psw{
+  color: #353648;
+  font-size: 18px;
+  line-height: 50rpx;
+}
+
+.chargecode_top .point_view{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 50%;
+  justify-content: space-between;
+}
+
+.chargecode_top .point{
+  width: 32rpx;
+  height: 32rpx;
+  background-color: #353648;
+  border-radius: 32rpx;
+}
+
+
+.chargecode_top .point_select{
+   width: 32rpx;
+  height: 32rpx;
+  background-color: #ffce00;
+  border-radius: 32rpx;
+}
+
+.chargecode_top .code{
+  color: #353648;
+  font-size: 80rpx;
+  line-height: 112rpx;
+  margin-top: 20rpx;
+  font-weight: bold;
+  letter-spacing: 60rpx;
+  margin-left: 60rpx;
+}
+
+.chargecode_top .code2{
+  color: #353648;
+  font-size: 70rpx;
+  line-height: 112rpx;
+  margin-top: 20rpx;
+  font-weight: bold;
+  letter-spacing: 40rpx;
+  margin-left: 60rpx;
+}
+
+.chargecode_top .help{
+  margin-top: 40rpx;
+  height: 20rpx;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.chargecode_top .help .img{
+  height: 40rpx;
+  width: 40rpx;
+}
+
+.chargecode_top .help .txt{
+  line-height: 40rpx;
+  margin: 20rpx;
+  color: #757685;
+  font-size: 30rpx;
+}
+
+
+.chargecode_top .loadingtxt{
+  color: #757685;
+  font-size: 30rpx;
+  margin-top: 50rpx;
+}
+
+/************/
+.chargecode_centerview{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   width: 100%;
+   margin-top: 490rpx;
+   position: absolute;
+}
+
+.chargecode_tips{
+  color: #757685;
+  font-size: 30rpx;
+  letter-spacing: -0.36px;
+  line-height: 42rpx;
+  font-family: "PingFangSC-Regular";
+}
+
+
+.charge_left_titleview{
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   width: 100%;
+   margin-top: 50rpx;
+   justify-content: center;
+}
+
+.charge_left_titleview .point{
+  background-color: #ffce00;
+  width: 16rpx;
+  height: 16rpx;
+  border-radius: 50%;
+}
+
+.charge_left_titleview .title{
+  color: #353648;
+  font-size: 36rpx;
+  line-height: 50rpx;
+  margin-left: 16rpx;
+  margin-right: 16rpx;
+}
+
+.chargecode_centerview .content{
+   color: #353648;
+  font-size: 50rpx;
+  line-height: 72rpx;
+  margin-top: 20rpx;
+}
+
+
+
+/*************/
+
+.chargecode_bottom_view{
+  margin-top: 1000rpx;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 80rpx;
+  position: absolute;
+}
+
+.chargecode_bottom_view .tips{
+  color: #BDBDBD;
+  font-size: 24rpx;
+  line-height: 40rpx;
+  margin-left: 40rpx;
+  margin-top: 8rpx;
+}
+
+
+.tipsview{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+}
+
+.tipscall{
+  color: #76ADF0;
+  font-size: 24rpx;
+  line-height: 40rpx;
+  margin-top: 10rpx;
+  /* border-bottom: 1px blue solid; */
+}
+
+
+
+
+
+.failview{
+  width: 100%;
+  background: rgba(0,0,0,0.7);
+  display:flex;
+  justify-content: center;
+  position: fixed;
+}
+
+.failview .img{
+  margin-top: 300rpx;
+  position: absolute;
+  width: 164rpx;
+  height: 164rpx;
+  z-index: 1;
+}
+
+.failview .content{
+  position: absolute;
+  width: 522rpx;
+  height: 514rpx;
+  background-color: white;
+  margin-top: 382rpx;
+  z-index: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.failview .content .fail_txt{
+  font-size: 32rpx;
+  margin-top: 156rpx;
+  line-height: 22rpx;
+  font-family: PingFangSC-Regular;
+  color: #353648;
+  letter-spacing: -0.39px;
+  text-align: center;
+}
+
+.failview .content .refresh_btn{
+  margin-top: 106rpx;
+  background-color: #FFCE00;
+  color: #353648;
+  font-size: 36rpx;
+  width: 240rpx;
+  height: 84rpx;
+  align-items: center;
+  font-family: "PingFangSC-Regular";
+  display: flex;
+  justify-content: center;
+}
+
+
+.nextview{
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  display:flex;
+  justify-content: center;
+  position: fixed;
+}
+
+.nextview .codeview{
+  width:92%;
+  height: 416rpx;
+  background-color: white;
+  margin-left: 4%;
+  margin-right: 4%;
+  box-shadow: 0 0 6px 0 #DEDEDE;
+  border-radius: 2px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nextview .codeview .psw{
+  color: #353648;
+  font-size: 36rpx;
+  line-height: 50rpx;
+  margin-top: 40rpx;
+  font-family: "PingFangSC-Regular";
+}
+
+.nextview .codeview .code{
+  color: #353648;
+  font-size: 72rpx;
+  line-height: 100rpx;
+  margin-top: 30rpx;
+  font-weight: bold;
+  letter-spacing: 60rpx;
+  margin-left: 60rpx;
+}
+
+.nextview .codeview .code2{
+  color: #353648;
+  font-size: 62rpx;
+  line-height: 100rpx;
+  margin-top: 30rpx;
+  font-weight: bold;
+  letter-spacing: 40rpx;
+  margin-left: 60rpx;
+}
+
+.nextview .codeview .btn{
+  color: #353648;
+  background-color: #FFCE00;
+  border-radius: 2px;
+  font-size: 36rpx;
+  line-height: 50rpx;
+  margin-top: 52rpx;
+  font-family: PingFangSC-Regular;
+  width: 240rpx;
+  height: 84rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nextview .tips{
+  color: white;
+  margin-top: 536rpx;
+  position: absolute;
+  font-size: 32rpx;
+  line-height: 44rpx;
+}
+
+.nextview .closeimg{
+  width: 84rpx;
+  height: 84rpx;
+  margin-top: 680rpx;
+  position: fixed;
+}
+
+.yanshi_view{
+  width:92%;
+  height: 780rpx;
+  background-color: white;
+  margin-top: -350rpx;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 0 6px 0 #DEDEDE;
+  border-radius: 2px;
+  z-index: 1;
+}
+
+.yanshi_view img{
+  width: 252rpx;
+}
+
+.yanshi_view .text{
+  margin-top: 20rpx;
+  font-size: 30rpx;
+  line-height: 30rpx;
+  color: #757685;
+}
+
+.yanshi_view .red_text{
+  color: red;
+}
+
+.yanshi_view .btn{
+  border-width: 1px;
+  border-color: #353648;
+  border-style: solid;
+  color: #353648;
+  font-size: 28rpx;
+  margin-top: 40rpx;
+  border-radius: 4rpx;
+  width: 180rpx;
+  height: 72rpx;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+
+/*小红电*/
+
+.point_select_red{
+   width: 32rpx;
+  height: 32rpx;
+  background-color: #FD5750;
+  border-radius: 32rpx;
+}
+
+.charge_left_titleview .point_red{
+  background-color: #FD5750;
+  width: 16rpx;
+  height: 16rpx;
+  border-radius: 50%;
+}
+
+
+.failview .content .refresh_btn_red{
+  margin-top: 106rpx;
+  background-color: #FD5750;
+  color: #ffffff;
+  font-size: 36rpx;
+  width: 240rpx;
+  height: 84rpx;
+  align-items: center;
+  font-family: "PingFangSC-Regular";
+  display: flex;
+  justify-content: center;
+}
+
+
+.nextview .codeview .btn_red{
+  color: #ffffff;
+  background-color: #FD5750;
+  border-radius: 2px;
+  font-size: 36rpx;
+  line-height: 50rpx;
+  margin-top: 52rpx;
+  font-family: PingFangSC-Regular;
+  width: 240rpx;
+  height: 84rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.chargecode_pre{
+  margin-top: 470rpx;
+  width:92%;
+  background-color: white;
+  box-shadow: 0 0 6px 0 #DEDEDE;
+  border-radius: 2px;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 30rpx;
+}
+
+.chargecode_pre .item{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 30rpx;
+  align-items: center;
+}
+
+.chargecode_pre .title{
+  width: 300rpx;
+  margin-left: 30rpx;
+  color: #353648;
+  font-size: 36rpx;
+}
+
+.chargecode_pre .content{
+  color: #353648;
+  font-size: 36rpx;
+  text-align: right;
+  margin-right: 30rpx;
+}
+
+.btn_close{
+  margin-left: 35%;
+  width: 30%;
+  height: 80rpx;
+  background-color: #ffce00;
+  border-radius: 20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

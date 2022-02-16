@@ -1,0 +1,84 @@
+<view bindtap="onPageTap">
+  <view class="swiper-tab">
+    <view class="swiper-tab-item {{currentTab==0? (product == 0) ? 'active' :'active_red' :''}}" data-current="0" bindtap="clickTab">全部</view>
+    <view class="swiper-tab-item {{currentTab==1?(product == 0) ? 'active' :'active_red':''}}" data-current="1" bindtap="clickTab">待支付</view>
+    <view class="swiper-tab-item {{currentTab==2?(product == 0) ? 'active' :'active_red':''}}" data-current="2" bindtap="clickTab">充电中</view>
+    <view class="swiper-tab-item {{currentTab==3?(product == 0) ? 'active' :'active_red':''}}" data-current="3" bindtap="clickTab">已完成</view>
+    <view class="swiper-tab-item {{currentTab==4?(product == 0) ? 'active' :'active_red':''}}" data-current="4" bindtap="clickTab">已取消</view>
+  </view>
+
+
+  <swiper style="height:{{contentHeight}}px" current="{{currentTab}}" duration="300" bindchange="swiperTab">
+    <template is="cardview" data="{{hasDatas,datas,contentHeight,loadingHidden,loadingStr,img_no_order,product}}"></template>
+    <template is="cardview" data="{{hasDatas,datas,contentHeight,loadingHidden,loadingStr,img_no_order,product}}"></template>
+    <template is="cardview" data="{{hasDatas,datas,contentHeight,loadingHidden,loadingStr,img_no_order,product}}"></template>
+    <template is="cardview" data="{{hasDatas,datas,contentHeight,loadingHidden,loadingStr,img_no_order,product}}"></template>
+    <template is="cardview" data="{{hasDatas,datas,contentHeight,loadingHidden,loadingStr,img_no_order,product}}"></template>
+  </swiper>
+
+</view>
+
+<view style="width:100%;  position: fixed;bottom:0;">
+  <ad-view data-id="adview"  showPage="4" id="adview"></ad-view>
+</view>
+
+
+<template name="cardview">
+  <swiper-item>
+    <view class='no_order_view' hidden="{{hasDatas}}">
+      <image class="no_order_image" src="{{img_no_order}}"></image>
+      <view class="no_order_txt">您当前还没有订单</view>
+    </view>
+    <scroll-view scroll-y="true" style="height:{{contentHeight-10}}px" class='scrollview' bindscrolltolower="onReachBottom">
+      <view wx:for="{{datas}}" class='order_item' wx:key="key" data-index="{{index}}" bindtap='onItemClick'>
+        <view class='order_view'>
+          <view class='order_view_content'>
+            <view class='top'>
+              <view class="item_title">{{item.createTime}}</view>
+              <view class='item_content'>{{item.statu}}</view>
+            </view>
+            <view class='center'>
+              <view class="center_item">
+                <view class='item_title'>订单编号</view>
+                <view class='item_content'>{{item.orderId}}</view>
+              </view>
+              <view class="center_item">
+                <view class='item_title'>商户名称</view>
+                <view class='item_content'>{{item.mchName}}</view>
+              </view>
+              <view class="center_item">
+                <view class='item_title'>充电时长</view>
+                <view class='item_content'>{{item.buyTime}}</view>
+              </view>
+            </view>
+            <view class='bottom'>
+              <view class='left'>
+                <view class='item_title' style='margin-top:20rpx'>{{item.serviceType == 1 ? "押金" : "返还金额"}} ：{{ item.serviceType == 1 ? item.depositPrice  : item.refundMoney + item.refundingMoney}}元（{{item.payStatu}}) </view>
+                <view class='item_title' style='margin-top:20rpx'>充电金额：{{item.serviceType == 1 ? item.servicePrice : item.servicePrice - item.refundMoney - item.refundingMoney}}元</view>
+              </view>
+
+              <view wx:if="{{item.btnStr===''}}">
+                <view class='bottom_item_nobtn'>
+                  <view class="bottom_item_title">{{item.titleStatu}}</view>
+                  <view class="bottom_item_per">¥</view>
+                  <view class='bottom_item_price'>{{item.totalPrice}}</view>
+                </view>
+              </view>
+              <view wx:else>
+                <view class='bottom_item'>
+                  <view class="bottom_item_title">{{item.titleStatu}}</view>
+                  <view class="bottom_item_per">¥</view>
+                  <view class='bottom_item_price'>{{item.totalPrice}}</view>
+                  <button class="{{(product == 0) ? 'bottom_item_btn' : 'bottom_item_btn_red'}}" catchtap='onPayClick' data-index="{{index}}">{{item.btnStr}}</button>
+                </view>
+              </view>
+            </view>
+            <view class='left_point'></view>
+            <view class='right_point'></view>
+          </view>
+        </view>
+      </view>
+      <view class='footer' hidden='{{loadingHidden}}'>{{loadingStr}}</view>
+    </scroll-view>
+  </swiper-item>
+</template>

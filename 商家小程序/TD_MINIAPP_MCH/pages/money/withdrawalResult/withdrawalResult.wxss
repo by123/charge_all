@@ -1,0 +1,49 @@
+/* pages/mine/withdrawalResult/withdrawalResult.wxss */
+
+.withdrawal-result {
+  text-align: center;
+}
+
+.result-img {
+  width: 200rpx;
+  height: 200rpx;
+  margin-top: 140rpx;
+}
+
+.result-status {
+  margin-top: 20rpx;
+  color: #757685;
+  font-size: 32rpx;
+  line-height: 44rpx;
+}
+
+.result-tip {
+  font-size: 28rpx;
+  color: #757685;
+  line-height: 40rpx;
+  margin-top: 10rpx;
+}
+
+.result-footer {
+  margin-top: 374rpx;
+}
+
+.footer-btn {
+  width: 440rpx;
+  margin: 0 auto;
+  height: 100rpx;
+}
+
+.contact {
+  color: #757685;
+  font-size: 30rpx;
+  line-height: 42rpx;
+  margin-top: 20rpx;
+}
+
+.contact image {
+  width: 26rpx;
+  height: 26rpx;
+  margin-left: 10rpx;
+  vertical-align: -4rpx;
+}

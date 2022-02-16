@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "ContentList": "/components/ContentList/ContentList"
+  },
+  "multipleSlots": true
+}

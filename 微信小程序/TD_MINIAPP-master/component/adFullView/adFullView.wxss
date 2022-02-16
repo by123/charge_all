@@ -1,0 +1,14 @@
+/* component/adFullView/adFullView.wxss */
+
+.fullview{
+  width: 750rpx;
+  height: 1334rpx;
+  background-color: black;
+}
+
+.fullimg {
+  width: 750rpx;
+  position: fixed;
+  bottom: 0;
+  top: 0;
+}

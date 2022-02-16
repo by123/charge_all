@@ -1,0 +1,43 @@
+/* components/Tabs/tabs.wxss */
+@import '../../statics/styles/common.wxss';
+
+.container {
+  width: 100%;
+  background: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+.has-title {
+  top: 142rpx;
+}
+
+.tabs {
+  margin-left: 30rpx;
+}
+
+.tabs-item {
+  width: 100rpx;
+  margin: 0 30rpx;
+  text-align: center;
+  line-height: 44rpx;
+  font-size: 32rpx;
+  padding: 20rpx 0 12rpx;
+  position: relative;
+}
+
+.active {
+  color: #353648;
+}
+
+.active::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 8rpx;
+  background: #FFCE00;
+}

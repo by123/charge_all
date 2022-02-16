@@ -1,0 +1,46 @@
+<view class='homePage' style="height:{{contentHeight}}px" bindtap="onPageTap">
+  <!-- 用户基本信息 -->
+  <view class='home_user_view'>
+    <view class='home_txt_view'>
+      <open-data type="userNickName" class="name"></open-data>
+      <view class="account">账号：{{accountStr}}</view>
+    </view>
+    <open-data class="home_head_txt" type="userAvatarUrl" mode='aspectFill'></open-data>
+  </view>
+  <!-- 功能菜单 -->
+  <view class="home_menu_view">
+    <view class='menu_imagebtn' bindtap='onOrderTap'>
+      <image class='menu_image' src="{{img_order}}" mode='aspectFill'></image>
+      <view class='menu_txt'>我的订单</view>
+    </view>
+    <view class='menu_imagebtn2' bindtap='onHelpTap'>
+      <image class='menu_image' src="{{img_help}}" mode='aspectFill'></image>
+      <view class='menu_txt'>充电帮助</view>
+    </view>
+  </view>
+  <!-- 数据统计 -->
+  <view class="home_data_view">
+    <view class='data_view'>
+      <view class='content'>{{chargeTimeStr}}次</view>
+      <view class='title'>充电次数</view>
+    </view>
+    <view class='line_view'></view>
+    <view class='data_view'>
+      <view class='content'>{{chargeMinutesStr}}</view>
+      <view class='title'>累计时长</view>
+    </view>
+  </view>
+  <!-- 充电按钮 -->
+
+  <view class="{{product == 0 ? 'home_scan_view' : 'home_scan_view_red'}}" bindtap='onScanTap'>
+    <image class='scan_image' src="{{img_scan}}" mode='aspectFill'></image>
+    <view class='scan_txt'>扫码充电</view>
+  </view>
+
+  <view>
+  </view>
+</view>
+
+<view style="width:100%;  position: fixed;bottom:0;">
+  <ad-view data-id="adview" showPage="3" id="adview"></ad-view>
+</view>

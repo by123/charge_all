@@ -1,0 +1,232 @@
+{
+  "description": "项目配置文件",
+  "packOptions": {
+    "ignore": []
+  },
+  "setting": {
+    "urlCheck": false,
+    "es6": true,
+    "enhance": false,
+    "postcss": true,
+    "preloadBackgroundData": false,
+    "minified": true,
+    "newFeature": true,
+    "coverView": true,
+    "nodeModules": false,
+    "autoAudits": false,
+    "showShadowRootInWxmlPanel": true,
+    "scopeDataCheck": false,
+    "uglifyFileName": true,
+    "checkInvalidKey": true,
+    "checkSiteMap": true,
+    "uploadWithSourceMap": true,
+    "compileHotReLoad": false,
+    "useMultiFrameRuntime": true,
+    "useApiHook": true,
+    "useApiHostProcess": false,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    },
+    "enableEngineNative": false,
+    "bundle": false,
+    "useIsolateContext": true,
+    "useCompilerModule": true,
+    "userConfirmedUseCompilerModuleSwitch": false,
+    "userConfirmedBundleSwitch": false,
+    "packNpmManually": false,
+    "packNpmRelationList": [],
+    "minifyWXSS": true
+  },
+  "compileType": "miniprogram",
+  "libVersion": "1.6.8",
+  "appid": "wx1d42e21557970cac",
+  "projectname": "炭电",
+  "debugOptions": {
+    "hidedInDevtools": []
+  },
+  "isGameTourist": false,
+  "condition": {
+    "search": {
+      "list": []
+    },
+    "conversation": {
+      "list": []
+    },
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "currentL": -1,
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "id": -1,
+          "name": "退款",
+          "pathName": "pages/order/detail/detail",
+          "query": "orderId=2018102447834585"
+        },
+        {
+          "id": -1,
+          "name": "退款",
+          "pathName": "pages/order/refund/refund",
+          "query": "orderId=2018102447834585"
+        },
+        {
+          "id": -1,
+          "name": "订单",
+          "pathName": "pages/order/index/index",
+          "query": ""
+        },
+        {
+          "id": -1,
+          "name": "商户信息",
+          "pathName": "pages/mine/detail/detail",
+          "query": ""
+        },
+        {
+          "id": -1,
+          "name": "银行卡信息",
+          "pathName": "pages/mine/bankInfo/bankInfo",
+          "query": ""
+        },
+        {
+          "id": 5,
+          "name": "添加银行卡",
+          "pathName": "pages/mine/addBank/addBank",
+          "query": "category=private"
+        },
+        {
+          "id": -1,
+          "name": "复位扫码",
+          "pathName": "pages/mine/reset/scanCode/scanCode",
+          "query": ""
+        },
+        {
+          "id": 7,
+          "name": "复位操作",
+          "pathName": "pages/mine/reset/action/action",
+          "query": "deviceSn=9810290000002001"
+        },
+        {
+          "id": -1,
+          "name": "我的",
+          "pathName": "pages/mine/index/index",
+          "query": ""
+        },
+        {
+          "id": -1,
+          "name": "复位结果",
+          "pathName": "pages/mine/reset/result/result",
+          "query": "deviceSn=SN9810230000000034"
+        },
+        {
+          "id": 10,
+          "name": "资金帮助",
+          "pathName": "pages/money/help/help",
+          "query": ""
+        },
+        {
+          "id": 11,
+          "name": "提现",
+          "pathName": "pages/money/withdrawal/withdrawal",
+          "query": "withDrawId=11"
+        },
+        {
+          "id": 12,
+          "name": "提现失败",
+          "pathName": "pages/money/withdrawalFail/withdrawalFail",
+          "query": "withdrawId=1a7d2b9ddf84463ea844688762293c90"
+        },
+        {
+          "id": 13,
+          "name": "提现成功",
+          "pathName": "pages/money/withdrawalSuccess/withdrawalSuccess",
+          "query": "withdrawId=c9201d4453514bbbaeb53de659b153a1"
+        },
+        {
+          "id": -1,
+          "name": "激活设备",
+          "pathName": "pages/mine/activeDevice/activeDevice",
+          "query": ""
+        },
+        {
+          "id": -1,
+          "name": "我的 进入 设备复位",
+          "pathName": "pages/mine/index/index",
+          "query": "redirect=reset"
+        },
+        {
+          "id": -1,
+          "name": "提现详情",
+          "pathName": "pages/money/withdrawalDetail/withdrawalDetail",
+          "query": ""
+        },
+        {
+          "id": -1,
+          "name": "绑定",
+          "pathName": "pages/common/active/active",
+          "query": ""
+        },
+        {
+          "id": -1,
+          "name": "管理员认证",
+          "pathName": "pages/mine/auth/auth",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "管理员认证手机号",
+          "pathName": "pages/mine/authPhone/authPhone",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": 20,
+          "name": "管理员认证没有手机号",
+          "pathName": "pages/mine/authNoPhone/authNoPhone",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "添加提现方式选择",
+          "pathName": "pages/mine/chooseType/chooseType",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "选择提现方式",
+          "pathName": "pages/money/chooseWithdrawalType/chooseWithdrawalType",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "运营人员管理",
+          "pathName": "pages/mine/personManage/personManage",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "选择银行卡",
+          "pathName": "pages/mine/chooseType/chooseType",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "绑定微信",
+          "pathName": "pages/mine/bindWechat/bindWechat",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

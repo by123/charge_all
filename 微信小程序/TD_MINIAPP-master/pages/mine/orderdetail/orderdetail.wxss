@@ -1,0 +1,106 @@
+
+.carditem{
+    width: 92%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    background: white;
+    align-items: center;
+    margin-top: 20rpx;
+    border: 0 solid #F4F4F6;
+  box-shadow: 0 0 6px 0 #DEDEDE;
+    border-radius: 2px;
+}
+
+.cardtopitem{
+    width: 92%;
+    height: 100rpx;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: solid 1rpx #DEDEDE;   
+    margin-left: 4%;
+    margin-right: 4%;
+}
+
+
+.maintitle{
+  color: #353648;
+  font-size: 30rpx;
+  font-weight: bold;
+}
+
+.title{
+  color: #757685;
+  font-size: 30rpx;
+}
+
+.content{
+  color: #353648;
+  font-size: 30rpx;
+  max-width: 400rpx;
+  line-height: 42rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+.cardbodyitem{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 92%;
+  margin-bottom: 20rpx;
+}
+
+.cardbodyitem .itemview{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width:100%;
+  margin-top: 20rpx;
+}
+
+
+.orderdetail_confirm_btn{
+   width:240rpx;
+   height: 84rpx;
+   font-size: 36rpx;
+   line-height: 84rpx;
+   margin-top:100rpx;
+   background-color: #FFCE00;
+}
+
+.orderdetail_close_btn{
+   width:240rpx;
+   height: 84rpx;
+   font-size: 36rpx;
+   line-height: 84rpx;
+   margin-top:30rpx;
+   margin-bottom: 30rpx;
+   border-style: solid;
+   border-width: 1px;
+   border-color: #353648;
+}
+
+.orderdetail_cancel_btn{
+   margin-top:30rpx;
+   margin-bottom: 100rpx;
+   color: #757685;
+   font-size: 30rpx;
+   line-height: 42rpx;
+}
+
+
+/*小红电*/
+.orderdetail_confirm_btn_red{
+   width:240rpx;
+   height: 84rpx;
+   font-size: 36rpx;
+   line-height: 84rpx;
+   margin-top:100rpx;
+   color: #ffffff;
+   background-color: #FD5750;
+}

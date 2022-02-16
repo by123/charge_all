@@ -1,0 +1,20 @@
+<!--pages/active/active.wxml-->
+<view class="active-wrap">
+  <view class="active-bg">
+    <image mode="widthFix" src="../../../images/bg_active.png"></image>
+  </view>
+  <view class="active-main">
+    <view class="main-title base-font-color">商户二维码</view>
+    <view class="main-code">
+      <view class="code-wrap">
+        <image src="{{qrCode}}"></image>
+      </view>
+      <view class="code-tip light-font-color">请出示二维码给代理商激活账户</view>
+    </view>
+  </view>
+  <view class="active-footer base-font-color">
+    <text bindtap="checkBind">我的商户账号已绑定></text>
+  </view>
+</view>
+
+<LoginModal />

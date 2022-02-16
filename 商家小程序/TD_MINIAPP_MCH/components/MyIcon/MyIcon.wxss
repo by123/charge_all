@@ -1,0 +1,20 @@
+/* components/Icon/Icon.wxss */
+
+.icon-tip {
+  width: 28rpx;
+  height: 28rpx;
+  margin-right: 10rpx;
+}
+
+.icon-arrow {
+  width: 26rpx;
+  height: 26rpx;
+  vertical-align: middle;
+}
+
+.icon-location {
+  width: 40rpx;
+  height: 40rpx;
+  vertical-align: middle;
+  margin-right: 10rpx;
+}

@@ -1,0 +1,450 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View"/>
+
+        <import type="com.xhd.td.model.bean.WithDrawResultBean"/>
+
+        <import type="com.xhd.td.ui.income.WithdrawDetailFragment"/>
+
+        <import type="com.xhd.td.utils.ExtUtilsKt" />
+
+
+        <variable
+                name="bean"
+                type="WithDrawResultBean"/>
+
+        <variable
+                name="fragment"
+                type="WithdrawDetailFragment"/>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/topview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white">
+
+        <include layout="@layout/title_bar"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:visibility="@{(bean.withdrawState==3)?View.GONE:View.VISIBLE}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/toolBar">
+
+
+            <ImageView
+                    android:id="@+id/imgvsuccess"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="34dp"
+                    android:layout_marginTop="16dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/withdraw_success"
+                    app:layout_constraintHorizontal_chainStyle="spread_inside"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@+id/imgvprocess"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                    android:id="@+id/tvprocess"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="申请成功"
+                    android:textColor="@color/tv_color"
+                    android:textSize="@dimen/sp_15"
+                    app:layout_constraintLeft_toLeftOf="@+id/imgvsuccess"
+                    app:layout_constraintRight_toRightOf="@+id/imgvsuccess"
+                    app:layout_constraintTop_toBottomOf="@+id/imgvsuccess"/>
+
+            <View
+                    android:id="@+id/line11"
+                    android:layout_width="0dp"
+                    android:layout_height="2dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:background="@color/item_back"
+                    app:layout_constraintBottom_toBottomOf="@+id/imgvprocess"
+                    app:layout_constraintLeft_toRightOf="@+id/imgvsuccess"
+                    app:layout_constraintRight_toLeftOf="@+id/imgvprocess"
+                    app:layout_constraintTop_toTopOf="@+id/imgvprocess"/>
+
+            <ImageView
+                    android:id="@+id/imgvprocess"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:scaleType="fitXY"
+                    android:src="@{bean.withdrawState!=2?@drawable/withdraw_processing:@drawable/withdraw_success}"
+                    app:layout_constraintLeft_toRightOf="@+id/imgvsuccess"
+                    app:layout_constraintRight_toLeftOf="@+id/imgvnoprocess"
+                    app:layout_constraintTop_toTopOf="@+id/imgvsuccess"/>
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="银行处理中"
+                    android:textColor="@{bean.withdrawState!=2?@color/tv_black:@color/tv_color}"
+                    android:textSize="@dimen/sp_15"
+                    app:layout_constraintLeft_toLeftOf="@+id/imgvprocess"
+                    app:layout_constraintRight_toRightOf="@+id/imgvprocess"
+                    app:layout_constraintTop_toBottomOf="@+id/imgvprocess"/>
+
+            <View
+                    android:id="@+id/line12"
+                    android:layout_width="0dp"
+                    android:layout_height="2dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:background="@color/item_back"
+                    app:layout_constraintBottom_toBottomOf="@+id/imgvprocess"
+                    app:layout_constraintLeft_toRightOf="@+id/imgvprocess"
+                    app:layout_constraintRight_toLeftOf="@+id/imgvnoprocess"
+                    app:layout_constraintTop_toTopOf="@+id/imgvprocess"/>
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="到账成功"
+                    android:textColor="@{(bean.withdrawState==2)?@color/tv_black:@color/tv_color}"
+                    android:textSize="@dimen/sp_15"
+                    app:layout_constraintLeft_toLeftOf="@+id/imgvnoprocess"
+                    app:layout_constraintRight_toRightOf="@+id/imgvnoprocess"
+                    app:layout_constraintTop_toBottomOf="@+id/imgvnoprocess"/>
+
+            <ImageView
+                    android:id="@+id/imgvnoprocess"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginRight="34dp"
+                    android:scaleType="fitXY"
+                    android:src="@{bean.withdrawState!=2?@drawable/withdraw_noprocess:@drawable/withdraw_success}"
+                    app:layout_constraintLeft_toRightOf="@+id/imgvprocess"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/imgvsuccess"/>
+
+            <androidx.cardview.widget.CardView
+                    android:id="@+id/topCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="16dp"
+                    app:cardCornerRadius="2dp"
+                    app:cardElevation="2dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvprocess">
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/white">
+
+                    <TextView
+                            android:id="@+id/tv_title"
+                            style="@style/order_item_style"
+                            android:layout_marginTop="16dp"
+                            android:text="提现信息"
+                            android:textSize="@dimen/sp_16"
+                            android:textStyle="bold"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"/>
+
+
+                    <View
+                            android:id="@+id/line1"
+                            android:layout_width="0dp"
+                            android:layout_height="1dp"
+                            android:layout_marginTop="16dp"
+                            android:background="@drawable/line_dash"
+                            android:paddingStart="160dp"
+                            android:paddingEnd="160dp"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/tv_title"/>
+
+                    <!--<ImageView-->
+                            <!--android:layout_width="10dp"-->
+                            <!--android:layout_height="20dp"-->
+                            <!--android:src="@drawable/semi_circle"-->
+                            <!--android:visibility="gone"-->
+                            <!--app:layout_constraintBottom_toBottomOf="@+id/line1"-->
+                            <!--app:layout_constraintLeft_toLeftOf="@+id/line1"-->
+                            <!--app:layout_constraintTop_toTopOf="@+id/line1"/>-->
+
+                    <!--<ImageView-->
+                            <!--android:layout_width="10dp"-->
+                            <!--android:layout_height="20dp"-->
+                            <!--android:rotation="180"-->
+                            <!--android:src="@drawable/semi_circle"-->
+                            <!--android:visibility="gone"-->
+                            <!--app:layout_constraintBottom_toBottomOf="@+id/line1"-->
+                            <!--app:layout_constraintRight_toRightOf="@+id/line1"-->
+                            <!--app:layout_constraintTop_toTopOf="@+id/line1"/>-->
+
+                    <TextView
+                            android:id="@+id/tv_card"
+                            style="@style/order_item_style"
+                            android:layout_marginTop="16dp"
+                            android:text="银行卡号"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/line1"/>
+
+                    <TextView
+                            android:id="@+id/tv_card_no"
+                            style="@style/order_item_style"
+                            android:textColor="@color/tv_black"
+                            android:textIsSelectable="true"
+                            app:layout_constraintBottom_toBottomOf="@+id/tv_card"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/tv_card"/>
+
+
+                    <TextView
+                            android:id="@+id/tv_account"
+                            style="@style/order_item_style"
+                            android:layout_marginTop="10dp"
+                            android:text="账户名称"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/tv_card"/>
+
+                    <TextView
+                            android:id="@+id/tv_account_value"
+                            style="@style/order_item_style"
+                            android:text="@{bean.accountName}"
+                            android:textColor="@color/tv_black"
+                            android:textIsSelectable="true"
+                            app:layout_constraintBottom_toBottomOf="@+id/tv_account"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/tv_account"/>
+
+
+                    <TextView
+                            android:id="@+id/tv_withdraw_amount"
+                            style="@style/order_item_style"
+                            android:layout_marginTop="10dp"
+                            android:text="提现金额"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/tv_account"/>
+
+                    <TextView
+                            android:id="@+id/tv_withdraw_amount_value"
+                            style="@style/order_item_style"
+                            android:text="@{bean.withdrawMoneyTotalYuan +@string/yuan}"
+                            android:textColor="@color/tv_black"
+                            app:layout_constraintBottom_toBottomOf="@+id/tv_withdraw_amount"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/tv_withdraw_amount"/>
+
+                    <TextView
+                            android:id="@+id/tv_withdraw_fee"
+                            style="@style/order_item_style"
+                            android:layout_marginTop="10dp"
+                            android:text="提现手续费"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/tv_withdraw_amount"/>
+
+                    <TextView
+                            android:id="@+id/tv_withdraw_fee_value"
+                            style="@style/order_item_style"
+                            android:text="@{bean.auxiliaryExpensesYuan+@string/yuan}"
+                            android:textColor="@color/tv_black"
+                            app:layout_constraintBottom_toBottomOf="@+id/tv_withdraw_fee"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/tv_withdraw_fee"/>
+
+
+                    <TextView
+                            android:id="@+id/tv_pay_fee"
+                            style="@style/order_item_style"
+                            android:layout_marginTop="10dp"
+                            android:text="支付手续费"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/tv_withdraw_fee"/>
+
+                    <TextView
+                            android:id="@+id/tv_pay_fee_value"
+                            style="@style/order_item_style"
+                            android:text="@{bean.payExpensesYuan+@string/yuan}"
+                            android:textColor="@color/tv_black"
+                            app:layout_constraintBottom_toBottomOf="@+id/tv_pay_fee"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/tv_pay_fee"/>
+
+
+
+
+                    <TextView
+                            android:id="@+id/tv_tax"
+                            style="@style/order_item_style"
+                            android:layout_marginTop="10dp"
+                            android:text="代扣税"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/tv_pay_fee"/>
+
+                    <TextView
+                            android:id="@+id/tv_tax_value"
+                            style="@style/order_item_style"
+                            android:text="@{bean.taxYuan+@string/yuan}"
+                            android:textColor="@color/tv_black"
+                            app:layout_constraintBottom_toBottomOf="@+id/tv_tax"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/tv_tax"/>
+
+
+
+
+                    <TextView
+                            android:id="@+id/tv_arrival_amount"
+                            style="@style/order_item_style"
+                            android:layout_marginTop="10dp"
+                            android:text="实际到账"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/tv_tax"/>
+
+                    <TextView
+                            android:id="@+id/tv_arrival_amount_value"
+                            style="@style/order_item_style"
+                            android:text="@{bean.withdrawMoneyYuan+@string/yuan}"
+                            android:textColor="@color/tv_black"
+                            app:layout_constraintBottom_toBottomOf="@+id/tv_arrival_amount"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/tv_arrival_amount"/>
+
+                    <TextView
+                            android:id="@+id/tv_apply_time"
+                            style="@style/order_item_style"
+                            android:layout_marginTop="10dp"
+                            android:text="申请时间"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/tv_arrival_amount"/>
+
+                    <TextView
+                            android:id="@+id/tv_apply_time_value"
+                            style="@style/order_item_style"
+                            android:text="@{ExtUtilsKt.formatDataTime(bean.createTime)}"
+                            android:textColor="@color/tv_black"
+                            app:layout_constraintBottom_toBottomOf="@+id/tv_apply_time"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/tv_apply_time"/>
+
+                    <TextView
+                            android:id="@+id/tv_billing_number"
+                            style="@style/order_item_style"
+                            android:layout_marginTop="10dp"
+                            android:text="银行流水号"
+                            app:layout_constraintHorizontal_chainStyle="spread_inside"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/tv_apply_time"/>
+
+                    <androidx.constraintlayout.widget.Group
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:visibility="@{bean.bankOrderid==null?View.GONE:View.VISIBLE}"
+                            app:constraint_referenced_ids="subMoneyValue,subMoney"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tv_billing_number_value"
+                            style="@style/order_item_style"
+                            android:layout_width="0dp"
+                            android:gravity="end"
+                            android:text="@{bean.bankOrderid}"
+                            android:textColor="@color/tv_black"
+                            app:autoSizeMinTextSize="@dimen/sp_12"
+                            app:layout_constraintBottom_toBottomOf="@+id/tv_billing_number"
+                            app:layout_constraintLeft_toRightOf="@+id/tv_billing_number"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/tv_billing_number"/>
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawableRight="@drawable/vector_back_dark_small"
+                            android:drawablePadding="4dp"
+                            android:onClick="@{()->fragment.close()}"
+                            android:text="查看历史提现记录"
+                            android:textColor="@color/tv_color"
+                            android:textSize="@dimen/sp_15"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/tv_billing_number"
+                            app:layout_constraintVertical_bias="0.7"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:visibility="@{(bean.withdrawState==3)?View.VISIBLE:View.GONE}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/toolBar"
+                tools:visibility="gone">
+
+            <ImageView
+                    android:id="@+id/failImg"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/withdrawfail"
+                    app:layout_constraintBottom_toTopOf="@+id/errorHint"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.3"
+                    app:layout_constraintVertical_chainStyle="packed"/>
+
+            <TextView
+                    android:id="@+id/errorHint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="提现失败"
+                    android:textColor="@color/tv_color"
+                    android:textSize="@dimen/sp_16"
+                    app:layout_constraintBottom_toTopOf="@+id/errorReason"
+                    app:layout_constraintLeft_toLeftOf="@+id/failImg"
+                    app:layout_constraintRight_toRightOf="@+id/failImg"
+                    app:layout_constraintTop_toBottomOf="@+id/failImg"/>
+
+            <TextView
+                    android:id="@+id/errorReason"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="@{@string/errorResult+bean.failedMsg}"
+                    android:textColor="@color/tv_color"
+                    android:textSize="@dimen/sp_14"
+                    app:layout_constraintBottom_toTopOf="@+id/tv_customer_service"
+                    app:layout_constraintLeft_toLeftOf="@+id/errorHint"
+                    app:layout_constraintRight_toRightOf="@+id/errorHint"
+                    app:layout_constraintTop_toBottomOf="@+id/errorHint"/>
+
+            <TextView
+                    android:id="@+id/tv_customer_service"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="90dp"
+                    android:drawableRight="@drawable/vector_back_dark_small"
+                    android:drawablePadding="4dp"
+                    android:text="联系平台客服"
+                    android:textColor="@color/tv_color"
+                    android:textSize="@dimen/sp_15"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

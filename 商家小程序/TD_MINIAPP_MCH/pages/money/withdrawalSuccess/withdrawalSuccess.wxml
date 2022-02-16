@@ -1,0 +1,39 @@
+<!--pages/money/withdrawalSuccess/withdrawalSuccess.wxml-->
+<view class="result">
+  <view class="result-head">
+    <view class="head-item {{status > 0 ? 'item-active' : status === 0 ? 'item-current' : ''}}">
+      <view class="item-icon">
+        <image src="../../../images/money/i_action_{{status > 0 ? 'active' : status === 0 ? 'current' : 'ready'}}.png"></image>
+      </view>
+      <view class="item-content">申请成功</view>
+    </view>
+    <view class="head-item {{status > 1 ? 'item-active' : status === 1 ? 'item-current' : ''}}">
+      <view class="item-icon active">
+        <image src="../../../images/money/i_action_{{status > 1 ? 'active' : status === 1 ? 'current' : 'ready'}}.png"></image>
+      </view>
+      <view class="item-content">银行处理中</view>
+    </view>
+    <view class="head-item {{status > 2 ? 'item-active' : status === 2 ? 'item-current' : ''}}">
+      <view class="item-icon">
+        <image src="../../../images/money/i_action_{{status > 2 ? 'active' : status === 2 ? 'current' : 'ready'}}.png"></image>
+      </view>
+      <view class="item-content">到账成功</view>
+    </view>
+  </view>
+
+  <view class="result-info">
+    <view class="info-title base-font-color">提现信息</view>
+    <view class="info-list">
+      <view class="info-item" wx:for="{{withdrawalInfo}}" wx:key="{{index}}">
+        <view class="item-name light-font-color">{{item.name}}</view>
+        <view class="item-value base-font-color">{{item.value}}</view>
+      </view>
+    </view>
+    <view class="result-history light-font-color" bindtap="checkHistory"><text>查看历史提现记录</text>
+      <MyIcon icon="arrow"></MyIcon>
+    </view>
+    <view class="circle circle-left"></view>
+    <view class="circle circle-right"></view>
+  </view>
+
+</view>

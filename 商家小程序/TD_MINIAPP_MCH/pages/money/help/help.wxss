@@ -1,0 +1,10 @@
+/* pages/money/help/help.wxss */
+.help {
+  font-size: 30rpx;
+  line-height: 50rpx;
+  padding: 0 60rpx;
+}
+
+.help-item {
+  margin-top: 44rpx;
+}

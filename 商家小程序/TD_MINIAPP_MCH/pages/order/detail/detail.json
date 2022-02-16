@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "订单详情",
+  "usingComponents": {
+    "Card": "/components/Card/Card",
+    "MyButton": "/components/MyButton/MyButton"
+  },
+  "backgroundColor": "#F4F4F6"
+}

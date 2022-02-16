@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View"/>
+
+        <variable
+                name="fragment"
+                type="com.xhd.td.ui.whitelist.WhitelistFragment"/>
+
+        <variable
+                name="viewModel"
+                type="com.xhd.td.vm.whitelist.WhitelistVM"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".ui.whitelist.WhitelistFragment">
+
+        <include layout="@layout/title_bar"/>
+
+
+        <TextView
+                android:id="@+id/tv_whitelist"
+                android:layout_width="wrap_content"
+                android:layout_height="17dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="15dp"
+                android:text="白名单记录"
+                android:textColor="#757685"
+                android:textSize="@dimen/sp_15"
+                android:onClick="@{()->fragment.whitelistRecord()}"
+                app:layout_constraintBottom_toBottomOf="@+id/toolBar"
+                app:layout_constraintRight_toRightOf="parent"/>
+
+
+        <ImageView
+                android:id="@+id/img_bg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/img_whitelist_bg"
+                android:layout_marginTop="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/toolBar"/>
+
+        <ImageView
+                android:id="@+id/img_whitelist_person"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="35dp"
+                android:src="@drawable/icon_whitelist_person"
+                app:layout_constraintStart_toStartOf="@+id/img_bg"
+                app:layout_constraintTop_toTopOf="@+id/img_bg"/>
+
+
+        <ImageView
+                android:id="@+id/img_whitelist_rang"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:src="@drawable/icon_whitelist_range"
+                app:layout_constraintEnd_toEndOf="@+id/img_whitelist_person"
+                app:layout_constraintStart_toStartOf="@+id/img_whitelist_person"
+                app:layout_constraintTop_toBottomOf="@+id/img_whitelist_person"/>
+
+
+
+        <ImageView
+                android:id="@+id/img_whitelist_usage_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:src="@drawable/icon_whitelist_usage_time"
+                app:layout_constraintEnd_toEndOf="@+id/img_whitelist_person"
+                app:layout_constraintStart_toStartOf="@+id/img_whitelist_person"
+                app:layout_constraintTop_toBottomOf="@+id/img_whitelist_rang"/>
+
+
+        <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="客户姓名"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_15"
+                app:layout_constraintBottom_toBottomOf="@+id/img_whitelist_person"
+                app:layout_constraintStart_toEndOf="@+id/img_whitelist_person"
+                app:layout_constraintTop_toTopOf="@+id/img_whitelist_person"/>
+
+
+        <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="使用范围"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_15"
+                app:layout_constraintBottom_toBottomOf="@+id/img_whitelist_rang"
+                app:layout_constraintStart_toEndOf="@+id/img_whitelist_person"/>
+
+
+
+
+        <TextView
+                android:id="@+id/tv_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="充电时长"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_15"
+                app:layout_constraintBottom_toBottomOf="@+id/img_whitelist_usage_time"
+                app:layout_constraintStart_toEndOf="@+id/img_whitelist_person"/>
+
+
+
+        <EditText
+                android:id="@+id/edit_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="10dp"
+                android:background="@null"
+                android:gravity="end"
+                android:hint="请输入客户姓名"
+                android:textColor="@color/white"
+                android:textColorHint="@color/tv_hint"
+                android:textSize="@dimen/sp_15"
+                android:maxLength="10"
+                app:layout_constraintBottom_toBottomOf="@id/img_whitelist_person"
+                app:layout_constraintEnd_toEndOf="@+id/img_bg"
+                app:layout_constraintHorizontal_bias="0.886"
+                app:layout_constraintStart_toEndOf="@+id/textView"
+                app:layout_constraintTop_toTopOf="@+id/img_whitelist_person"/>
+
+
+        <TextView
+                android:id="@+id/tv_whitelist_rang"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_marginStart="8dp"
+                android:background="@null"
+                android:gravity="end"
+                android:hint="请选择可免费充电的商户"
+                android:onClick="@{()->fragment.selectWhitelistScope()}"
+                android:textColor="@color/white"
+                android:textColorHint="@color/tv_hint"
+                android:textSize="@dimen/sp_15"
+                android:ellipsize="end"
+                android:maxEms="10"
+                android:singleLine="true"
+                app:layout_constraintBottom_toBottomOf="@id/img_whitelist_rang"
+                app:layout_constraintEnd_toEndOf="@+id/edit_name"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/textView2"/>
+
+
+        <TextView
+                android:id="@+id/tv_whitelist_usage_time"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_marginStart="8dp"
+                android:background="@null"
+                android:gravity="end"
+                android:hint="请选择充电时长"
+                android:onClick="@{()->fragment.whitelistUsageTime()}"
+                android:textColor="@color/white"
+                android:textColorHint="@color/tv_hint"
+                android:textSize="@dimen/sp_15"
+                android:ellipsize="end"
+                android:maxEms="10"
+                android:singleLine="true"
+                app:layout_constraintBottom_toBottomOf="@id/img_whitelist_usage_time"
+                app:layout_constraintEnd_toEndOf="@+id/edit_name"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/textView2"/>
+
+
+        <TextView
+                android:id="@+id/tv_instructions"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="步骤说明："
+                android:layout_marginTop="40dp"
+                android:layout_marginStart="10dp"
+                android:textColor="#353648"
+                android:textSize="@dimen/sp_16"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/img_bg"
+                app:layout_constraintTop_toBottomOf="@id/img_bg"/>
+
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/whitelist_instructions"
+                android:layout_marginTop="5dp"
+                android:textColor="#757685"
+                android:lineSpacingExtra="8dp"
+                android:textSize="@dimen/sp_14"
+                app:layout_constraintStart_toStartOf="@id/tv_instructions"
+                app:layout_constraintTop_toBottomOf="@id/tv_instructions"
+
+                />
+
+        <Button
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="20dp"
+                android:background="@color/whitelist_btn"
+                android:text="微信邀请客户"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_18"
+                android:onClick="@{()->fragment.wechatInvite()}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+
+        <!--<include-->
+                <!--layout="@layout/layout_pb"-->
+                <!--app:pbEnable="@{viewModel.isLoading}"/>-->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

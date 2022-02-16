@@ -1,0 +1,11 @@
+<!--components/LoginModal/LoginModal.wxml-->
+<view class="login-wrap" catchtouchmove="catchEvent" catchtap="catchEvent" wx:if="{{visible}}">
+  <view class="login-mask"></view>
+  <view class="login-main">
+    <view class="login-title">授权登录</view>
+    <view class="login-content">为了您的正常使用，我们想要获取您的用户信息</view>
+    <view class="login-btn">
+      <button open-type="getUserInfo" bindgetuserinfo="handleGetUserInfo" hover-class='btn-hover'>确认授权</button>
+    </view>
+  </view>
+</view>

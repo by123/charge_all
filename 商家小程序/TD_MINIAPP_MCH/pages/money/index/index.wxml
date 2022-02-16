@@ -1,0 +1,93 @@
+<!--pages/money/index.wxml-->
+
+<view class="money-wrap">
+  <view class="money-head base-font-color">
+    <view class="mine-title">资金</view>
+    <view class="head-card">
+      <image mode="widthFix" src='../../../images/money/bg_money_top.png'></image>
+      <view class="card-main">
+        <view class="card-canWithdraw">
+          <view class="head-item">
+            <view class="item-name">可提现</view>
+            <view class="item-value withdrawal-value">{{profit.canWithdrawNum || '0.00'}}</view>
+          </view>
+          <view class="card-btn" wx:if="{{canWithdraw}}">
+            <MyButton customStyle="width: 200rpx; background: #fff;border-color: #fff;" bind:btnTap="onWithdrawal">提现</MyButton>
+          </view>
+        </view>
+        <view class="head-list">
+          <view class="head-item balance-item">
+            <view class="item-name">账户余额</view>
+            <view class="item-value">{{profit.balance || '0.00'}}</view>
+          </view>
+          <view class="head-item total-item">
+            <view class="item-name">累计收益</view>
+            <view class="item-value">{{profit.total || '0.00'}}</view>
+          </view>
+        </view>
+      </view>
+
+    </view>
+  </view>
+
+  <Notice content="{{noticeContent}}" icon="{{noticeIcon}}" visible="{{noticeVisible}}" bind:closeNotice="closeNotice"></Notice>
+
+  <view class="money-tabs light-font-color">
+    <view class="tab-item {{tab === 'profit' ? 'active' : ''}}">
+      <text data-tab="profit" bindtap="changeTab">收益明细</text>
+    </view>
+    <view class="tab-item {{tab === 'withdrawal' ? 'active' : ''}}">
+      <text data-tab="withdrawal" bindtap="changeTab">提现明细</text>
+    </view>
+  </view>
+  <view wx:if="{{tab === 'profit'}}">
+    <view class="money-filter">
+      <view class="filter">
+        <picker mode="date" value="{{profitDate}}" start="{{startDate}}" end="{{endDate}}" bindchange="bindDateChange">
+          <view class="picker">
+            <text>{{profitPickerText}}</text>
+            <image src="../../../images/money/i_arrow_down.png"></image>
+          </view>
+        </picker>
+        <view></view>
+      </view>
+      <navigator url="../help/help" class="money-help light-font-color">资金帮助<MyIcon icon="arrow"></MyIcon>
+      </navigator>
+    </view>
+    <view class="money-profit-item" wx:for="{{list}}" wx:key="{{index}}">
+      <Card dataSource="{{item}}" />
+    </view>
+    <view class="money-no-profit light-font-color" wx:if="{{init && !list.length}}">
+      <image src="../../../images/no_profit.png"></image>
+      <view>暂无收益</view>
+    </view>
+  </view>
+
+  <view wx:else>
+    <view class="money-filter">
+      <view class="filter">
+        <picker mode="date" value="{{withdrawalDate}}" start="{{startDate}}" end="{{endDate}}" bindchange="bindDateChange">
+          <view class="picker">
+            <text>{{withdrawalPickerText}}</text>
+            <image src="../../../images/money/i_arrow_down.png"></image>
+          </view>
+        </picker>
+        <view></view>
+      </view>
+      <navigator url="../help/help" class="money-help light-font-color">资金帮助<MyIcon icon="arrow"></MyIcon>
+      </navigator>
+    </view>
+    <view class="money-profit-item" wx:for="{{list}}" wx:key="{{item.withdrawId}}"  bindtap="checkDetail" data-id="{{item.withdrawId}}" data-state="{{item.orderState}}">
+      <Card dataSource="{{item}}">
+        <view class="withdrawal-fail light-font-color" wx-if="{{item.orderState === 3}}" catchtap="goWithdrawalFail" data-id="{{item.withdrawId}}"><text>查看失败原因</text><MyIcon icon="arrow"></MyIcon></view>
+      </Card>
+    </view>
+    <view class="money-no-profit light-font-color" wx:if="{{init && !list.length}}">
+      <image src="../../../images/no_profit.png"></image>
+      <view>暂无提现记录</view>
+    </view>
+  </view>
+  <Loadmore wx:if="{{!init || (init && list.length)}}" init="{{init}}" hasMore="{{hasMore}}" hasData="{{list.length}}" emptyText="暂无收益"></Loadmore>
+</view>
+
+<LoginModal />

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        >
+
+    <TextView
+            android:id="@+id/tv_what_taxi_business"
+            style="@style/title_first"
+            android:text="@string/what_is_taxi_business"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:textStyle="bold"
+            />
+
+    <TextView
+            android:id="@+id/tv_answer_taxi_business"
+            style="@style/content"
+
+            android:text="@string/answer_taxi_business"
+
+            app:layout_constraintTop_toBottomOf="@+id/tv_what_taxi_business"
+            app:layout_constraintStart_toStartOf="@id/tv_what_taxi_business"
+            />
+
+
+    <TextView
+            android:id="@+id/tv_taxi_business_process"
+            style="@style/title_first"
+            android:text="@string/taxi_business_process"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_answer_taxi_business"
+            />
+
+
+    <TextView
+            android:id="@+id/tv_taxi_business_process_first_title"
+            style="@style/title_second"
+            android:text="@string/taxi_business_process_first_title"
+            app:layout_constraintStart_toStartOf="@id/tv_taxi_business_process"
+            app:layout_constraintTop_toBottomOf="@id/tv_taxi_business_process"
+            android:drawableStart="@drawable/shape_dot"
+            android:drawablePadding="5dp"
+            />
+
+
+    <TextView
+            android:id="@+id/tv_taxi_business_process_first_content"
+            style="@style/content"
+            android:text="@string/taxi_business_process_first_content"
+            app:layout_constraintStart_toStartOf="@id/tv_taxi_business_process_first_title"
+            app:layout_constraintTop_toBottomOf="@id/tv_taxi_business_process_first_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+
+    <TextView
+            android:id="@+id/tv_taxi_business_process_second_title"
+            style="@style/title_second"
+
+            android:text="@string/taxi_business_process_second_title"
+
+            app:layout_constraintStart_toStartOf="@id/tv_taxi_business_process"
+            app:layout_constraintTop_toBottomOf="@id/tv_taxi_business_process_first_content"
+            android:drawableStart="@drawable/shape_dot"
+            android:drawablePadding="5dp"
+
+            />
+
+
+    <TextView
+            android:id="@+id/tv_taxi_business_process_second_content"
+            style="@style/content"
+            android:text="@string/taxi_business_process_second_content"
+            app:layout_constraintTop_toBottomOf="@id/tv_taxi_business_process_second_title"
+            app:layout_constraintStart_toStartOf="@id/tv_taxi_business_process_second_title"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintEnd_toEndOf="parent"
+
+            />
+
+
+    <TextView
+            android:id="@+id/tv_taxi_business_process_third_title"
+            style="@style/title_second"
+            android:text="@string/taxi_business_process_third_title"
+            app:layout_constraintStart_toStartOf="@id/tv_taxi_business_process"
+            app:layout_constraintTop_toBottomOf="@id/tv_taxi_business_process_second_content"
+            android:drawableStart="@drawable/shape_dot"
+            android:drawablePadding="5dp"
+
+            />
+
+
+    <TextView
+            android:id="@+id/tv_taxi_business_process_third_content"
+            style="@style/content"
+
+            android:text="@string/taxi_business_process_third_content"
+            app:layout_constraintStart_toStartOf="@id/tv_taxi_business_process_third_title"
+            app:layout_constraintTop_toBottomOf="@id/tv_taxi_business_process_third_title"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

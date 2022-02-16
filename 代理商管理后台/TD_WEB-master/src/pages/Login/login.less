@@ -1,0 +1,178 @@
+@import '../../styles/var';
+@import '../../styles/font.less';
+
+@login-font-color: #353648;
+@login-placeholder-color: #BDBDBD;
+
+.login-{
+  &wrapper {
+    position: relative;
+    height: 100vh;
+    background-image: linear-gradient(45deg, #E5E7E8 0%, #F4F4F4 100%);
+
+    input[type=text]:focus, input[type=password]:focus, textarea:focus { 
+      -webkit-box-shadow: none;
+      border: none;
+      box-shadow: none;
+    }
+  }
+
+  &footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: transparent;
+
+    .layout-footer {
+      background: transparent;
+    }
+  }
+
+  &form-wrap {
+    position: absolute;
+    top: 50%;
+    right: 10.6%;
+    transform: translate(0, -50%);
+    background: #fff;
+    width: 26%;
+    min-width: 400px;
+  }
+
+  &form {
+    // height: 70%;
+    padding: 10% 14% 22.4%;
+    box-shadow: 0 0 100px rgba(0,0,0,.08);
+
+    button {
+      width: 15.6%;
+      border: none;
+    }
+
+    .active-item {
+      border-bottom-color: @login-font-color;
+    }
+
+    .error-item {
+      border-bottom-color: #D53D16;
+    }
+
+    .first-item {
+      margin-top: 0;
+    }
+
+    .ant-form-explain {
+      color: #D53D16;
+      font-size: @base-font-size;
+      line-height: 20px;
+      margin-top: 2%;
+    }
+  }
+
+  &form-item {
+    height: 42px;
+    line-height: 20px;
+    margin-bottom: 0;
+    margin-top: 8%;
+    border-bottom: .5px solid #dedede;
+    
+    input {
+      border: none;
+      font-size: @base-font-size;
+      color: #353648;
+      padding: 6px 0;
+    }
+  }
+
+  &logo {
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+    color: #353648;
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 15.6%;
+
+    img {
+      width: 28px;
+      margin-right: 8px;
+      vertical-align: top;
+    }
+
+    span {
+      vertical-align: text-bottom;
+      font-size: 20px;
+      text-transform: uppercase;
+      display: inline-block;
+    }
+  }
+
+  &code-item {
+    position: relative;
+    margin-top: 12%;
+    .ant-form-item {
+      margin-bottom: 0;
+    }
+
+    .ant-form-item-children {
+      width: 100%;
+    }
+  }
+
+  &code-img {
+    height: 40px;
+    img {
+      position: absolute;
+      right: 0;
+      bottom: 10px;
+      width: 100px;
+      height: 40px;
+      cursor: pointer;
+    }
+  }
+
+  &remember-item {
+    margin-top: 10%;
+    line-height: 20px;
+
+    .remember-a {
+      position: absolute;
+      right: 0;
+      top: 0;
+      text-align: right;
+    }
+  }
+
+  &btn-item {
+    text-align: center;
+    margin-top: 19.6%;
+
+    button {
+      width: 75%;
+      height: 46px;
+      line-height: 46px;
+      color: @login-font-color;
+      font-size: 18px;
+    }
+
+    button:hover {
+      color: @login-font-color;
+    }
+  }
+
+  &bg {
+    position: absolute;
+    left: 9.4%;
+    top: 50%;
+    width: 47%;
+    transform: translate(0, -50%);
+  }
+
+}
+
+//:global {
+//  &ant-input {
+//    background: red;
+//  }
+//}

@@ -1,0 +1,27 @@
+<!--pages/mine/auth/auth.wxml-->
+<view>
+  <view class="auth-title base-font-color">管理员认证</view>
+  <view class="auth-warn base-font-color">为保证资金安全，需要当前登录微信号认证为商户的管理员，才可以提现</view>
+  <view class="auth-info">
+    <view class="info-title light-font-color">当前微信号信息：</view>
+    <view class="info-data">
+      <image src="{{userInfo.avatarUrl}}"></image>
+      <view class="info-nickname base-font-color">{{userInfo.nickName}}</view>
+    </view>
+  </view>
+  <view class="auth-tip">
+    <view class="tip-item">提示：</view>
+    <view class="tip-item">1、 商户可以绑定多个微信号作为操作账号，例如老板、前台、财务等都可以绑定微信作为商户操作账号</view>
+    <view class="tip-item">2、只有一个微信号作为商户管理员账号，其余为运营人员账号</view>
+    <view class="tip-item">3、仅商户管理员账号拥有提现权限</view>
+  </view>
+  <view class="auth-btn">
+    <MyButton
+      size="large"
+      full="true"
+      bind:btnTap="handleAuth"
+    >开始认证</MyButton>
+  </view>
+</view>
+
+<LoginModal />

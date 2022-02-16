@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <import type="android.view.View"/>
+        <variable
+                name="bean"
+                type="com.xhd.td.model.bean.DevMchListBean"/>
+
+        <variable
+                name="type"
+                type="Integer"/>
+
+        <variable
+                name="adapter"
+                type="com.xhd.td.adapter.home.TotalMerchantAdapter"/>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white">
+
+
+        <TextView
+                android:id="@+id/tv_agent_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="15dp"
+                android:text="代理商名称"
+                android:textColor="@color/tv_color"
+                android:textSize="@dimen/sp_14"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+        <com.xhd.td.view.TextImageView
+                android:id="@+id/tv_agent_name_value"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="16dp"
+                android:ellipsize="end"
+                android:gravity="right"
+                android:lines="1"
+                android:maxLines="1"
+                android:text="@{bean.mchName}"
+                android:textColor="@color/hyperlink"
+                android:textSize="@dimen/sp_14"
+                app:layout_constrainedWidth="true"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_agent_name"
+                app:layout_constraintLeft_toRightOf="@+id/tv_agent_name"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_agent_name"/>
+
+
+        <TextView
+                android:id="@+id/tv_agent_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="10dp"
+                android:text="代理商类型"
+                android:textColor="@color/tv_color"
+                android:textSize="@dimen/sp_14"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_agent_name"/>
+
+        <TextView
+                android:id="@+id/tv_agent_type_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:text="未知"
+                android:textColor="@color/tv_black"
+                android:textSize="@dimen/sp_14"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_agent_type"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_agent_type"/>
+
+
+        <TextView
+                android:id="@+id/tv_agent_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:text="拓展代理数量"
+                android:textColor="@color/tv_color"
+                android:textSize="@dimen/sp_14"
+                android:visibility="@{(type == adapter.DESCENDANT &amp;&amp; bean.mchType == 0) ?View.VISIBLE:View.GONE}"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_agent_type"/>
+
+
+        <TextView
+                android:id="@+id/tv_agent_num_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:text="30"
+                android:textColor="@color/tv_black"
+                android:textSize="@dimen/sp_14"
+                android:visibility="@{(type == adapter.DESCENDANT &amp;&amp; bean.mchType == 0) ?View.VISIBLE:View.GONE}"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_agent_num"
+                app:layout_constraintTop_toTopOf="@+id/tv_agent_num"/>
+
+
+        <TextView
+                android:id="@+id/tv_merchant_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:text="拓展商户数量"
+                android:textColor="@color/tv_color"
+                android:textSize="@dimen/sp_14"
+                android:visibility="@{(type == adapter.DESCENDANT &amp;&amp; bean.mchType == 0) ?View.VISIBLE:View.GONE}"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_agent_num"/>
+
+
+        <TextView
+                android:id="@+id/tv_merchant_num_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:text="未知"
+                android:textColor="@color/tv_black"
+                android:textSize="@dimen/sp_14"
+                android:visibility="@{(type == adapter.DESCENDANT &amp;&amp; bean.mchType == 0) ?View.VISIBLE:View.GONE}"
+
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_merchant_num"
+                app:layout_constraintTop_toTopOf="@+id/tv_merchant_num"/>
+
+
+        <TextView
+                android:id="@+id/tv_contact"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:text="联系人"
+                android:textColor="@color/tv_color"
+                android:textSize="@dimen/sp_14"
+                android:visibility="@{type == adapter.DIRECT?View.VISIBLE:View.GONE}"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_merchant_num"/>
+
+
+        <TextView
+                android:id="@+id/tv_contact_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:text="未知联系人"
+                android:textColor="@color/tv_black"
+                android:textSize="@dimen/sp_14"
+                android:visibility="@{type == adapter.DIRECT?View.VISIBLE:View.GONE}"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_contact"
+                app:layout_constraintTop_toTopOf="@+id/tv_contact"/>
+
+
+        <TextView
+                android:id="@+id/tv_devices_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:text="设备数量"
+                android:textColor="@color/tv_color"
+                android:textSize="@dimen/sp_14"
+                android:visibility="@{(type == adapter.DESCENDANT &amp;&amp; bean.mchType == 1) ?View.VISIBLE:View.GONE}"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_contact"/>
+
+        <TextView
+                android:id="@+id/tv_devices_num_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:text="未知"
+                android:textColor="@color/tv_black"
+                android:textSize="@dimen/sp_14"
+                android:visibility="@{(type == adapter.DESCENDANT &amp;&amp; bean.mchType == 1) ?View.VISIBLE:View.GONE}"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_devices_num"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_devices_num"/>
+
+
+        <TextView
+                android:id="@+id/tv_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:text="开通日期"
+                android:textColor="@color/tv_color"
+                android:textSize="@dimen/sp_14"
+                android:visibility="@{(type == adapter.DIRECT ||(type == adapter.DESCENDANT &amp;&amp; bean.mchType == 1) )?View.VISIBLE:View.GONE}"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_devices_num"/>
+
+        <TextView
+                android:id="@+id/tv_time_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:text="0000-00-00"
+                android:textColor="@color/tv_black"
+                android:textSize="@dimen/sp_14"
+                android:visibility="@{(type == adapter.DIRECT ||(type == adapter.DESCENDANT &amp;&amp; bean.mchType == 1) )?View.VISIBLE:View.GONE}"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_time"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_time"/>
+
+
+        <TextView
+                android:id="@+id/tv_salesman"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:text="关联业务员"
+                android:visibility="@{type == adapter.DIRECT?View.VISIBLE:View.GONE}"
+                android:textColor="@color/tv_color"
+                android:textSize="@dimen/sp_14"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_time"/>
+
+        <TextView
+                android:id="@+id/tv_salesman_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:text="未知业务员"
+                android:textColor="@color/tv_black"
+                android:textSize="@dimen/sp_14"
+                android:visibility="@{type == adapter.DIRECT?View.VISIBLE:View.GONE}"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_salesman"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_salesman"/>
+
+        <com.xhd.td.view.TextImageView
+                android:id="@+id/tv_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:text="查看详情"
+                android:textColor="@color/tv_color"
+                android:drawableEnd="@drawable/ic_arrow_back"
+                app:drawableEndHeight="14dp"
+                app:drawableEndWidth="14dp"
+                android:drawablePadding="5dp"
+                android:textSize="@dimen/sp_14"
+                android:visibility="@{bean.mchType == 0?View.VISIBLE:View.GONE}"
+                app:layout_constraintTop_toBottomOf="@+id/tv_salesman"
+                app:layout_constraintRight_toRightOf="parent"/>
+
+        <View
+                android:id="@+id/line"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/item_back"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="15dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_detail"/>
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

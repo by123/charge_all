@@ -1,0 +1,6 @@
+<view class='page_deviceerror' bindtap="onPageTap">
+   <image src="{{img_no_active}}"  mode='aspectFill' class='img_noactive'></image>
+   <view class = "text_noactive">{{errorStr}}</view>
+   <view class = "text_contact">请联系商家</view>
+   <view class="{{product == 0 ? 'btn_backhome' : 'btn_backhome_red'}}" bindtap='onBackHome'>返回首页</view>
+</view>

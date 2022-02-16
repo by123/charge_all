@@ -1,0 +1,150 @@
+page, view, text, image, scroll-view, input, button, textarea {
+  box-sizing: border-box;
+}
+
+.hide {
+  display: none;
+}
+
+/* 单行溢出隐藏 */
+
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* 多行文本溢出隐藏，line-clamp为显示的行数 */
+
+.mutiple-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+/* 多行文本溢出隐藏 */
+
+/* 点击导航组件时的视觉反馈 */
+
+.nav-hover {
+  background: #f7f7f7;
+}
+
+input {
+  color: #353648;
+}
+
+.base-font-color {
+  color: #353648;
+}
+
+.light-font-color {
+  color: #757685;
+}
+
+.base-bg-color {
+  background-color: #f4f4f6;
+}
+
+/* 相对定位居中 */
+
+.center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+}
+
+/* 浮动 */
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+.clearfix:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+
+/* 铺满的图片 */
+
+.full-img image {
+  width: 100%;
+  height: 100%;
+}
+
+.card-margin-bottom-30 {
+  margin-bottom: 30rpx;
+}
+
+.mine-title {
+  font-weight: 500;
+  padding: 0 30rpx;
+  line-height: 82rpx;
+  font-size: 60rpx;
+}
+
+/* 去除按钮边框方法 */
+
+/* 
+
+button:after {
+  border: none;
+} 
+
+*/
+
+/* 修改swiper 组件样式*/
+
+/* .swiper-wrap .wx-swiper-dots {
+  position: absolute;
+  bottom: 15rpx;
+}
+
+.swiper-wrap .wx-swiper-dots {
+  position: absolute;
+  bottom: 15rpx;
+}
+
+.swiper-wrap .wx-swiper-dot {
+  height: 10rpx;
+  width: 10rpx;
+  margin-right: 8rpx !important;
+}
+
+.swiper-wrap .wx-swiper-dot:last-child {
+  margin-right: 0 !important;
+} */
+
+/* 修改switch组件样式 */
+
+/* .wx-switch-input {
+  width: 66rpx !important;
+  height: 30rpx !important;
+  background: #ffd800 !important;
+  border-color: #e5e5e5 !important;
+} */
+
+/*白色样式（false的样式）*/
+
+/* .wx-switch-input::before {
+  width: 64rpx !important;
+  height: 26rpx !important;
+  background-color: #1976f1!important; 
+} */
+
+/*绿色样式（true的样式）*/
+
+/* .wx-switch-input::after {
+  width: 26rpx !important;
+  height: 26rpx !important;
+  background-color: #1976f1!important; 
+} */

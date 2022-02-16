@@ -1,0 +1,19 @@
+<!--pages/mine/withdrawalResult/withdrawalResult.wxml-->
+<view>
+  <view class="withdrawal-result">
+    <image class="result-img" wx:if="{{status === 'success'}}" src="../../../images/i_success.png"></image>
+    <image class="result-img" wx:if="{{status === 'fail'}}" src="../../../images/i_fail.png"></image>
+    <image class="result-img"  wx:if="{{status === 'pending'}}" src="../../../images/i_pending.png"></image>
+    <view class="result-status">{{statusText}}</view>
+    <view class="result-tip">{{statusTip}}</view>
+    <view class="result-footer">
+      <view class="footer-btn">
+        <MyButton size="large" full="{{true}}" bind:btnTap="handleOk">完成</MyButton>
+      </view>
+      <view class="contact" bindtap="handleContact">
+        <text>联系平台客服</text>
+        <image src="../../../images/i_arrow_right.png"></image>
+      </view>
+    </view>
+  </view>
+</view>

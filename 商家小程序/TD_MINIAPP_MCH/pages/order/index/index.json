@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "OrderCard": "/components/OrderCard/OrderCard",
+    "Tabs": "/components/Tabs/Tabs",
+    "Loadmore": "/components/Loadmore/Loadmore",
+    "LoginModal": "/components/LoginModal/LoginModal"
+  },
+  "navigationBarTitleText": "",
+  "enablePullDownRefresh": true
+}

@@ -1,0 +1,4 @@
+${PODS_ROOT}/Target Support Files/Pods-manage/Pods-manage-resources.sh
+${PODS_ROOT}/LBXScan/LBXScan/UI/CodeScan.bundle
+${PODS_ROOT}/LCProgressHUD/LCProgressHUD/LCProgressHUD.bundle
+${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle

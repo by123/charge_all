@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+                name="bean"
+                type="com.xhd.td.model.bean.IncomeTopBeam"/>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:background="@color/white">
+
+        <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@{bean.mchName}"
+                android:textColor="@color/tv_black"
+                android:textSize="@dimen/sp_14"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+                android:id="@+id/refund"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="设备激活数"
+                android:textColor="@color/tv_color"
+                android:textSize="@dimen/sp_15"
+                app:layout_constraintLeft_toLeftOf="@+id/name"
+                app:layout_constraintTop_toBottomOf="@+id/name"/>
+
+        <TextView
+                android:id="@+id/refundValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{bean.activeDeviceTotalNum}"
+                android:textColor="@color/tv_black"
+                android:textSize="@dimen/sp_15"
+                app:layout_constraintLeft_toLeftOf="@+id/refund"
+                app:layout_constraintRight_toRightOf="@+id/refund"
+                app:layout_constraintTop_toBottomOf="@+id/refund"/>
+
+
+        <TextView
+                android:id="@+id/order"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="订单数"
+                android:textColor="@color/tv_color"
+                android:textSize="@dimen/sp_15"
+                app:layout_constraintLeft_toRightOf="@+id/refund"
+                app:layout_constraintRight_toLeftOf="@+id/earning"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/refund"/>
+
+        <TextView
+                android:id="@+id/orderValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{bean.orderNum}"
+                android:textColor="@color/tv_black"
+                android:textSize="@dimen/sp_15"
+                app:layout_constraintLeft_toLeftOf="@+id/order"
+                app:layout_constraintRight_toRightOf="@+id/order"
+                app:layout_constraintTop_toBottomOf="@+id/order"/>
+
+
+        <TextView
+                android:id="@+id/earning"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="订单金额"
+                android:textColor="@color/tv_color"
+                android:textSize="@dimen/sp_15"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/refund"/>
+
+        <TextView
+                android:id="@+id/earningValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{bean.orderServiceNumYuan+@string/yuan}"
+                android:textColor="@color/tv_black"
+                android:textSize="@dimen/sp_15"
+                app:layout_constraintLeft_toLeftOf="@+id/earning"
+                app:layout_constraintRight_toRightOf="@+id/earning"
+                app:layout_constraintTop_toBottomOf="@+id/earning"/>
+
+        <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="16dp"
+                android:background="#DEDEDE"
+                app:layout_constraintTop_toBottomOf="@+id/refundValue"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

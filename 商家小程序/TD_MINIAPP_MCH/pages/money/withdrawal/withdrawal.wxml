@@ -1,0 +1,78 @@
+<!--pages/money/withdrawal/withdrawal.wxml-->
+<view class="withdrawal-wrapper">
+  <block wx:if="{{isInit && hasBankInfo}}">
+    <view class="bind-wechat" wx:if="{{!hasWechat}}" bindtap="bindWechat">
+      <image src="../../../images/i_bind_wechat.png"></image>
+      <view class="bind-content">
+        <view class="content-name base-font-color">微信钱包</view>
+        <view class="content-rule light-font-color">{{min}}元起提，实时到账</view>
+      </view>
+      <view class="bind-btn base-font-color">点击绑定</view>
+    </view>
+
+    <view class="withdrawal-bank">
+      <view class="withdrawal-text">提现至</view>
+      <view class="withdrawal-content base-font-color" bindtap="handleChooseType">
+        <view class="bank section">
+          <image wx:if="{{bankInfo.isPublic !== 2}}" src="../../../images/i_withdrawal_bank.png"></image>
+          <image wx:else src="../../../images/i_withdrawal_wechat.png"></image>
+          <view class="bank-name">{{bankInfo.bankName}}</view>
+        </view>
+        <view class="account section">
+          <image wx:if="{{bankInfo.isPublic === 2}}" src="{{userInfo.avatarUrl}}"></image>
+          <view class="account-name light-font-color">{{bankInfo._accountName}}</view>
+        </view>
+      </view>
+      <view class="withdrawal-arrow"  bindtap="handleChooseType">
+        <image src="../../../images/i_arrow_right.png"></image>
+      </view>
+    </view>
+    <view class="withdrawal-rule-list light-font-color">
+      <view class="rule-item" wx:if="{{bankInfo.isPublic === 2}}">单笔提现金额不得低于{{min}}元，不得大于{{max}}元</view>
+      <view class="rule-item" wx:else>单笔提现金额不得低于{{min}}元</view>
+      <view class="rule-item">{{bankInfo.isPublic !== 2 ? withdrawalTimeDesc : withdrawalTimeDescWechat}}</view>
+    </view>
+    <view class="withdrawal-balance light-font-color">可提现金额：{{balanceText}}元</view>
+    <view class="withdrawal-input">
+      <text>￥</text>
+      <input
+        placeholder="{{placeholderText}}"
+        type="digit"
+        class="base-font-color"
+        placeholder-class="placeholder-style"
+        bindinput="handleInput"
+        value="{{withdrawalValue}}"
+        bindfocus="handleFocus"
+        bindblur="handleBlur"
+        cursor-spacing="150"
+        bindkeyboardheightchange="handleHeightChange"
+      ></input>
+      <view>
+        <MyButton
+          size="mini"
+          hollow="{{true}}"
+          customStyle="font-size: 24rpx; width: 134rpx; padding: 0;"
+          bind:btnTap="withdrawalAll"
+        >全部提现</MyButton>
+      </view>
+    </view>
+    <view class="withdrawal-tip" wx:if="{{fee}}"><image src="../../../images/i_tip.png"></image>手续费{{fee}}元，实际到账到账{{actualMoney}}元</view>
+    <view class="withdrawal-btns" style="bottom: {{bottom}}px">
+      <MyButton
+        customStyle="width: 240rpx; margin-left: 30rpx;"
+        loading="{{loading}}"
+        bind:btnTap="handleWithdrawal"
+        disable="{{!withdrawalValue}}"
+      >立即提现</MyButton>
+    </view>
+  </block>
+  <block wx:if="{{isInit && !hasBankInfo}}">
+    <EmptyBankInfo bind:addBank="addBank" />
+  </block>
+</view>
+<view class="modal-wrap" wx:if="{{modalVisible}}">
+  <view class="modal">  
+    <view class="success-text">{{count}}</view>
+    <view class="success-count">微信打款中，请不要关闭页面</view>
+  </view>
+</view>

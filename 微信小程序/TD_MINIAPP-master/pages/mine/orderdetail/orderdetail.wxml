@@ -1,0 +1,69 @@
+<view class='container' style="background:#F4F4F6" bindtap="onPageTap">
+
+  <!-- 订单编号 -->
+  <view class='carditem'>
+    <view class="cardtopitem">
+      <view class='maintitle'>订单编号</view>
+      <view class='content'>{{item.orderId}}</view>
+    </view>
+    <view class='cardbodyitem'>
+      <view wx:for="{{orderDatas}}" wx:key="key" class='itemview'>
+        <view class='title'>{{item.title}}</view>
+        <view class='content'>{{item.content}}</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 充电线信息 -->
+  <view class='carditem'>
+    <view class="cardtopitem">
+      <view class='maintitle'>充电线信息</view>
+    </view>
+    <view class='cardbodyitem'>
+      <view wx:for="{{productDatas}}" wx:key="key" class='itemview'>
+        <view class='title'>{{item.title}}</view>
+        <view class='content'>{{item.content}}</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 商户信息 -->
+  <view class='carditem'>
+    <view class="cardtopitem">
+      <view class='maintitle'>商户信息</view>
+    </view>
+    <view class='cardbodyitem'>
+      <view wx:for="{{merchantDatas}}" wx:key="key" class='itemview'>
+        <view class='title'>{{item.title}}</view>
+        <view class='content'>{{item.content}}</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 交易信息 -->
+  <view class='carditem' style='margin-bottom:10px'>
+    <view class="cardtopitem">
+      <view class='maintitle'>交易信息</view>
+    </view>
+    <view class='cardbodyitem'>
+      <view wx:for="{{tradeDatas}}" wx:key="key" class='itemview'>
+        <view class='title'>{{item.title}}</view>
+        <view class='content'>{{item.content}}</view>
+      </view>
+    </view>
+  </view>
+
+
+  <button class="{{(product == 0) ? 'orderdetail_confirm_btn' : 'orderdetail_confirm_btn_red'}}" bindtap='onConfirmTap' hidden='{{(item.statu == "待支付" ? false : true)}}'>继续支付</button>
+
+  <view class='orderdetail_cancel_btn' bindtap='onCancelTap' hidden='{{(item.statu == "待支付"  ? false : true)}}'>取消订单 ></view>
+
+  <button class='orderdetail_close_btn' bindtap='onCloseTap' hidden='{{(item.statu == "结束订单" ? false : true)}}'>结束订单</button>
+
+
+
+</view>
+
+<view style="width:100%;  position: fixed;bottom:0;">
+  <ad-view data-id="adview"  showPage="5" id="adview"></ad-view>
+</view>

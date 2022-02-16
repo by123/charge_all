@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/topView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="#00666666"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cardConst"
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:background="@color/white"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/groupId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:constraint_referenced_ids="login_pb,progress_sch" />
+
+        <ProgressBar
+            android:id="@+id/login_pb"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="18dp"
+            android:max="100"
+            android:progress="0"
+            android:progressDrawable="@drawable/circle_progress_bar"
+            app:layout_constraintLeft_toLeftOf="@+id/cardConst"
+            app:layout_constraintRight_toRightOf="@+id/cardConst"
+            app:layout_constraintTop_toBottomOf="@+id/versionNumb"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/progress_sch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0%"
+            android:textColor="@color/btn"
+            android:textSize="@dimen/sp_16"
+            app:layout_constraintCircle="@+id/login_pb" />
+
+        <TextView
+            android:id="@+id/versionHint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="56dp"
+            android:text="发现版本更新"
+            android:textColor="@color/tv_black"
+            android:textSize="@dimen/sp_18"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/version"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:text="V1.5"
+            android:textColor="#bdbdbd"
+            android:textSize="@dimen/sp_12"
+            app:layout_constraintBottom_toBottomOf="@+id/versionHint"
+            app:layout_constraintLeft_toRightOf="@+id/versionHint"
+            app:layout_constraintTop_toTopOf="@+id/versionHint" />
+
+        <TextView
+            android:id="@+id/versionNumb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="大小：0.0M"
+            android:textColor="#bdbdbd"
+            android:textSize="@dimen/sp_12"
+            app:layout_constraintLeft_toLeftOf="@+id/versionHint"
+            app:layout_constraintRight_toRightOf="@+id/versionHint"
+            app:layout_constraintTop_toBottomOf="@+id/versionHint" />
+
+        <TextView
+            android:id="@+id/versionDesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="40dp"
+            android:lineSpacingExtra="6dp"
+            android:textColor="@color/tv_color"
+            android:textSize="@dimen/sp_13"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintLeft_toLeftOf="@+id/cardConst"
+            app:layout_constraintRight_toRightOf="@+id/cardConst"
+            app:layout_constraintTop_toBottomOf="@+id/versionNumb" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/biar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="bottom"
+            app:constraint_referenced_ids="versionDesc,login_pb" />
+
+        <View
+            android:id="@+id/bottomView"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/tv_hint"
+            app:layout_constraintBottom_toTopOf="@+id/cancel"
+            app:layout_constraintTop_toBottomOf="@+id/biar" />
+
+        <TextView
+            android:id="@+id/cancel"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:background="@color/white"
+            android:gravity="center"
+            android:text="取消"
+            android:textColor="#bdbdbd"
+            android:textSize="@dimen/sp_16"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/downApk"
+            app:layout_constraintTop_toBottomOf="@+id/bottomView" />
+
+        <TextView
+            android:id="@+id/downApk"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:background="@color/btn"
+            android:gravity="center"
+            android:text="立即更新"
+            android:textColor="@color/select_text_color"
+            android:textSize="@dimen/sp_16"
+            app:layout_constraintBottom_toBottomOf="@+id/cancel"
+            app:layout_constraintLeft_toRightOf="@+id/cancel"
+            app:layout_constraintRight_toRightOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/topCard"
+        android:layout_width="115dp"
+        android:layout_height="100dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/version_top"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

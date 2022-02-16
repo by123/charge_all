@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "提现",
+  "usingComponents": {
+    "MyButton": "/components/MyButton/MyButton",
+    "MyIcon": "/components/MyIcon/MyIcon",
+    "EmptyBankInfo": "/components/EmptyBankInfo/EmptyBankInfo",
+    "LoginModal": "/components/LoginModal/LoginModal"
+  }
+}

@@ -1,0 +1,14 @@
+/* pages/charge/chargeHelp/chargeHelp.wxss */
+
+.charge-help-list {
+  padding: 0 30rpx;
+  margin-top: 20rpx;
+  font-size: 28rpx;
+  color: #757685;
+  letter-spacing: -0.68rpx;
+  line-height: 48rpx;
+}
+
+.charge-help-item {
+  margin-bottom: 30rpx;
+}

@@ -1,0 +1,64 @@
+<!--pages/mine/index.wxml-->
+<view class="base-font-color mine-container">
+  <view class="mine-title">我的</view>
+  <view class="mine-head">
+    <view class="head-info">
+      <view class="head-nickname">{{userInfo.nickName || '未登录'}}</view>
+      <view class="head-role light-font-color" wx:if="{{roleText}}">{{roleText}}<view class="img" wx:if="{{!isAdmin}}" bindtap="handleTipClick"><image src="../../../images/i_tip_black.png"></image></view></view>
+    </view>
+    <view class="head-avatar">
+      <image src="{{userInfo.avatarUrl}}" wx:if="{{userInfo.avatarUrl}}"></image>
+      <image src="../../../images/i_avatar.png" wx:else></image>
+    </view>
+  </view>
+  <view class="mine-list">
+    <navigator class="list-item-wrap" url="../detail/detail">
+      <view class="list-item">
+        <image class="item-icon" src="../../../images/i_business.png"></image>
+        <view class="item-content">商户详情</view>
+        <image class="item-arrow" src="../../../images/i_arrow_right.png"></image>
+      </view>
+    </navigator>
+
+    <navigator class="list-item-wrap" wx:if="{{isAdmin}}" url="../personManage/personManage">
+      <view class="list-item">
+        <image class="item-icon" src="../../../images/i_manage.png"></image>
+        <view class="item-content">运营人员管理</view>
+        <image class="item-arrow" src="../../../images/i_arrow_right.png"></image>
+      </view>
+    </navigator>
+
+    <navigator class="list-item-wrap" url="../bankInfo/bankInfo" wx:if="{{isAdmin || isAdmin === null}}">
+      <view class="list-item">
+        <image class="item-icon" src="../../../images/i_bank.png"></image>
+        <view class="item-content">银行卡信息</view>
+        <image class="item-arrow" src="../../../images/i_arrow_right.png"></image>
+      </view>
+    </navigator>
+
+    <navigator class="list-item-wrap" url="../activeDevice/activeDevice">
+      <view class="list-item">
+        <image class="item-icon" src="../../../images/i_device_active.png"></image>
+        <view class="item-content">激活设备</view>
+        <image class="item-arrow" src="../../../images/i_arrow_right.png"></image>
+      </view>
+    </navigator>
+
+    <view class="list-item-wrap" bindtap="openScanCode">
+      <view class="list-item">
+        <image class="item-icon" src="../../../images/i_device_reset.png"></image>
+        <view class="item-content">设备密码重置</view>
+        <image class="item-arrow" src="../../../images/i_arrow_right.png"></image>
+      </view>
+    </view>
+
+  </view>
+</view>
+<TipModal okText="我知道了" visible="{{tipVisible}}" bind:onOk="handleOk">
+  <view class="tip-list light-font-color">
+    <view class="tip-item">1、商户可以绑定多个微信号作为操作账号，例如老板，前台，财务等都可以绑定微信作为商户操作账号</view>
+    <view class="tip-item">2、只有一个微信号作为商户管理员账号，其余为运营人员账号；运营人员可以处理客户投诉，退款等事项；</view>
+    <view class="tip-item">3、仅商户管理员账号拥有提现权限</view>
+  </view>
+</TipModal>
+<LoginModal />

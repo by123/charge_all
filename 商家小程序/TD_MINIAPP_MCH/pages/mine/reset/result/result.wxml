@@ -1,0 +1,13 @@
+<!--pages/mine/reset/result/result.wxml-->
+<view class="result-wrapper light-font-color">
+  <view class="result-content">
+    <image src="../../../../images/i_success.png"></image>
+    <view class="content-text">密码重置操作已完成</view>
+    <view class="content-device base-font-color">设备 SN{{deviceSn}}</view>
+  </view>
+  <view class="result-tip">
+    <view>若设备输入充电密码仍然无法充电，</view>
+    <view>请再次尝试设备密码重置操作，或联系<text bindtap="handleContact">平台客服</text></view>
+  </view>
+
+</view>

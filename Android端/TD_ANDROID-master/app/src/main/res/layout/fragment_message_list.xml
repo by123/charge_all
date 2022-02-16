@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <import type="android.view.View"/>
+
+        <variable
+                name="fragment"
+                type="com.xhd.td.ui.mine.MessageListFragment"/>
+
+        <variable
+                name="viewModel"
+                type="com.xhd.td.vm.mine.MessageVM"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".ui.mine.MessageListFragment">
+
+
+        <include layout="@layout/title_bar"/>
+
+        <cn.droidlover.xrecyclerview.XRecyclerContentLayout
+                android:id="@+id/recyclerContentLayout"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+
+                android:background="@color/white"
+                app:layout_constraintTop_toBottomOf="@+id/toolBar"
+                app:layout_constraintBottom_toBottomOf="parent"
+
+                app:x_emptyLayoutId="@layout/view_stub_empty"
+                app:x_loadingLayoutId="@layout/view_stub_loading"
+                app:loadingVisibility="@{viewModel.isLoading?View.VISIBLE:View.GONE}"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+
+        />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

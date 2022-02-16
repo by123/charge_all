@@ -1,0 +1,25 @@
+/* pages/mine/bankDetail/bankDetail.wxss */
+.detail-list {
+  padding: 0 30rpx;
+}
+
+.detail-item {
+  border-bottom: 1rpx solid #dedede;
+  line-height: 42rpx;
+  display: flex;
+  font-size: 30rpx;
+  padding: 30rpx 0;
+}
+
+.detail-list .detail-item:last-child {
+  border-bottom: none;
+}
+
+.detail-item .item-name {
+  flex: 2;
+}
+
+.detail-item .item-value {
+  flex: 3;
+  text-align: right;
+}

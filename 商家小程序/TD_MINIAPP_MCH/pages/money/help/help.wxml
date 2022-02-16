@@ -1,0 +1,6 @@
+<!--pages/money/help/help.wxml-->
+<view class="help light-font-color">
+  <view class="help-item">1，收益可提现时间: T+N。(可在“账户管理-账户详情”中查看结算周期)。</view>
+  <view class="help-item">2. 如之前已经计提的用户订单发生退款，已经分给商户的利润在退款完成当日的收益中进行扣除</view>
+  <view class="help-item">3. 今日收益将在次日10点前统计汇总</view>
+</view>

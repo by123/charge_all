@@ -1,0 +1,74 @@
+/* pages/mine/personManage/personManage.wxss */
+.no-person {
+
+}
+
+.no-person-content {
+  text-align: center;
+  font-size: 32rpx;
+  line-height: 44rpx;
+}
+
+.no-person-content image {
+  margin-bottom: 20rpx;
+  width: 200rpx;
+  height: 200rpx;
+  margin-top: 140rpx;
+}
+
+.no-person-tip {
+  border-top: 1rpx solid #dedede;
+  width: 690rpx;
+  margin: 140rpx auto 0;
+  color: #bdbdbd;
+  font-size: 24rpx;
+  line-height: 40rpx;
+  padding-top: 40rpx;
+}
+
+.tip-item {
+  margin-bottom: 20rpx;
+}
+
+.person-list {
+  margin-top: 20rpx;
+  padding: 0 30rpx;
+}
+
+.person-item {
+  box-shadow: 2rpx 4rpx 20rpx 0 #DEDEDE;
+  border-radius: 4rpx;
+  height: 180rpx;
+  padding: 34rpx 40rpx 0;
+  margin-bottom: 30rpx;
+}
+
+.person-item .item-title {
+  font-size: 28rpx;
+  line-height: 40rpx;
+}
+
+.person-item .item-content {
+  margin-top: 20rpx;
+  display: flex;
+  align-items: center;
+}
+
+.person-item .item-avator {
+  flex-basis: 52rpx;
+  height: 52rpx;
+  border-radius: 50%;
+}
+
+.person-item .item-info {
+  flex: 1;
+  line-height: 42rpx;
+  font-size: 30rpx;
+  margin-left: 20rpx;
+  max-width: 300rpx;
+}
+
+.person-item .item-action-btn {
+  font-size: 24rpx;
+  margin-left: 30rpx;
+}

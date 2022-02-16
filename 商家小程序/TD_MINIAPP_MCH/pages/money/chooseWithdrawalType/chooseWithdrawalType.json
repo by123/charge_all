@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "选择提现方式",
+  "usingComponents": {
+    "LoginModal": "/components/LoginModal/LoginModal"
+  }
+}

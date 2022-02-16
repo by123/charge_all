@@ -1,0 +1,37 @@
+<view class='chargecode_page'  bindtap="onPageTap">
+<view class='maskview'></view>
+<view class='cardview'>
+     <image class='imgbg' src="{{img_drive_bg}}" mode='aspectFill'></image>  
+     <view class='contentbg'>
+        <view class='title'>请在充电器上输入密码</view>
+        <view class='psw'>{{password}}</view>
+        <view class='helpview' bindtap='onHelpTap'>
+             <image class='helpimg' src="{{img_charge_help}}" mode='aspectFill'></image>  
+             <view class='helptxt'>充电帮助</view>
+        </view>
+     </view>
+     <view class='yanshi_view' animation="{{animation}}">
+      <image class="img" src="{{gif_yanshi}}" mode='aspectFit'></image>
+      <text class='text'>在充电器上按数字键</text>
+      <view class='text'>输入<span class="red_text">密码</span>即可充电</view>
+      <view class='btn' bindtap='onKnowTap'>我知道了</view>
+    </view>
+</view>
+<view class='tips'>提示：</view>
+<template is="point_item" data="{{...point1}}"></template>
+<template is="point_item" data="{{...point2}}"></template>
+
+
+<view class='backbtn' bindtap='onBackBtnTap'>返回首页</view>
+
+</view>
+
+
+
+<template name="point_item">
+    <view class='point' style='margin-top:{{height}}rpx'></view>
+    <view class='content' style='margin-top:{{height-16}}rpx'>{{content}}</view>
+</template>
+
+
+

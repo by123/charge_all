@@ -1,0 +1,9 @@
+<!--pages/mine/bankDetail/bankDetail.wxml-->
+<view>
+  <view class="detail-list">
+    <view class="detail-item" wx:for="{{detailList}}" wx:key="{{index}}">
+      <view class="item-name light-font-color">{{item.name}}</view>
+      <view class="item-value base-font-color">{{item.value}}</view>
+    </view>
+  </view>
+</view>

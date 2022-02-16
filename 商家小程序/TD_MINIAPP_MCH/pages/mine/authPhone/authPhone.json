@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "MyButton": "/components/MyButton/MyButton",
+    "TipModal": "/components/TipModal/TipModal"
+  },
+  "navigationBarTitleText": ""
+}

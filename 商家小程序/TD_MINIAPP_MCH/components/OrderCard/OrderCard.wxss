@@ -1,0 +1,53 @@
+/* components/OrderCard/OrderCard.wxss */
+
+.order-wrap {
+  position: relative;
+}
+
+.order-profit {
+  display: flex;
+  height: 70rpx;
+}
+
+.profit-value {
+  flex: 1;
+  font-size: 30rpx;
+  color: #757685;
+  height: 70rpx;
+  overflow: hidden;
+}
+
+.profit-value .value {
+  color: #353648;
+  font-size: 30rpx;
+  vertical-align: middle;
+}
+
+.profit-value .number {
+  font-size: 60rpx;
+  line-height: 70rpx;
+}
+
+.profit-btn {
+  flex: 1;
+  text-align: right;
+}
+
+.circle {
+  position: absolute;
+  top: 244rpx;
+  width: 32rpx;
+  height: 32rpx;
+  border-radius: 50%;
+  background: #f4f4f6;
+}
+
+.circle-left {
+  left: 16rpx;
+  box-shadow: inset -8rpx 0 6rpx 0 #DEDEDE;
+}
+
+.circle-right {
+  right: 16rpx;
+  box-shadow: inset 8rpx 0 6rpx 0 #DEDEDE;
+}

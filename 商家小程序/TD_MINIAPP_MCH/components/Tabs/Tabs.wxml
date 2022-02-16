@@ -1,0 +1,11 @@
+<!--components/Tabs/tabs.wxml-->
+<view class="container">
+  <view wx:if="{{title}}" class="mine-title">{{title}}</view>
+  <scroll-view scroll-x>
+  <view class="tabs clearfix" style="width: {{wrapperWidth}}rpx;">
+    <block wx:for="{{tabsArray}}" wx:key="{{index}}">
+      <view class="tabs-item light-font-color fl {{active === item.value ? 'active' : ''}}" data-category="{{item.value}}" bindtap="changeTab">{{item.name}} </view>
+    </block>
+  </view>
+</scroll-view>
+</view>

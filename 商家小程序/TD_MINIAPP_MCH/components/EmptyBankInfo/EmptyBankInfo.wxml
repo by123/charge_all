@@ -1,0 +1,10 @@
+<!--components/EmptyBankInfo/EmptyBankInfo.wxml-->
+<view class="bank-empty light-font-color">
+  <view class="empty-image">
+    <image src="../../images/i_no_bank.png"></image>
+  </view>
+  <view class="empty-text">您当前还没有银行卡信息</view>
+  <view class="empty-btn">
+    <MyButton size="large" bind:btnTap="addBank" full="true">添加银行卡</MyButton>
+  </view>
+</view>

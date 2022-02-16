@@ -1,0 +1,47 @@
+<!--pages/mine/bankInfo/bankInfo.wxml-->
+<view>
+  <view class="bank-list base-font-color" wx:if="{{banks}}">
+    <block wx:for="{{banks}}" wx:key="{{item.bankId}}">
+      <!-- 银行卡 -->
+      <view class="section-item" bindtap="handleToggle" data-index="{{index}}" wx:if="{{item.isPublic < 2}}">
+        <view class="bank-item">
+          <view class="item-bg">
+            <image src="../../../images/bg_bank.png"></image>
+          </view>
+          <view class="item-main">
+            <view class="item-head">
+              <image src="../../../images/i_bank_card.png"></image>
+              <view class="item-name">
+                <view class="item-title">{{item.bankName}}</view>
+                <view class="item-type">{{item._type}}</view>
+              </view>
+            </view>
+            <view class="item-info">{{item._bankId}}
+            </view>
+          </view>
+        </view>
+        <view class="toggle">
+          <image src="../../../images/i_toggle{{item.active ? '_active' : ''}}.png"></image>
+        </view>
+      </view>
+
+      <!-- 微信钱包 -->
+      <view class="section-item"  bindtap="handleToggle" data-index="{{index}}" wx:if="{{item.isPublic === 2}}">
+        <view class="wechat-item">
+          <image src="../../../images/bg_wechat_card.png"></image>
+          <view class="wechat-main">
+            <image src="{{userInfo.avatarUrl}}"></image>
+            <view class="wechat-content">
+              <view class="wechat-name">微信钱包</view>
+              <view class="wechat-nickname">{{item.accountName}}</view>
+            </view>
+          </view>
+        </view>
+        <view class="toggle">
+          <image src="../../../images/i_toggle{{item.active ? '_active' : ''}}.png"></image>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>
+<LoginModal />

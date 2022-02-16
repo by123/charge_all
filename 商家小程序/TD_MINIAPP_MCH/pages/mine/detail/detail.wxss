@@ -1,0 +1,25 @@
+/* pages/mine/detail/detail.wxss */
+page {
+  background: #f4f4f6;
+}
+
+.detail-wrap {
+  padding-top: 20rpx;
+}
+
+.phone-wrap {
+  display: flex;
+  align-items: center;
+  margin-top: 20rpx;
+}
+
+.phone-wrap > view {
+  flex: 1;
+  font-size: 28rpx;
+  line-height: 42rpx;
+}
+
+.phone-wrap > image {
+  flex-basis: 32rpx;
+  height: 32rpx;
+}

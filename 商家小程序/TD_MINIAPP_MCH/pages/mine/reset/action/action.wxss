@@ -1,0 +1,134 @@
+/* pages/mine/reset/action/action.wxss */
+.action-device {
+  padding: 20rpx 0 30rpx;
+  margin: 0 30rpx;
+  border-bottom: 1rpx solid #dedede;
+  font-size: 28rpx;
+  line-height: 40rpx;
+}
+
+.action-device text {
+  margin-left: 21rpx;
+}
+
+.action-section {
+  padding: 0 30rpx 0 30rpx;
+}
+
+.action-section .section-head {
+  padding-top: 32rpx;
+  line-height: 44rpx;
+  font-size: 32rpx;
+  position: relative;
+  font-weight: 500;
+}
+
+/* .action-section .section-head::after {
+  position: absolute;
+  content: '';
+  left: -38rpx;
+  width: 20rpx;
+  height: 20rpx;
+  background: #ffce00;
+  top: 46rpx;
+} */
+
+.action-section .section-content-text {
+  margin-top: 10rpx;
+  line-height: 42rpx;
+  font-size: 30rpx;
+}
+
+.action-step-one .step-one-code {
+  display: flex;
+  height: 184rpx;
+  align-items: center;
+  border: 1rpx solid #f4f4f6;
+  box-shadow: 2rpx 4rpx 20rpx 0 #dedede;
+  border-radius: 4rpx;
+  margin-top: 30rpx;
+  text-align: center;
+  font-weight: 500;
+  padding: 0 30rpx;
+}
+
+.action-step-one .step-one-code text {
+  line-height: 84rpx;
+  font-size: 60rpx;
+  flex: 1;
+  letter-spacing: 10rpx;
+}
+
+.action-step-one .step-one-img {
+  width: 100%;
+  border: 1rpx solid red;
+  margin-top: 30rpx;
+}
+
+.action-step-two .step-two-btn {
+  margin-top: 30rpx;
+  text-align: center;
+}
+
+.action-tips {
+  margin-top: 66rpx;
+  font-size: 28rpx;
+  line-height: 40rpx;
+  color: #bdbdbd;
+  padding: 0 30rpx;
+}
+
+.action-tips view:first-child {
+  margin-bottom: 20rpx;
+}
+
+.action-help {
+  margin-top: 120rpx;
+  text-align: center;
+  line-height: 42rpx;
+  font-size: 30rpx;
+}
+
+.action-help text {
+  color: rgb(128, 179, 241);
+  padding-bottom: 120rpx;
+}
+
+.action-top {
+  position: relative;
+  line-height: 48rpx;
+  font-size: 30rpx;
+  text-align: center;
+  margin-top: 18rpx;
+}
+
+.action-top:after {
+  content: '';
+  position: absolute;
+  left: 96rpx;
+  top: 22rpx;
+  height: 1rpx;
+  width: 180rpx;
+  background: #dedede;
+}
+
+.action-top::before {
+  content: '';
+  position: absolute;
+  right: 96rpx;
+  top: 22rpx;
+  height: 1rpx;
+  width: 180rpx;
+  background: #dedede;
+}
+
+.video-wrap {
+  margin: 28rpx 30rpx 0;
+  padding: 0 18rpx 30rpx;
+  border-bottom: 1rpx solid #dedede;
+}
+
+.video {
+  width: 100%;
+  height: 368rpx;
+}

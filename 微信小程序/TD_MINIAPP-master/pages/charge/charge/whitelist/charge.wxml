@@ -1,0 +1,8 @@
+<view class="page_whitelist_charge" bindtap="onPageTap">
+    <image class='bg_image' src="{{img_vip_use}}" mode='aspectFill'></image>
+    <open-data class="img_head" type="userAvatarUrl" mode='aspectFill'></open-data>
+    <open-data type="userNickName" class="txt_nickname"></open-data>
+    <view class='txt_free_charge'>本次可免费充电{{time}}小时</view>
+    <view class='btn_password' style='margin-top:{{chargeBtnHeight}}px' bindtap='onGetPswTap'>获取充电密码</view>
+    <view class='btn_cancel' style='margin-top:{{cancelBtnHeight}}px' bindtap='onCancelTap'>取消</view>
+</view>

@@ -1,0 +1,13 @@
+{
+  "presets": [
+    ["env", {"modules": false}],
+    "stage-0",
+    "react"
+  ],
+  "plugins": [
+    "react-hot-loader/babel",
+    "transform-class-properties",
+    "syntax-dynamic-import",
+    ["import", { "libraryName": "antd", "style": true }]
+  ]
+}

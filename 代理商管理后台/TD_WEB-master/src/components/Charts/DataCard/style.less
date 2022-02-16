@@ -1,0 +1,53 @@
+.data-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  box-sizing: border-box;
+  padding: 20px;
+  border-radius: 5px;
+  .icon-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 0 0 50px;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 25px;
+    background: #2DB6F4;
+    text-align: center;
+    i {
+      color: #fff;
+      font-size: 32px;
+    }
+
+  }
+  .card-content {
+    margin-left: 30px;
+    .label {
+      font-size: 12px;
+      color: #fff;
+    }
+    .value {
+      font-size: 28px;
+      white-space: nowrap;
+      color: #fff;
+    }
+  }
+  &.default-card {
+    border: 1px solid #f0f2f5;
+    .card-content {
+      .label {
+        color: #989898;
+      }
+      .value {
+        white-space: nowrap;
+        color: #666;
+      }
+    }
+  }
+  &.has-child {
+    height: 170px;
+  }
+}

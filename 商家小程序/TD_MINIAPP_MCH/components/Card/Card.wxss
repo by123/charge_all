@@ -1,0 +1,30 @@
+/* components/Card/Card.wxss */
+.empty {
+  height: 34rpx;
+  width: 100%;
+  position: relative;
+}
+
+.empty:after {
+  content: '';
+  width: 100%;
+  height: 0;
+  position: absolute;
+  left: 0;
+  top: 18rpx;
+  border-bottom: 1rpx solid #DEDEDE;
+}
+
+.card-wrap {
+  padding: 20rpx 30rpx;
+  width: 690rpx;
+  margin: 0 auto;
+  border: 1rpx solid #F4F4F6;
+  border-radius: 4rpx;
+  box-shadow: 2rpx 4rpx 20rpx 0 #DEDEDE;
+  background: #fff;
+}
+
+.dashed:after {
+  border-bottom-style: dashed;
+}

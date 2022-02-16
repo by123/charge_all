@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "我要充电",
+  "usingComponents": {
+    "adbanner-view": "/component/adBannerView/adBannerView"
+  }
+}

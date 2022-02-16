@@ -1,0 +1,156 @@
+@import '../../styles/var';
+
+.layout- {
+  // ========================footer============================== //
+  &footer {
+    text-align: center;
+  }
+
+  // =========================bread============================= //
+  &bread {
+    display: flex;
+    align-items: center;
+    width: 60%; // 留出右边，放页面操作按钮
+    height: 64px;
+  }
+
+  // ========================header============================== //
+  &header {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 999;
+    display: flex;
+    flex: 0 0 auto;
+    height: 47px;
+    padding-right: @padding-big;
+    background-color: #fff;
+    box-shadow: @shadow-2;
+
+    h2 {
+      line-height: 47px;
+    }
+    .right-wrapper {
+      display: flex;
+      flex-flow: row-reverse;
+      flex: 1;
+      align-items: center;
+    }
+
+    .button {
+      width: 47px;
+      height: 47px;
+      line-height: 47px;
+      text-align: center;
+      font-size: 18px;
+      cursor: pointer;
+      transition: @transition-ease-in;
+
+      &:hover {
+        color: @primary-color;
+        background-color: fade(@primary-color, 15%);
+      }
+    }
+    .loading-wrapper {
+      width: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      i {
+        font-size: 18px;
+        color: @primary-color;
+      }
+    }
+  }
+
+  &footer {
+    .web-link {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .web-link:hover {
+      color: @primary-color;
+    }
+  }
+
+
+  &logo {
+    text-align: center;
+    height: 30px;
+    line-height: 30px;
+    cursor: pointer;
+    margin: 28px 0;
+    transition: @transition-ease-out;
+    overflow: hidden;
+
+    img {
+      height: 100%;
+      margin-right: 8px;
+      vertical-align: text-bottom;
+      transition: @transition-ease-out;
+    }
+
+    span {
+      vertical-align: text-bottom;
+      font-size: @font-size-lg;
+      display: inline-block;
+      color: #999;
+    }
+
+    .anticon {
+      transition: @transition-ease-out;
+    }
+  }
+}
+
+// ========================breadcrumb============================== //
+.ant-breadcrumb {
+  .anticon {
+    .font-size {
+      font-size: @font-size-base;
+    }
+  }
+  font-size: @font-size-lg;
+}
+
+.ant-layout-sider {
+  z-index: 1000;
+  background: @menu-dark-bg;
+  &.ant-layout-sider-collapsed {
+    img {
+      margin: 0 8px;
+    }
+  }
+}
+
+.ant-menu.ant-menu-dark {
+  &.ant-menu-inline {
+    &::-webkit-scrollbar-thumb {
+      background-color: @menu-dark-submenu-bg;
+    }
+    &::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    height: calc(~'100vh - 120px');
+    overflow-y: auto;
+    .ant-menu-item-selected {
+      background-color: @menu-dark-submenu-bg;
+
+    }
+  }
+
+  .ant-menu-item-selected {
+    color: @primary-color;
+    background-color: @menu-dark-submenu-bg;
+
+    & > a {
+      color: @primary-color;
+      span {
+        color: @primary-color;
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+<view class='.taxiPage' bindtap="onPageTap">
+  <template is="item" data="{{...step1}}"></template>
+   <view class='official'>
+     <official-account></official-account>
+   </view> 
+  <template is="item" data="{{...step2}}"></template>
+  <template is="item" data="{{...step3}}"></template>
+</view>
+
+
+
+<template name="item">
+    <view class='step' style='margin-top:{{height}}rpx'>{{title}}</view>
+    <view class='content'>{{content}}</view>
+</template>

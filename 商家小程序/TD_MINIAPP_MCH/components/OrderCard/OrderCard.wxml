@@ -1,0 +1,14 @@
+<!--components/OrderCard/OrderCard.wxml-->
+<view class="order-wrap">
+  <Card dataSource="{{orderData}}" isSolid="{{false}}">
+    <view class="order-profit">
+      <view class="profit-value">我的收益：<text class="value">￥<text class="number">{{profit}}</text></text>
+      </view>
+      <view class="profit-btn" wx:if="{{hasRefund}}" catchtap="catchTap">
+        <MyButton size="small" hollow="true" catch:btnTap="handleTap">退款</MyButton>
+      </view>
+    </view>
+  </Card>
+  <view class="circle circle-left"></view>
+  <view class="circle circle-right"></view>
+</view>

@@ -1,0 +1,69 @@
+/* components/TipBar/TipBar.wxss */
+.notice-wrap {
+  display: flex;
+  width: 660rpx;
+  align-items: center;
+  margin: 0 auto 30rpx;
+  height: 80rpx;
+  background: #fff9D0;
+  border-radius: 4rpx;
+}
+
+.notice-icon {
+  flex-basis: 80rpx;
+  height: 80rpx;
+  margin-left: 30rpx;
+}
+
+.notice-icon image {
+  width: 100%;
+  height: 100%;
+}
+
+.notice-content {
+  margin: 0 6rpx 0 20rpx;
+  flex: 1;
+  font-size: 28rpx;
+  line-height: 40rpx;
+  color: #353648;
+  position: relative;
+  height: 40rpx;
+  overflow: hidden;
+}
+
+.notice-content-scroll {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.notice-content-scroll view{
+  white-space: nowrap;
+  position: relative;
+  animation: scroll 15s linear infinite;
+}
+
+@keyframes scroll {
+  0% {
+    left: 448rpx;
+  }
+  100% {
+    left: -100%;
+  }
+}
+
+.notice-close {
+  flex-basis: 60rpx;
+  height: 60rpx;
+  margin-right: 16rpx;
+  position: relative;
+}
+
+.notice-close image {
+  width: 32rpx;
+  height: 32rpx;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}

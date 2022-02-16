@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/topCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="8dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardElevation="2dp"
+        app:cardUseCompatPadding="true">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp">
+
+        <TextView
+                android:id="@+id/tv_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:text=""
+                android:textColor="@color/tv_color"
+                android:textSize="@dimen/sp_15"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+                android:id="@+id/tv_withdraw_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="16dp"
+                android:text="提现状态"
+                android:textColor="@color/tv_black"
+                android:textSize="@dimen/sp_15"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_time"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_time"/>
+
+        <View
+                android:id="@+id/line"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@color/tv_hint"
+                app:layout_constraintTop_toBottomOf="@+id/tv_time"/>
+
+
+        <TextView
+                android:id="@+id/tv_card"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:text="银行卡号"
+                android:textColor="@color/tv_color"
+                android:textSize="@dimen/sp_15"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/line"/>
+
+        <TextView
+                android:id="@+id/tv_card_no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="16dp"
+                android:text=""
+                android:textColor="@color/tv_black"
+                android:textSize="@dimen/sp_15"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_card"
+                app:layout_constraintRight_toRightOf="parent"/>
+
+        <TextView
+                android:id="@+id/tv_account"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:text="账户名称"
+                android:textColor="@color/tv_color"
+                android:textSize="@dimen/sp_15"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_card"/>
+
+        <TextView
+                android:id="@+id/tv_account_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="16dp"
+                android:text=""
+                android:textColor="@color/tv_black"
+                android:textSize="@dimen/sp_15"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_account"
+                app:layout_constraintRight_toRightOf="parent"/>
+
+
+
+        <TextView
+                android:id="@+id/tv_withdraw_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:text="提现金额"
+                android:textColor="@color/tv_color"
+                android:textSize="@dimen/sp_15"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_account"/>
+
+        <TextView
+                android:id="@+id/tv_withdraw_amount_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="16dp"
+                android:text=""
+                android:textColor="@color/tv_black"
+                android:textSize="@dimen/sp_15"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_withdraw_amount"
+                app:layout_constraintRight_toRightOf="parent"/>
+
+
+<!--        <TextView-->
+<!--                android:id="@+id/tv_fee"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginLeft="16dp"-->
+<!--                android:layout_marginTop="8dp"-->
+<!--                android:layout_marginBottom="16dp"-->
+<!--                android:text="手续费"-->
+<!--                android:textColor="@color/tv_color"-->
+<!--                android:textSize="@dimen/sp_15"-->
+<!--                app:layout_constraintLeft_toLeftOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/tv_withdraw_amount"/>-->
+
+<!--        <TextView-->
+<!--                android:id="@+id/tv_fee_value"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginRight="16dp"-->
+<!--                android:text=""-->
+<!--                android:textColor="@color/tv_black"-->
+<!--                android:textSize="@dimen/sp_15"-->
+<!--                app:layout_constraintBottom_toBottomOf="@+id/tv_fee"-->
+<!--                app:layout_constraintRight_toRightOf="parent"/>-->
+
+        <TextView
+                android:id="@+id/tv_arrival_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+
+                android:text="实际到账"
+                android:textColor="@color/tv_color"
+                android:textSize="@dimen/sp_15"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_withdraw_amount"
+                app:layout_constraintVertical_bias="0"/>
+
+        <TextView
+                android:id="@+id/tv_arrival_amount_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="16dp"
+                android:text=""
+                android:textColor="@color/tv_black"
+                android:textSize="@dimen/sp_15"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_arrival_amount"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_arrival_amount"/>
+
+        <!--<androidx.constraintlayout.widget.Group-->
+                <!--android:id="@+id/group"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:visibility="gone"-->
+                <!--app:constraint_referenced_ids="line2,tv_fail_reason"-->
+                <!--app:layout_goneMarginBottom="16dp"/>-->
+
+        <View
+                android:id="@+id/line2"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@color/tv_hint"
+                app:layout_constraintTop_toBottomOf="@+id/tv_arrival_amount"/>
+
+        <TextView
+                android:id="@+id/tv_fail_reason"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="16dp"
+                android:drawableEnd="@drawable/vector_back_dark_small"
+                android:drawablePadding="4dp"
+                android:text="查看失败原因"
+                android:textColor="@color/tv_color"
+                android:textSize="@dimen/sp_15"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/line2"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

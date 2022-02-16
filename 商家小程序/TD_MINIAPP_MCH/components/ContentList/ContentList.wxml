@@ -1,0 +1,7 @@
+<!--components/ContentList/ContentList.wxml-->
+<view class="content-list">
+  <view class="content-item" wx:for="{{dataSource}}" wx:key="{{index}}">
+    <view wx:if="{{item.name}}" class="item-name" style="{{item.customStyle.name || ''}}">{{item.name}}</view>
+    <view wx:if="{{item.value || item.value === 0}}" class="item-value" style="{{item.customStyle.value || ''}}"><text>{{item.value}}</text></view>
+  </view>
+</view>

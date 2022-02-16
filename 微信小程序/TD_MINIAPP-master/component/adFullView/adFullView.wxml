@@ -1,0 +1,3 @@
+<view class="fullview" hidden="{{hiddenAd}}">
+  <image src="{{adData.adPicUrl}}" class="fullimg" style="height:{{height}}px;margin-top:{{top}}px" bindtap="onAdDetailTap" bindload="imageLoad"></image>
+</view>

@@ -1,0 +1,1 @@
+include ':app', ':mvvm',  ':fragmentation_core', ':fragmentation', ':fragmentation_swipeback','xlog',':qrcodecore',':zxing',':treeview_lib',':ARecyclerView', ':picture_library', ':ucrop'

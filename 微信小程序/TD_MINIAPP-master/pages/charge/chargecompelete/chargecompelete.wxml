@@ -1,0 +1,29 @@
+<view class="container" bindtap="onPageTap">
+  <view class='topview'>
+    <image class='showimg' src="{{product == 0 ? img_compelete : ''}}" mode='aspectFill'></image>
+    <view class="txtview">
+        <view class='title'>充电结束</view>
+        <view class='content'>{{depositPriceStr}}</view>
+    </view>
+  </view>
+
+  <view class='bodyview'>
+
+      <view class='title'>订单明细</view>
+
+      <view wx:for="{{items}}" wx:key="key" class='itemview'>
+          <view class='item_title'>{{item.title}}</view>
+          <view class='item_content_view'>
+            <view class="{{items.length -1 == index ? 'item_content_bold' : 'item_content '}}">{{item.content}}</view>
+            <view class='item_content' hidden="{{items.length -1 == index ? false : true}}">元</view>
+          </view>
+      </view>
+
+      <view class='btnview'>
+         <view class="{{product == 0 ? 'backhomebtn' : 'backhomebtn_red'}}" bindtap='onBackHomeTap'>回到首页</view>
+      </view>
+
+  </view>
+
+
+</view>

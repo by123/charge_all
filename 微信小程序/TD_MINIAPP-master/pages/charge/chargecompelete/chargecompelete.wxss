@@ -1,0 +1,136 @@
+page{
+  background: #F4F4F6;
+  overflow-y: hidden;
+}
+
+.topview{
+  position: fixed;
+  background-color: white;
+  width: 92%;
+  height: 212rpx;
+  box-shadow: 0 0 6px 0 #DEDEDE;
+  border-radius: 2px;
+  margin-top: 20rpx;
+}
+
+.showimg{
+  width: 100%;
+  height: 212rpx;
+  position: absolute;
+}
+
+.topview .txtview{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.topview .txtview .title{
+  color: #353648;
+  font-size: 40rpx;
+  line-height: 56rpx;
+  font-weight: bold;
+}
+
+.topview .txtview .content{
+  color: #353648;
+  font-size: 40rpx;
+  line-height: 56rpx;
+  margin-top: 18rpx;
+}
+
+
+.bodyview{
+  background-color: white;
+  width: 92%;
+  box-shadow: 0 0 6px 0 #DEDEDE;
+  border-radius: 2px;
+  margin-top: 252rpx;
+  position: absolute;
+  padding-bottom: 100rpx;
+}
+
+.bodyview .title{
+  color: #353648;
+  font-size: 36rpx;
+  line-height: 56rpx;
+  margin-top: 30rpx;
+  margin-left: 30rpx;
+  font-weight: bold;
+}
+
+.bodyview .itemview{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 124rpx;
+  border-bottom: 1rpx solid #DEDEDE;
+  margin-left:30rpx; 
+  margin-right:30rpx; 
+}
+
+.bodyview .itemview .item_title{
+  color: #757685;
+  font-size: 32rpx;
+}
+
+.item_content_view{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.item_content_view  .item_title{
+  color: #757685;
+  margin-left: 4rpx;
+  font-size: 32rpx;
+}
+
+.item_content{
+  color: #353648;
+  font-size: 32rpx;
+}
+
+.item_content_bold{
+  font-weight: bold;
+  font-size: 40rpx;
+}
+
+.bodyview .btnview{
+  margin-top: 100rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.bodyview .btnview .backhomebtn{
+   width: 240rpx;
+   height: 84rpx;
+   line-height: 84rpx;
+   border-radius: 4rpx;
+   background-color: #FFCE00;
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   justify-content: center;
+}
+
+
+/*小红电*/
+.bodyview .btnview .backhomebtn_red{
+   width: 240rpx;
+   height: 84rpx;
+   line-height: 84rpx;
+   border-radius: 4rpx;
+   background-color: #FD5750;
+   display: flex;
+   flex-direction: row;
+   color: #ffffff;
+   align-items: center;
+   justify-content: center;
+}

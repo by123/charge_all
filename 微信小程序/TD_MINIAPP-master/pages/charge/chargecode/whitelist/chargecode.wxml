@@ -1,0 +1,99 @@
+<view class='chargecode_page' bindtap="onPageTap">
+
+<view class='body' style='height:{{contentHeight}}px;filter: blur({{blurValue}}rpx);'>
+
+    <!-- 密码功能块 -->
+    <view class='chargecode_topview'>
+      <image class='chargecode_top_image' src="{{img_psw_top}}" mode='aspectFill'></image>
+      <view class='chargecode_top' style="height:{{product == 0 ?  340 : 400}}rpx;margin-top:{{product == 0 ?  130 : 70}}rpx">
+           <view class = "psw">请在充电器上输入密码</view> 
+           <view wx:if="{{deviceCodeStr.length == 5}}" class = "code" hidden="{{loadingHidden}}">{{deviceCodeStr}}
+           </view>
+           <view wx:else="{{deviceCodeStr.length == 6}}" class = "code2" hidden="{{loadingHidden}}">{{deviceCodeStr}}
+           </view>
+           <view class="help" bindtap='onHelpTap' >
+              <image class="img" src="{{img_charge_help}}" hidden="{{loadingHidden}}"></image>
+              <view class="txt" hidden="{{loadingHidden}}">充电帮助</view>
+           </view>
+           <view class='point_view'>
+              <template is="point_item" data="{{...point1,loadingHidden,product}}"></template>
+              <template is="point_item" data="{{...point2,loadingHidden,product}}"></template>
+              <template is="point_item" data="{{...point3,loadingHidden,product}}"></template>
+              <template is="point_item" data="{{...point4,loadingHidden,product}}"></template>
+              <template is="point_item" data="{{...point5,loadingHidden,product}}"></template>
+           </view>
+
+           <text class="loadingtxt" hidden="{{!loadingHidden}}">获取密码中，请稍等...</text>
+      </view>
+    </view>
+
+<view class='yanshi_view' animation="{{animation}}">
+  <image class="img" src="{{gif_yanshi}}" mode='aspectFit'></image>
+  <text class='text'>在充电器上按数字键</text>
+  <view class='text'>输入<span class="red_text">密码</span>即可充电</view>
+  <view class='btn' bindtap='onKnowTap'>我知道了</view>
+</view>
+    <!-- 剩余充电时间 -->
+    <view class='chargecode_centerview' hidden='{{loadingHidden}}'>
+      <view class="chargecode_tips">如充电中断，请再次扫码获取密码</view>
+      <view class= "charge_left_titleview">
+         <view class="{{product == 0 ?  'point' : 'point_red'}}"></view>
+         <view class='title'>剩余充电时间</view>
+         <view class="{{product == 0 ?  'point' : 'point_red'}}"></view>
+      </view>
+      <view class= "content">{{timeStr}}</view>
+    </view>
+ 
+    <view class='chargecode_bottom_view'>
+      <view class = "tips">提示</view>
+      <view class='tips'>1、 如果充电中设备断电，请再次扫描二维码获取充电密
+     码，在充电器上重新输入密码即可继续充电</view>
+      <view class = "tipsview">
+        <view class = "tips">2、如果设备无法正常使用，请联系</view>
+        <view class='tipscall' bindtap='onProblem'>平台客服</view> 
+      </view>
+    </view>
+
+
+    <view class='footer'>
+ 
+    </view>
+
+</view>
+
+
+<!-- 获取密码失败模块 -->
+<view class='failview' style='height:{{contentHeight}}px' hidden='{{netHidden}}'>
+     <image class='img' src="{{img_net_error}}" mode='aspectFill'></image>
+     <view class='content'>
+        <text class='fail_txt'>网络环境不给力，\n
+请刷新页面重新获取密码充电</text>
+        <view class="{{product == 0 ? 'refresh_btn' : 'refresh_btn_red'}}" bindtap='onRefreshTap'>立即刷新</view>
+     </view>
+</view>
+
+<!-- 再次进入提示模块 -->
+<view class='nextview' style='height:{{contentHeight}}px' hidden='{{nextHidden}}'>
+  <view class='codeview' style="margin-top:{{product == 0 ?  130 : 70}}rpx">
+      <view class = "psw">如充电中断，请再次输入充电密码</view> 
+       <view wx:if="{{deviceCodeStr.length == 5}}" class = "code" hidden="{{loadingHidden}}">{{deviceCodeStr}}
+           </view>
+           <view wx:else="{{deviceCodeStr.length == 6}}" class = "code2" hidden="{{loadingHidden}}">{{deviceCodeStr}}</view>
+      <view class="{{product == 0 ? 'btn' : 'btn_red'}}" bindtap='onCloseTap'>我知道了</view>
+  </view>
+</view>
+
+  <view style="width:100%;  position: fixed;bottom:0;">
+    <ad-view data-id="adview" id="adview" showPage="0"></ad-view>
+  </view>
+</view>
+
+
+<template name="point_item">
+    <view wx:if="{{point}}" hidden='{{!loadingHidden}}'>
+        <view class="{{product == 0 ? 'point_select' : 'point_select_red'}}"></view>
+    </view>          
+    <view wx:else hidden='{{!loadingHidden}}'>
+      <view class='point'></view>
+    </view>
+</template>

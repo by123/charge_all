@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "设备密码重置",
+  "usingComponents": {
+    "MyButton": "/components/MyButton/MyButton"
+  }
+}

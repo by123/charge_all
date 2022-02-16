@@ -1,0 +1,32 @@
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+       xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolBar"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:minHeight="45dp"
+            android:text="123456"
+            app:navigationIcon="@drawable/ic_back_arrow_black"
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="@color/white">
+
+        <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="我是一个标题"
+                android:textColor="@color/tv_black"
+                android:textSize="@dimen/sp_18"
+                android:layout_gravity="center"/>
+    </androidx.appcompat.widget.Toolbar>
+
+    <!--<ImageView-->
+            <!--android:id="@+id/img_back"-->
+            <!--style="@style/style_back_icon"-->
+            <!--android:onClick="@{()->fragment.cancel()}"-->
+            <!--app:layout_constraintBottom_toBottomOf="@id/toolBar"-->
+            <!--app:layout_constraintLeft_toLeftOf="parent"-->
+            <!--app:layout_constraintTop_toTopOf="@+id/toolBar"/>-->
+
+</merge>

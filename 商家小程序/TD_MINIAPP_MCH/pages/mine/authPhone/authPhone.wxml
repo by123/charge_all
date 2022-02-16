@@ -1,0 +1,41 @@
+<!--pages/mine/authPhone/authPhone.wxml-->
+<view bindtap="handleCloseInput">
+  <view class="auth-container">
+    <view class="auth-phone-text base-font-color">系统将发送验证码至商户关联手机号</view>
+    <view class="auth-phone-number base-font-color">{{contactPhone}}</view>
+    <view class="auth-phone-contact light-font-color">如手机号有误，请联系业务员更改<image src="../../../images/i_phone.png" bindtap="handleContact"></image>
+    </view>
+      <input class="hidden-input" value="{{dataList}}" type="number" bindinput="handleInput" focus="{{isFocus}}"></input>
+    <view class="auth-input-group" catchtap="handleTabInput">
+      <block wx:for="{{[0, 1, 2, 3, 4, 5]}}" wx:key="{{item}}">
+        <input
+          type="number"
+          value="{{dataList[index]}}"
+          disabled
+        ></input>
+      </block>
+    </view>
+    <view class="auth-get"><text bindtap="handleSendCode">{{timeText}}</text></view>
+  </view>
+
+  <view class="auth-btn {{isFocus ? 'focus' : ''}}">
+    <MyButton
+      size="large"
+      disable="{{disable}}"
+      full="true"
+      bind:btnTap="handleSubmit"
+      loading="{{loading}}"
+    >提交认证</MyButton>
+  </view>
+</view>
+
+<TipModal
+  visible="{{modalVisible}}"
+  okText="联系业务员"
+  cancelText="取消"
+  title="认证失败"
+  bind:onCancel="handleCancel"
+  bind:onOk="handleContact"
+>
+  <view class="tip light-font-color">{{errMsg}}</view>
+</TipModal>

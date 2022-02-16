@@ -1,0 +1,21 @@
+<!--pages/whitelist/whitelist.wxml-->
+<view class="{{product == 0 ? 'whitelistpage' : 'whitelistpage_red'}}" hidden='{{!hiddenUI}}' bindtap="onPageTap">
+  <image class="{{product == 0 ? 'bg_image' : 'bg_image_red'}}" src="{{img_invite}}" mode='aspectFill'></image>
+  <view class="{{product == 0 ? 'btn_invite' : 'btn_invite_red'}}" bindtap='onAcceptTap'>接受邀请</view>
+</view>
+
+
+<view bindtap="onPageTap">
+    <view class='startpage' hidden='{{hiddenUI}}'>
+        <image class='start_image' src="{{img_about}}"></image>
+        <view class='start_txt'>{{product_name}}</view>
+        <view class='start_line'></view>
+
+        <view class = "start_title_view">
+          <view class='start_main_title'>登陆后{{product_name}}充电将获得以下权限</view>
+          <view class='start_sub_title'>· 获得您的公开信息(昵称、头像、地理位置等）</view>
+        </view>
+          <button type='primary' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo" class='start_login_btn'>确认登录</button>
+    </view>
+
+</view>

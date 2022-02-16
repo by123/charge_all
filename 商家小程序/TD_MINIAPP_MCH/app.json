@@ -1,0 +1,60 @@
+{
+  "pages": [
+    "pages/money/index/index",
+    "pages/money/withdrawal/withdrawal",
+    "pages/money/chooseWithdrawalType/chooseWithdrawalType",
+    "pages/money/help/help",
+    "pages/money/withdrawalSuccess/withdrawalSuccess",
+    "pages/money/withdrawalFail/withdrawalFail",
+    "pages/money/withdrawalResult/withdrawalResult",
+    "pages/order/index/index",
+    "pages/order/detail/detail",
+    "pages/order/refund/refund",
+    "pages/mine/index/index",
+    "pages/mine/detail/detail",
+    "pages/mine/chooseType/chooseType",
+    "pages/mine/bankDetail/bankDetail",
+    "pages/mine/reset/result/result",
+    "pages/mine/reset/action/action",
+    "pages/mine/personManage/personManage",
+    "pages/mine/activeDevice/activeDevice",
+    "pages/mine/addBank/addBank",
+    "pages/mine/authPhone/authPhone",
+    "pages/mine/bankInfo/bankInfo",
+    "pages/mine/bindWechat/bindWechat",
+    "pages/mine/auth/auth",
+    "pages/mine/authNoPhone/authNoPhone",
+    "pages/common/active/active"
+  ],
+  "tabBar": {
+    "color": "#BDBDBD",
+    "selectedColor": "#353648",
+    "list": [
+      {
+        "pagePath": "pages/money/index/index",
+        "text": "资金",
+        "iconPath": "images/tabs/icon_money.png",
+        "selectedIconPath": "images/tabs/icon_money_active.png"
+      },
+      {
+        "pagePath": "pages/order/index/index",
+        "text": "订单",
+        "iconPath": "images/tabs/icon_order.png",
+        "selectedIconPath": "images/tabs/icon_order_active.png"
+      },
+      {
+        "pagePath": "pages/mine/index/index",
+        "text": "我的",
+        "iconPath": "images/tabs/icon_mine.png",
+        "selectedIconPath": "images/tabs/icon_mine_active.png"
+      }
+    ]
+  },
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "炭电",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json"
+}

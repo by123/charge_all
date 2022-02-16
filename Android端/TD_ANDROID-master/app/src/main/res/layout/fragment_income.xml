@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View"/>
+
+        <import type="com.xhd.td.ui.income.IncomeFragment"/>
+
+        <import type="com.xhd.td.vm.income.IncomeVM"/>
+
+        <import type="com.xhd.td.utils.ExtUtilsKt"/>
+
+        <variable
+                name="fragment"
+                type="IncomeFragment"/>
+
+        <variable
+                name="viewModel"
+                type="IncomeVM"/>
+
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="100dp"
+                app:elevation="0dp"
+                android:background="@color/white">
+
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:minHeight="60dp"
+                    app:contentScrim="@color/white"
+                    app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+
+                    <TextView
+                            android:id="@+id/home_content_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginTop="30dp"
+                            android:layout_marginBottom="10dp"
+                            android:text="收益"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintBottom_toTopOf="@+id/cardview_income"
+                            android:textColor="@color/tv_black"
+                            android:textSize="@dimen/sp_30"/>
+
+                    <TextView
+                            android:id="@+id/tv_fund_help"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="16dp"
+                            android:drawableEnd="@drawable/vector_back_dark_small"
+                            android:drawablePadding="2dp"
+                            android:onClick="@{()->fragment.startFundHelpFragment()}"
+                            android:text="资金帮助"
+                            android:textColor="@color/tv_color"
+                            android:textSize="@dimen/sp_14"
+                            app:layout_constraintBottom_toBottomOf="@+id/home_content_title"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/home_content_title"/>
+
+
+                <androidx.cardview.widget.CardView
+                        android:id="@+id/cardview_income"
+                        android:layout_width="match_parent"
+                        android:layout_height="176dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginBottom="2dp"
+                        app:cardElevation="0dp"
+                        app:cardCornerRadius="2dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/home_content_title">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/shape_income_color">
+
+                            <ImageView
+                                    android:layout_width="86dp"
+                                    android:layout_height="41dp"
+                                    android:src="@drawable/vector_top_cash"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/btn_withdraw"/>
+
+                            <TextView
+                                    android:id="@+id/tv_withdraw"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="16dp"
+                                    android:layout_marginTop="20dp"
+                                    android:text="可提现"
+                                    android:textColor="@color/select_text_color"
+                                    android:textSize="@dimen/sp_15"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"/>
+
+                            <TextView
+                                    android:id="@+id/tv_withdraw_Value"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@{ExtUtilsKt.convertToWan(viewModel.incomeBean.canWithdrawNum)}"
+                                    android:textColor="@color/select_text_color"
+                                    android:textSize="@dimen/sp_30"
+                                    app:layout_constraintStart_toStartOf="@+id/tv_withdraw"
+                                    app:layout_constraintTop_toBottomOf="@+id/tv_withdraw"/>
+
+
+                            <ImageView
+                                    android:id="@+id/img_freeze"
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:src="@drawable/ic_income_freeze"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:visibility="gone"
+                                    app:layout_constraintBottom_toBottomOf="@id/tv_withdraw_Value"
+                                    app:layout_constraintLeft_toRightOf="@id/tv_withdraw_Value"
+                            />
+
+
+                            <ImageView
+                                    android:id="@+id/img_freeze_arrow"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="3dp"
+                                    android:src="@drawable/ic_freeze_background"
+                                    android:visibility="@{fragment.displayFreezeTip?View.VISIBLE:View.GONE}"
+                                    app:layout_constraintStart_toStartOf="@+id/img_freeze"
+                                    app:layout_constraintEnd_toEndOf="@+id/img_freeze"
+                                    app:layout_constraintBottom_toTopOf="@+id/img_freeze"
+                            />
+
+                            <TextView
+                                    android:id="@+id/tv_freeze"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/shape_income_freeze"
+                                    android:textColor="@color/white"
+                                    android:textSize="13sp"
+                                    android:paddingStart="12dp"
+                                    android:paddingEnd="12dp"
+                                    android:paddingTop="10dp"
+                                    android:paddingBottom="10dp"
+                                    android:visibility="@{fragment.displayFreezeTip?View.VISIBLE:View.GONE}"
+                                    app:layout_constraintHorizontal_bias="0.8"
+                                    app:layout_constraintBottom_toTopOf="@+id/img_freeze_arrow"
+                                    app:layout_constraintStart_toStartOf="@+id/img_freeze_arrow"
+                                    app:layout_constraintEnd_toEndOf="@+id/img_freeze_arrow"
+                            />
+
+                            <Button
+                                    android:id="@+id/btn_withdraw"
+                                    android:layout_width="100dp"
+                                    android:layout_height="40dp"
+                                    android:layout_marginEnd="15dp"
+                                    android:background="@color/white"
+                                    android:onClick="@{()->fragment.withdraw()}"
+                                    android:text="提现"
+                                    android:textColor="@color/withdraw_text"
+                                    android:textSize="@dimen/sp_16"
+                                    app:layout_constraintBottom_toBottomOf="@+id/tv_withdraw_Value"
+                                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                            <TextView
+                                    android:id="@+id/tv_balance"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="账户余额"
+                                    android:textColor="@color/select_text_color"
+                                    android:textSize="@dimen/sp_15"
+                                    app:layout_constraintBottom_toTopOf="@+id/tv_balance_value"
+                                    app:layout_constraintStart_toStartOf="@+id/tv_withdraw"
+                                    app:layout_constraintTop_toBottomOf="@+id/tv_withdraw_Value"
+                                    app:layout_constraintVertical_chainStyle="packed"/>
+
+                            <TextView
+                                    android:id="@+id/tv_balance_value"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="2dp"
+                                    android:text="@{ExtUtilsKt.convertToWan(viewModel.incomeBean.balanceAmount)}"
+                                    android:textColor="@color/select_text_color"
+                                    android:textSize="@dimen/sp_20"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintStart_toStartOf="@+id/tv_balance"
+                                    app:layout_constraintEnd_toEndOf="@+id/tv_balance"
+                                    app:layout_constraintTop_toBottomOf="@+id/tv_balance"/>
+
+                            <View
+                                    android:id="@+id/lineVertical"
+                                    android:layout_width="1dp"
+                                    android:layout_height="18dp"
+                                    android:layout_marginLeft="30dp"
+                                    android:background="@color/view"
+                                    app:layout_constraintBottom_toBottomOf="@+id/tv_balance_value"
+                                    app:layout_constraintLeft_toRightOf="@+id/tv_balance"
+                                    app:layout_constraintTop_toTopOf="@+id/tv_balance"/>
+
+                            <TextView
+                                    android:id="@+id/tv_cumulative_income"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="30dp"
+                                    android:text="累计收益"
+                                    android:textColor="@color/select_text_color"
+                                    android:textSize="@dimen/sp_15"
+                                    app:layout_constraintLeft_toRightOf="@+id/lineVertical"
+                                    app:layout_constraintTop_toTopOf="@+id/tv_balance"/>
+
+                            <TextView
+                                    android:id="@+id/tv_cumulative_income_value"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="2dp"
+                                    android:text="@{ExtUtilsKt.convertToWan(viewModel.incomeBean.total)}"
+                                    android:textColor="@color/select_text_color"
+                                    android:textSize="@dimen/sp_20"
+                                    app:layout_constraintStart_toStartOf="@+id/tv_cumulative_income"
+                                    app:layout_constraintEnd_toEndOf="@+id/tv_cumulative_income"
+                                    app:layout_constraintTop_toBottomOf="@+id/tv_cumulative_income"/>
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.appcompat.widget.Toolbar
+                        android:layout_width="match_parent"
+                        android:layout_height="25dp"
+                        app:layout_collapseMode="pin">
+
+                </androidx.appcompat.widget.Toolbar>
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <!--<androidx.swiperefreshlayout.widget.SwipeRefreshLayout-->
+        <!--android:id="@+id/swipeLayout"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:elevation="0dp"-->
+        <!--app:layout_behavior="@string/appbar_scrolling_view_behavior">-->
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        >
+
+            <TextView
+                    android:id="@+id/tv_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:drawableEnd="@drawable/vector_arrow_down"
+                    android:drawablePadding="4dp"
+                    android:gravity="bottom"
+                    android:text=""
+                    android:textColor="@color/tv_black"
+                    android:textSize="@dimen/sp_16"
+                    app:layout_constraintBottom_toBottomOf="@+id/tabLayout_income"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tabLayout_income"/>
+
+            <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/tabLayout_income"
+                    android:layout_width="wrap_content"
+                    android:layout_height="38dp"
+                    android:background="@color/white"
+                    app:elevation="0dp"
+                    android:layout_marginEnd="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tabGravity="center"
+                    app:tabIndicatorFullWidth="false"
+                    app:tabIndicatorHeight="4dp"
+                    app:tabIndicatorColor="@color/tabIndicator"
+                    app:tabMode="fixed">
+
+            </com.google.android.material.tabs.TabLayout>
+
+
+            <androidx.viewpager.widget.ViewPager
+                    android:id="@+id/viewPager_income"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tabLayout_income"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <include
+                layout="@layout/layout_pb"
+                tools:pbEnable="@{viewModel.isLoading}"/>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

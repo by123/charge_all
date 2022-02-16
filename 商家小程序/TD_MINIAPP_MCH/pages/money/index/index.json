@@ -1,0 +1,12 @@
+{
+  "usingComponents": {
+    "MyButton": "/components/MyButton/MyButton",
+    "Card": "/components/Card/Card",
+    "Loadmore": "/components/Loadmore/Loadmore",
+    "LoginModal": "/components/LoginModal/LoginModal",
+    "MyIcon": "/components/MyIcon/MyIcon",
+    "Notice": "/components/Notice/Notice"
+  },
+  "navigationBarTitleText": "",
+  "enablePullDownRefresh": true
+}

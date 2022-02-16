@@ -1,0 +1,46 @@
+{
+  "pages": [
+    "pages/start/start",
+    "pages/home/home",
+    "pages/ad/ad",
+    "pages/charge/charge/origin/charge",
+    "pages/charge/charge/pre/charge",
+    "pages/charge/charge/whitelist/charge",
+    "pages/charge/chargecompelete/chargecompelete",
+    "pages/charge/chargeHelp/chargeHelp",
+    "pages/charge/chargecode/origin/chargecode",
+    "pages/charge/chargecode/pre/chargecode",
+    "pages/charge/chargecode/taxi/chargecode",
+    "pages/charge/chargecode/whitelist/chargecode",
+    "pages/charge/deviceerror/deviceerror",
+    "pages/mine/help/help",
+    "pages/mine/order/order",
+    "pages/mine/orderdetail/orderdetail",
+    "pages/whitelist/whitelist",
+    "pages/whitelist/whitelistResult",
+    "pages/customer/customer",
+    "pages/customer/complain",
+    "pages/taxi/taxiPage",
+    "pages/charge/charge/taxi/charge",
+    "pages/addDetail/addDetail"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor":"#ffffff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "networkTimeout": {
+    "request": 5000,
+    "connectSocket": 5000
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "为了更好的为您提供服务，需要您的同意，才能访问您的位置"
+    }
+  },
+  "navigateToMiniProgramAppIdList": [
+    "wx5ec64022b475262d"
+  ],
+  "sitemapLocation": "sitemap.json"
+}

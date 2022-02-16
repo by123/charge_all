@@ -1,0 +1,5 @@
+<!--components/MyButton/MyButton.wxml-->
+
+<button class='btn {{btnClass}}' style='{{customStyle}}' bindtap='onTap' loading="{{loading}}" hover-class="{{hoverClass}}">
+  <slot />
+</button>

@@ -1,0 +1,111 @@
+/* pages/mine/index.wxss */
+.mine-container .mine-title {
+  padding-bottom: 40rpx;
+}
+
+.mine-head {
+  padding: 0 30rpx;
+  height: 120rpx;
+  position: relative;
+}
+
+.mine-head .head-nickname {
+  font-size: 40rpx;
+  font-weight: 600;
+  line-height: 56rpx;
+  padding-right: 180rpx;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  margin-top: 4rpx;
+}
+
+.mine-head .head-role {
+  line-height: 42rpx;
+  font-size: 30rpx;
+  margin-top: 8rpx;
+}
+
+.mine-head .head-role .img {
+  width: 40rpx;
+  height: 40rpx;
+  display: inline-block;
+  position: relative;
+  margin-left: 6rpx;
+  vertical-align: -8rpx;
+}
+
+.mine-head .head-role image {
+  width: 28rpx;
+  height: 28rpx;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.mine-head .head-avatar {
+  position: absolute;
+  right: 30rpx;
+  top: 0;
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.mine-head .head-avatar image {
+  width: 100%;
+  height: 100%;
+}
+
+.mine-list {
+  margin-top: 20rpx;
+}
+
+.mine-list .list-item {
+  font-size: 32rpx;
+  padding: 40rpx 0;
+  line-height: 44rpx;
+  position: relative;
+  display: flex;
+  align-items: center;
+  border-bottom: 1rpx solid #dedede;
+}
+
+.mine-list .list-item-wrap {
+  padding: 0 30rpx;
+}
+
+.mine-list .list-item-wrap:last-child {
+  margin-bottom: 0;
+}
+
+.mine-list .list-item-wrap:last-child .list-item {
+  border: none;
+}
+
+.mine-list .item-icon {
+  flex-basis: 40rpx;
+  height: 40rpx;
+}
+
+.mine-list .item-content {
+  flex: 1;
+  margin-left: 20rpx;
+  color: #353648;
+}
+
+.mine-list .item-arrow {
+  flex-basis: 26rpx;
+  height: 26rpx;
+}
+
+.tip-list {
+  font-size: 30rpx;
+  padding-bottom: 20rpx;
+}
+
+.tip-list .tip-item {
+  margin-bottom: 40rpx;
+}

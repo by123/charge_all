@@ -1,0 +1,15 @@
+<!--pages/mine/activeDevice/activeDevice.wxml-->
+<view class="active-wrapper">
+  <view class="active">
+    <view class="active-location light-font-color">
+      <MyIcon icon="location"></MyIcon>
+      <text>{{mchName}}</text>
+    </view>
+    <view class="active-total base-font-color">{{activeTotal}}</view>
+    <view class="active-title base-font-color">已激活设备</view>
+    <view class="active-btn">
+      <MyButton full="true" size="big" bind:btnTap="handleCantinue">激活设备</MyButton>
+    </view>
+  </view>
+</view>
+<LoginModal />

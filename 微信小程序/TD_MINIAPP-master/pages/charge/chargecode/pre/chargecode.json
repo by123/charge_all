@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "充电器密码",
+    "usingComponents": {
+      "ad-view": "/component/adView/adView"
+    }
+}

@@ -1,0 +1,43 @@
+/* pages/mine/activeDevice/activeDevice.wxss */
+
+.active-wrapper {
+  text-align: center;
+}
+
+.active {
+  display: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.active .active-location {
+  margin-top: 60rpx;
+  line-height: 48rpx;
+  font-size: 34rpx;
+  text-align: center;
+}
+
+.active-location text {
+  vertical-align: middle;
+}
+
+.active .active-title {
+  font-size: 36rpx;
+  line-height: 50rpx;
+}
+
+.active .active-total {
+  line-height: 200rpx;
+  text-align: center;
+  font-size: 142rpx;
+  margin-top: 94rpx;
+}
+
+.active .active-btn {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 110rpx;
+}

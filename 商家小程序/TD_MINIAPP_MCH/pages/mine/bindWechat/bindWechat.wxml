@@ -1,0 +1,30 @@
+<!--pages/mine/bindWechat/bindWechat.wxml-->
+<view class="bind-wechat">
+  <view class="content">
+    <image src="../../../images/bg_bind_wechat.png"></image>
+    <view class="content-main base-font-color">
+      <view>您可以提现到</view>
+      <view>微信钱包啦</view>
+      <view class="rule light-font-color">{{min}}元起提 实时到账</view>
+    </view>
+  </view>
+  <view class="bind-btn">
+    <MyButton size="large" full="true" bind:btnTap="handleBindWechat">绑定微信钱包</MyButton>
+  </view>
+</view>
+
+<TipModal
+  title="绑定微信钱包"
+  cancelText="取消"
+  visible="{{bindModalVisible}}"
+  bind:onOk="handleOk"
+  bind:onCancel="handleCancel"
+>
+  <view class="tip-content light-font-color">提现人员微信信息如下：</view>
+  <view class="tip-info">
+    <image class="info-avator" src="{{userInfo.avatarUrl}}"></image>
+    <view class="info-nickname base-font-color">{{userInfo.nickName}}</view>
+  </view>
+</TipModal>
+
+<LoginModal />

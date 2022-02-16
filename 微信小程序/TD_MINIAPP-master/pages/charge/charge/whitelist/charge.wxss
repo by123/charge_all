@@ -1,0 +1,75 @@
+.page_whitelist_charge{
+  position: relative;
+}
+
+
+.page_whitelist_charge .bg_image{
+  margin-top: 120rpx;
+  margin-left: 4%;
+  position: absolute;
+  width: 92%;
+  height: 420rpx;
+}
+
+.page_whitelist_charge .img_head{
+  position: absolute;
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  background-color: white;
+  overflow:hidden;
+  display: block;
+  border: 2px solid #fff;
+  margin-top: 234rpx;
+  margin-left: 96rpx;
+}
+
+.page_whitelist_charge .txt_nickname{
+  position: absolute;
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #FFFFFF;
+  margin-left: 210rpx;
+  margin-top: 252rpx;
+  text-align: center;
+}
+
+.page_whitelist_charge .txt_free_charge{
+  position: absolute;
+  font-family: PingFangSC-Medium;
+  font-size: 32rpx;
+  margin-left: 96rpx;
+  margin-top: 448rpx;
+  color: #FFFFFF;
+  letter-spacing: -0.39px;
+}
+
+.page_whitelist_charge .btn_password{
+  position: absolute;
+  background: #DEC188;
+  border-radius: 2px;
+  width: 88%;
+  margin-left: 6%;
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36rpx;
+  margin-top: 600rpx;
+}
+
+
+.page_whitelist_charge .btn_cancel{
+  position: absolute;
+  background: #FFFFFF;
+  border: 1px solid #353648;
+  border-radius: 2px;
+  width: 88%;
+  margin-left: 6%;
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36rpx;
+  margin-top: 740rpx;
+}

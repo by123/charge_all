@@ -1,0 +1,22 @@
+/* pages/mine/authNoPhone/authNoPhone.wxss */
+
+.no-phone {
+  text-align: center;
+}
+
+.no-image {
+  width: 200rpx;
+  height: 200rpx;
+  margin-top: 140rpx;
+  margin-bottom: 20rpx;
+}
+
+.text {
+  font-size: 30rpx;
+  line-height: 42rpx;
+}
+
+.btn {
+  margin: 384rpx auto 0;
+  width: 440rpx;
+}

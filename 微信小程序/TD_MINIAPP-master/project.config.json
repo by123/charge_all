@@ -1,0 +1,167 @@
+{
+  "description": "项目配置文件。",
+  "setting": {
+    "urlCheck": false,
+    "es6": true,
+    "enhance": false,
+    "postcss": true,
+    "preloadBackgroundData": false,
+    "minified": true,
+    "newFeature": true,
+    "coverView": true,
+    "nodeModules": false,
+    "autoAudits": false,
+    "showShadowRootInWxmlPanel": true,
+    "scopeDataCheck": false,
+    "uglifyFileName": false,
+    "checkInvalidKey": true,
+    "checkSiteMap": true,
+    "uploadWithSourceMap": true,
+    "compileHotReLoad": false,
+    "useMultiFrameRuntime": true,
+    "useApiHook": true,
+    "useApiHostProcess": true,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    },
+    "enableEngineNative": false,
+    "bundle": false,
+    "useIsolateContext": true,
+    "useCompilerModule": true,
+    "userConfirmedUseCompilerModuleSwitch": false,
+    "userConfirmedBundleSwitch": false,
+    "packNpmManually": false,
+    "packNpmRelationList": [],
+    "minifyWXSS": true
+  },
+  "compileType": "miniprogram",
+  "libVersion": "2.18.0",
+  "appid": "wxa7f0a2b9c0165e53",
+  "projectname": "tandian",
+  "isGameTourist": false,
+  "scripts": {
+    "beforeCompile": "",
+    "beforePreview": "",
+    "beforeUpload": ""
+  },
+  "simulatorType": "wechat",
+  "simulatorPluginLibVersion": {},
+  "condition": {
+    "search": {
+      "list": []
+    },
+    "conversation": {
+      "list": []
+    },
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "currentL": -1,
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "id": -1,
+          "name": "充电结束",
+          "pathName": "pages/charge/chargecompelete/chargecompelete",
+          "query": ""
+        },
+        {
+          "id": 5,
+          "name": "白名单",
+          "pathName": "pages/whitelist/whitelist",
+          "query": ""
+        },
+        {
+          "id": -1,
+          "name": "开始页面",
+          "pathName": "pages/start/start",
+          "query": ""
+        },
+        {
+          "id": -1,
+          "name": "设备未激活",
+          "pathName": "pages/charge/deviceerror/deviceerror",
+          "query": ""
+        },
+        {
+          "id": -1,
+          "name": "白名单结果",
+          "pathName": "pages/whitelist/whitelistResult",
+          "query": ""
+        },
+        {
+          "id": 10,
+          "name": "订单详情",
+          "pathName": "pages/mine/orderdetail/orderdetail",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "自定义预览",
+          "pathName": "pages/home/home",
+          "query": "name=can",
+          "scene": 1037,
+          "referrerInfo": {
+            "appId": "wx5ec64022b475262d",
+            "extraData": "{}"
+          }
+        },
+        {
+          "id": -1,
+          "name": "新司机注册",
+          "pathName": "pages/taxi/taxiPage",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "乘客扫码落地页",
+          "pathName": "pages/charge/charge/taxi/charge",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": 9,
+          "name": "司机密码页",
+          "pathName": "pages/charge/chargecode/taxi/chargecode",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": 10,
+          "name": "pages/charge/charge/origin/charge",
+          "pathName": "pages/charge/charge/origin/charge",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "充电结束",
+          "pathName": "pages/charge/charge/whitelist/charge",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "充电错误",
+          "pathName": "pages/charge/deviceerror/deviceerror",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "白名单充电",
+          "pathName": "pages/charge/charge/whitelist/charge",
+          "query": "",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

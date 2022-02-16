@@ -1,0 +1,73 @@
+@import '../../styles/var';
+.bind-billing-wrap {
+  max-width: 800px;
+  margin: 20px auto 0 auto;
+  border-radius: 4px;
+  h4 {
+    border-bottom: 1px solid @light-border-color;
+    line-height: 40px;
+    padding-left: 20px;
+  }
+  .bind-billing {
+    padding: 0 20px;
+    .item {
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 15px;
+      align-self: center;
+      //margin-bottom: 16px;
+      .label {
+        flex: 0 0 70px;
+        padding-top: 10px;
+      }
+      .margin-left{
+        margin-left: 10px;
+      }
+      .margin-top {
+        margin-top: 15px;
+      }
+      .value {
+        position: relative;
+        flex: 1;
+        .ant-form-item {
+          flex: 0 0 auto;
+        }
+        .add-rule-btn {
+          position: absolute;
+          left: 375px;
+          bottom: 33px;
+        }
+      }
+      span {
+        padding: 0 5px;
+      }
+      .ant-tag {
+        margin-bottom: 10px;
+        height: auto;
+      }
+      .tag-wrap {
+        padding-top: 10px;
+      }
+      >a {
+        margin-bottom: 16px;
+      }
+    }
+    .child {
+      .label {
+        //text-align: right;
+      }
+      .delete-btn {
+        padding-left: 10px;
+        font-size: 18px;
+        color: red;
+      }
+    }
+    .ant-form-item-required::before {
+      padding-top: 15px;
+    }
+  }
+  .billing-title {
+    margin-left: 10px;
+    margin-bottom: 10px;
+  }
+}

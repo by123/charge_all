@@ -1,0 +1,29 @@
+/* components/EmptyBankInfo/EmptyBankInfo.wxss */
+
+.bank-empty .empty-image {
+  width: 200rpx;
+  height: 200rpx;
+  text-align: center;
+  margin: 140rpx auto 0;
+}
+
+.bank-empty .empty-image image {
+  width: 100%;
+  height: 100%;
+}
+
+.bank-empty .empty-text {
+  margin-top: 20rpx;
+  font-size: 32rpx;
+  line-height: 44rpx;
+  text-align: center;
+  color: #757685;
+}
+
+.bank-empty .empty-btn {
+  position: absolute;
+  bottom: 160rpx;
+  left: 30rpx;
+  text-align: center;
+  width: 690rpx;
+}

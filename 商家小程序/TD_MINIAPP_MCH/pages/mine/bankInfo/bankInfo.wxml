@@ -1,0 +1,52 @@
+<!--pages/mine/bankInfo/bankInfo.wxml-->
+<view>
+  <block wx:if="{{!banks.length && init}}">
+    <EmptyBankInfo bind:addBank="addBank" />
+  </block>
+
+  <view class="bank-list base-font-color" wx:if="{{banks.length && init}}">
+    <block wx:for="{{banks}}" wx:key="{{item.bankId}}">
+      <!-- 银行卡 -->
+      <view class="bank-item" wx:if="{{item.isPublic < 2}}">
+        <view class="item-bg">
+          <image src="../../../images/bg_bank.png"></image>
+        </view>
+        <view class="item-main">
+          <view class="item-head">
+            <image src="../../../images/i_bank_card.png"></image>
+            <view class="item-name">
+              <view class="item-title">{{item.bankName}}</view>
+              <view class="item-type">{{item._type}}</view>
+            </view>
+          </view>
+          <view class="item-info">{{item._bankId}}
+          </view>
+        </view>
+      </view>
+
+      <!-- 微信钱包 -->
+      <view class="wechat-item" wx:if="{{item.isPublic === 2}}">
+        <image src="../../../images/bg_wechat_card.png"></image>
+        <view class="wechat-main">
+          <image src="{{userInfo.avatarUrl}}"></image>
+          <view class="wechat-content">
+            <view class="wechat-name">微信钱包</view>
+            <view class="wechat-nickname">{{item.accountName}}</view>
+          </view>
+        </view>
+      </view>
+    </block>
+
+    <view class="bind-wechat" wx:if="{{canAddWechat}}" bindtap="handleAddWechat">
+      <view class="rule">
+        <view class="rule-name">绑定微信钱包</view>
+        <view class="rule-text">{{startMoney}}元起提，实时到账</view>
+      </view>
+      <view class="bind-btn">立即绑定</view>
+    </view>
+    <view class="add-bank-btn" wx:if="{{canAddBank}}">
+      <MyButton size="large" full="true" bind:btnTap="addBank">添加银行卡</MyButton>
+    </view>
+  </view>
+</view>
+<LoginModal />

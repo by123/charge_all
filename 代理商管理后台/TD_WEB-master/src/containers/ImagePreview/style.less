@@ -1,0 +1,132 @@
+.image-preview {
+
+}
+
+.image-modal-wrapper {
+  .ant-modal {
+    top: 0;
+    padding-bottom: 0;
+  }
+  .ant-modal-close {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    border-radius: 28px;
+    background: #fff;
+    .ant-modal-close-x {
+      font-size: 36px;
+    }
+  }
+  .ant-modal-content {
+    border-radius: 0;
+    background-color: transparent;
+  }
+  .ant-modal-body {
+    position: relative;
+    height: 100vh;
+    overflow: auto;
+    .title {
+      position: fixed;
+      left: 50px;
+      top: 20px;
+      color: #fff;
+      background: rgba(0,21,41, .3);
+      border-radius: 2px;
+      font-size: 18px;
+      padding: 0 5px;
+    }
+    .thumbs-wrapper {
+      position: fixed;
+      left: 0;
+      bottom: 60px;
+      width: 100%;
+      height: 100px;
+      background: rgba(0,21,41, .3);
+    }
+    ul.preview-list {
+      position: absolute;
+      top: 0;
+      display: flex;
+      justify-content: center;
+      min-width: 100%;
+      transition: all 1s;
+      &>li {
+        position: relative;
+        height: 80px;
+        width: 120px;
+        margin: 10px;
+        overflow: hidden;
+        img {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          width: 100%;
+        }
+      }
+      .active {
+        box-shadow: 0 0 10px @primary-color;
+      }
+    }
+
+  }
+  .operation-bar {
+    font-size: 48px;
+    text-align: center;
+    a {
+      color: #ccc;
+      margin: 0 10px;
+      &:hover {
+        color: #fff;
+
+      }
+    }
+    .bottom-wrapper {
+      position: fixed;
+      width: 100%;
+      height: 60px;
+      font-size: 36px;
+      background: rgba(0,21,41, .3);
+      left: 0;
+      bottom: 0;
+    }
+    .left-btn {
+      position: fixed;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    .right-btn {
+      position: fixed;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+  .center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .img-wrapper {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    img {
+      display: block;
+      margin: 0 auto;
+      transition: all .5s;
+    }
+  }
+
+}
+
+.image-modal-wrapper.thumbs-list-modal {
+  .ant-modal-body {
+    padding-bottom: 160px;
+  }
+  .right-btn,.left-btn {
+    transform: translateY(-100%);
+  }
+}

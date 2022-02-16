@@ -1,0 +1,46 @@
+@import "../styles/var";
+
+.page-container {
+  height: 100vh;
+  //min-width: 1280px;
+  .page-main {
+    margin: 0 40px;
+    min-height: auto; // 覆盖antd样式
+    .content {
+      position: relative;
+      min-height: ~"calc(100vh - 133px)";
+      background-color: #fff;
+      padding: 30px;
+      &-header {
+        display: flex;
+        align-items: center;
+        height: 40px;
+        line-height: 40px;
+        margin-bottom: 20px;
+        .operation {
+          margin-left: 40px;
+          button {
+            margin-right: 10px;
+          }
+        }
+      }
+      .list {
+        &-desc {
+          color: #757685;
+          padding-bottom: 10px;
+          p {
+            padding-left: 5px;
+          }
+        }
+        &-operation {
+          display: flex;
+          padding: 16px 0;
+          button {
+            margin-right: 10px;
+          }
+        }
+      }
+
+    }
+  }
+}

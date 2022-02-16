@@ -1,0 +1,10 @@
+<!--components/Card/Card.wxml-->
+<view class="card-wrap" bindtap='onTap'>
+  <view wx:if="{{cardList}}">
+    <view wx:for="{{cardList}}" wx:key="{{item.key || index}}">
+      <ContentList dataSource="{{item}}"></ContentList>
+      <view wx:if="{{index < cardList.length - 1 || (lastHasBorder && index === cardList.length - 1)}}" class="empty {{isSolid ? 'solid' : 'dashed'}}"></view>
+    </view>
+  </view>
+  <slot />
+</view>

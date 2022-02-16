@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "MyButton": "/components/MyButton/MyButton",
+    "TipModal": "/components/TipModal/TipModal",
+    "LoginModal": "/components/LoginModal/LoginModal"
+  },
+  "navigationBarTitleText": "绑定微信钱包"
+}

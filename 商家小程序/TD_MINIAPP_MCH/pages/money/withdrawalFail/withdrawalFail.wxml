@@ -1,0 +1,7 @@
+<!--pages/money/withdrawalFail/withdrawalFail.wxml-->
+<view class="withdrawal light-font-color">
+  <image class="image" src="../../../images/money/i_withdrawal_error.png"></image>
+  <view class="withdrawal-tip-result">提现失败</view>
+  <view class="withdrawal-tip-reason">失败原因：{{reason}}</view>
+  <view class="contact" bindtap="makePhoneCall">联系平台客服<image src="../../../images/i_arrow_right.png"></image></view>
+</view>

@@ -1,0 +1,9 @@
+<!--pages/mine/authNoPhone/authNoPhone.wxml-->
+<view class="no-phone">
+  <image class="no-image" src="../../../images/i_fail.png"></image>
+  <view class="text light-font-color">当前商户手机号码为空，</view>
+  <view class="text light-font-color">请联系业务员补充手机号码后再来提现</view>
+  <view class="btn">
+    <MyButton size="large" bind:btnTap="handleContact" full="true">联系业务员</MyButton>
+  </view>
+</view>

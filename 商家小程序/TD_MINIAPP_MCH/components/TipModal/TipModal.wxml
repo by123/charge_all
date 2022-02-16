@@ -1,0 +1,13 @@
+<!--components/TipModal/TipModal.wxml-->
+<view class="mask" catchtouchmove="stopEvent" wx:if="{{visible}}">
+  <view class="modal-main">
+    <view class="modal-title">{{title}}</view>
+    <view class="modal-content">
+      <slot></slot>
+    </view>
+    <view class="modal-btns">
+      <button wx:if="{{cancelText}}" class="cancel-btn btn" hover-class="btn-hover" bindtap="handleCancel">{{cancelText}}</button>
+      <button class="ok-btn btn" hover-class="btn-hover" bindtap="handleOk">{{okText}}</button>
+    </view>
+  </view>
+</view>

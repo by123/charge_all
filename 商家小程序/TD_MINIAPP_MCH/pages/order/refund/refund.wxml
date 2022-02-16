@@ -1,0 +1,38 @@
+<!--pages/money/refund/refund.wxml-->
+
+<view class="refund-wrap">
+  <view class="card-wrap" wx:if="{{orderData}}">
+    <Card dataSource="{{orderData}}" />
+  </view>
+  <Card dataSource="{{moneyData}}" lastHasBorder="{{true}}">
+    <view class="refund-content">
+      <view class="light-font-color">退款金额</view>
+      <input class="base-font-color" placeholder-class="placeholder-class" type="digit" placeholder="请输入退款金额" bindinput="handleInput"></input>
+    </view>
+  </Card>
+  <view class="refund-tip">
+    <image src="../../../images/i_tip.png" class="full-img"></image>该笔订单退款金额不能超过用户实付金额：{{actualPrice}}元</view>
+  <Card dataSource="{{reasonData}}" lastHasBorder="{{true}}">
+    <view class="reason-select light-font-color">
+      <view class="select-title">退款原因</view>
+      <picker
+        bindchange="bindPickerChange"
+        value="{{pickerIndex}}"
+        range="{{reasonArray}}"
+        range-key="desc"
+        class="picker"
+      >
+        <view class="picker-text">{{reasonText}}<image src="../../../images/i_arrow_right.png"></image></view>
+      </picker>
+    </view>
+    <view class="reason-content" wx:if="{{reasonArray.length && reasonArray[pickerIndex].id === 7}}">
+      <textarea class="base-font-color" placeholder-class="placeholder-class" placeholder="请输入您的退款原因" bindinput="handleInputReason"></textarea>
+    </view>
+  </Card>
+
+  <view class="refund-btn">
+    <MyButton size="large" full="true" loading="{{loading}}"bind:btnTap="onConfirm" disable="{{disable}}">确定</MyButton>
+  </view>
+</view>
+
+<LoginModal />

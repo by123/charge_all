@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "ad-fullview": "/component/adFullView/adFullView"
+  },
+  "navigationStyle": "custom"
+}

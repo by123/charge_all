@@ -1,0 +1,61 @@
+<view class="charge_page" style='height:{{contentHeight}}px' bindtap="onPageTap">
+  <view class='charge_body' style='height:{{bodyHeight}}px'>
+
+    <view class="charge_ad">
+      <adbanner-view data-id="adview" showPage="1" id="adBannerView"></adbanner-view>
+    </view>
+
+    <!-- 充电帮助入口 -->
+    <view class="charge_help" bindtap='onHelpTap'>
+      <view>充电前请先检查充电器上是否通电亮红灯</view>
+      <image class="charge_help_arrow" src="{{img_check}}" />
+    </view>
+
+    <!-- 标题 -->
+    <view class="charge_title_view">
+      <view class="time">充电时长</view>
+      <view class='history'>
+        <view class='txt' bindtap='onHistoryTap'>历史订单</view>
+        <image class='img' src="{{img_charge_time}}"></image>
+      </view>
+    </view>
+
+    <!-- 列表 -->
+    <scroll-view scroll-y="true" class='charge_listview'>
+      <view wx:for="{{items}}" wx:key="key" bindtap='onItemTap' data-name="{{item}}" wx:data-index="{{index}}">
+        <view class="charge_item {{item.checked ? (product == 0 ? 'active' :'active_red') :''}}">
+          <view class='imagetime'>
+            <image class="showimage" src="{{img_time}}"></image>
+            <view class="time">{{item.timeStr}}</view>
+          </view>
+
+          <view class="priceimage">
+            <view class="lineview"></view>
+            <view class="priceview">
+              <view class="price">¥ {{item.price/100}}</view>
+              <image class="selectimage" src="{{img_select}}" hidden="{{index != selectIndex}}"  ></image>
+            </view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+
+  <view class="charge_bottom" style='margin-top:{{bodyHeight}}px'>
+    <view class='tips' hidden='{{hiddeenPledgeTitle}}'>押金{{pledgeStr}}元，结束充电后自动返还</view>
+    <!-- 底部按钮 -->
+    <view class='charge_bottom_view'>
+
+      <view class='price_view'>
+        <view class='total_price'>¥{{totalPrice}}</view>
+        <view class='deposit_price' hidden='{{hiddeenPledge}}'>含押金{{pledgeStr}}元</view>
+      </view>
+      <form bindsubmit="submit" report-submit='true'>
+        <button class="pay_btn {{selectIndex == -1 ? '': (product == 0 ? 'pay_btn_active' : 'pay_btn_active_red')}}" form-type='submit'>支付获取密码 </button>
+      </form>
+    </view>
+
+  </view>
+
+
+</view>

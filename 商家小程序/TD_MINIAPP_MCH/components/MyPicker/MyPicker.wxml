@@ -1,0 +1,21 @@
+<!--components/MyPicker/MyPicker.wxml-->
+<view class="picker-wrap">
+  <view class="light-color picker-value" wx:if="{{value[0] < 0}}">请选择</view>
+  <view class="base-font-color picker-value" wx:else>{{selectedValue}}</view>
+  <image class="select-arrow arrow-down" src="../../images/i_arrow_right.png"></image>
+</view>
+
+<view class="picker-mask" wx:if="{{visible}}"  catchtap="catchTap" >
+  <view class="mask-bg" bindtap="closePicker"></view>
+  <view class="picker-main" catchtap="catchTap">
+    <view class="picker-title base-font-color">请选择
+      <button class="picker-confirm light-font-color" hover-class="none" bindtap="confirmPicker">确定</button>
+    </view>
+    <picker-view class="picker-view" value="{{value}}" indicator-style="height: 50px; font-weight: 600;" bindchange="onPickerChange">
+      <picker-view-column wx:for="{{dataSource}}" wx:for-item="column" wx:for-index="columnIndex" wx:key="{{columnIndex}}">
+        <view wx:for="{{column}}" wx:key="{{index}}" class="picker-item">{{item.name}}</view>
+      </picker-view-column>
+    </picker-view>
+  </view>
+
+</view>

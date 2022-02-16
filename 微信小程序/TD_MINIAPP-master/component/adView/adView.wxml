@@ -1,0 +1,10 @@
+<swiper indicator-dots="true" autoplay="true" interval='5000' indicator-active-color="{{indicator_color}}" circular="true" class='adwiper' current="{{currentTab}}" bindchange="onSwipeAdTap" hidden="{{hiddenAd}}">
+  <block wx:for="{{adLists}}" wx:key="key" wx:for-item="data">
+    <swiper-item>
+      <view class='adview' bindtap='onAdDetailTap'>
+        <image class='adimg' src="{{data.adPicUrl}}"></image>
+        <image class='closeimg' src='{{img_close_ad}}' catchtap='onCloseAdTap'></image>
+      </view>
+    </swiper-item>
+  </block>
+</swiper>

@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View"/>
+
+        <variable
+                name="fragment"
+                type="com.xhd.td.ui.unbind.UnbindFragment"/>
+
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white">
+
+        <include layout="@layout/title_bar"/>
+
+
+        <androidx.cardview.widget.CardView
+                android:id="@+id/card_scan_unbinding"
+                android:layout_width="match_parent"
+                android:layout_height="82dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="20dp"
+                app:cardElevation="3dp"
+                app:layout_constraintTop_toBottomOf="@+id/toolBar">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="82dp">
+
+                <ImageView
+                        android:id="@+id/img_scan_unbinding"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_scan_unbinding"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_scan_unbinding_tip"
+                        app:layout_constraintTop_toTopOf="@+id/tv_scan_unbinding"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:layout_marginStart="16dp"/>
+
+                <TextView
+                        android:id="@+id/tv_scan_unbinding"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="扫码解绑"
+                        android:textColor="@color/textColorPrimary"
+                        android:textSize="@dimen/sp_16"
+                        app:layout_constraintStart_toEndOf="@+id/img_scan_unbinding"
+                        app:layout_constraintVertical_bias="0.3"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"/>
+
+                <TextView
+                        android:id="@+id/tv_scan_unbinding_tip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="扫码设备二维码，解绑设备"
+                        android:textColor="@color/tv_color"
+                        android:textSize="@dimen/sp_13"
+                        app:layout_constraintStart_toStartOf="@+id/tv_scan_unbinding"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_scan_unbinding"/>
+
+                <ImageView
+                        android:id="@+id/img_scan_unbinding_arrow"
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/back_dark"
+                        android:layout_marginEnd="15dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintBottom_toBottomOf="@+id/img_scan_unbinding"
+                        app:layout_constraintTop_toTopOf="@+id/img_scan_unbinding"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+                android:id="@+id/card_merchant_device_unbinding"
+                android:layout_width="match_parent"
+                android:layout_height="82dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="20dp"
+                app:cardElevation="3dp"
+                app:layout_constraintTop_toBottomOf="@+id/card_scan_unbinding">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="82dp">
+
+                <ImageView
+                        android:id="@+id/img_merchant_device_unbinding"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_marginStart="16dp"
+                        android:src="@drawable/ic_merchant_device_unbinding"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"/>
+
+                <TextView
+                        android:id="@+id/tv_merchant_device_unbinding"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="按商户解绑"
+                        android:textColor="@color/textColorPrimary"
+                        android:textSize="@dimen/sp_16"
+                        app:layout_constraintStart_toEndOf="@+id/img_merchant_device_unbinding"
+                        app:layout_constraintVertical_bias="0.35"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+                <TextView
+                        android:id="@+id/tv_merchant_device_unbinding_tip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/tv_color"
+                        android:textSize="@dimen/sp_13"
+                        android:text="选择商户，一键批量解绑"
+                        app:layout_constraintStart_toStartOf="@+id/tv_merchant_device_unbinding"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_merchant_device_unbinding"/>
+
+
+                <ImageView
+                        android:id="@+id/img_merchant_device_unbinding_arrow"
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/back_dark"
+                        android:layout_marginEnd="15dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintBottom_toBottomOf="@+id/img_merchant_device_unbinding"
+                        app:layout_constraintTop_toTopOf="@+id/img_merchant_device_unbinding"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

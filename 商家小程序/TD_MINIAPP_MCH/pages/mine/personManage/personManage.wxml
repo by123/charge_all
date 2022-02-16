@@ -1,0 +1,28 @@
+<!--pages/mine/personManage/personManage.wxml-->
+<view>
+  <view class="person-list" wx:if="{{isInit && list.length}}">
+    <view class="person-item" wx:for="{{list}}" wx:key="{{item.userId}}">
+      <view class="item-title light-font-color">运营人员信息</view>
+      <view class="item-content base-font-color">
+        <image class="item-avator" src="{{item.headUrl}}"></image>
+        <view class="item-info">{{item.nickname}}</view>
+        <view class="item-action-btn" bindtap="handleTransfer" data-index="{{index}}">转让管理员给他</view>
+        <view class="item-action-btn" bindtap="handleDelete" data-index="{{index}}">删除</view>
+      </view>
+    </view>
+  </view>
+  <!-- 空白页面 -->
+  <view class="no-person" wx:if="{{isInit && !list.length}}">
+    <view class="no-person-content base-font-color">
+      <image src="../../../images/i_fail.png"></image>
+      <view>当前商户没有运营人员</view>
+      <view>请联系业务员添加</view>
+    </view>
+    <view class="no-person-tip">
+      <view class="tip-item">提示：</view>
+      <view class="tip-item">1、 商户可以绑定多个微信号作为操作账号，例如老板、前台、财务等都可以绑定微信作为商户操作账号</view>
+      <view class="tip-item">2、只有一个微信号作为商户管理员账号，其余为运营人员账号；运营人员可以处理客户投诉，退款等事项</view>
+      <view class="tip-item">3、仅商户管理员账号拥有提现权限</view>
+    </view>
+  </view>
+</view>

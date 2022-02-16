@@ -1,0 +1,10 @@
+<!--components/TipBar/TipBar.wxml-->
+<view class="notice-wrap" wx:if="{{visible}}">
+  <view class="notice-icon">
+    <image src="{{icon}}"></image>
+  </view>
+  <view class="notice-content">
+    <view class="notice-content-scroll"><view>{{content}}</view></view>
+  </view>
+  <view class="notice-close" bindtap="closeNotice"><image src="../../images/i_notice_close.png"></image></view>
+</view>

@@ -1,0 +1,10 @@
+<view class="container">
+  <view wx:for="{{datas}}" wx:key="index">
+    <view wx:if="{{item.type == 'img'}}">
+      <image src="{{item.content}}"  class="add_img" bindload="imageLoad" id="{{index}}" style="height:{{item.height}}px"></image>
+    </view>
+    <view wx:elif="{{item.type == 'text'}}">
+      <view class="add_txt">{{item.content}}</view>
+    </view>
+  </view>
+</view>

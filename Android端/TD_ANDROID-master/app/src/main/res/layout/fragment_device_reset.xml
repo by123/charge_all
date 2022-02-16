@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View" />
+        <import type="com.xhd.td.ui.home.DeviceResetFragment" />
+        <import type="com.xhd.td.vm.home.ScanVM" />
+
+        <variable
+                name="fragment"
+                type="DeviceResetFragment" />
+
+        <variable
+                name="viewModel"
+                type="ScanVM" />
+
+
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white">
+
+        <include layout="@layout/title_bar"/>
+
+        <!--<androidx.appcompat.widget.Toolbar-->
+                <!--android:id="@+id/toolBar"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="?attr/actionBarSize"-->
+                <!--android:background="@color/white" />-->
+
+        <!--<ImageView-->
+                <!--android:id="@+id/back"-->
+                <!--style="@style/backIcon_style"-->
+                <!--android:onClick="@{fragment.close}"-->
+                <!--app:layout_constraintBottom_toBottomOf="@id/toolBar"-->
+                <!--app:layout_constraintLeft_toLeftOf="parent"-->
+                <!--app:layout_constraintTop_toTopOf="@+id/toolBar" />-->
+
+        <!--<TextView-->
+                <!--android:id="@+id/title"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="设备密码重置"-->
+                <!--android:textColor="@color/tv_black"-->
+                <!--android:textSize="@dimen/sp_18"-->
+                <!--app:layout_constraintBottom_toBottomOf="@+id/toolBar"-->
+                <!--app:layout_constraintLeft_toLeftOf="parent"-->
+                <!--app:layout_constraintRight_toRightOf="parent"-->
+                <!--app:layout_constraintTop_toTopOf="@id/toolBar" />-->
+
+        <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:scrollbars="vertical"
+                android:visibility="@{fragment.resetSuccess?View.GONE:View.VISIBLE}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/toolBar">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                <TextView
+                        android:id="@+id/tv_operation_guide"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:drawableLeft="@drawable/line"
+                        android:drawableRight="@drawable/line"
+                        android:drawablePadding="20dp"
+                        android:gravity="center"
+                        android:paddingTop="8dp"
+                        android:text="操作指引"
+                        android:textColor="@color/tv_color"
+                        android:textSize="@dimen/sp_15"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                <cn.jzvd.JzvdStd
+                        android:id="@+id/jzvd_video"
+                        android:layout_width="320dp"
+                        android:layout_height="180dp"
+                        android:layout_marginTop="16dp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_operation_guide" />
+
+                <View
+                        android:id="@+id/topLine"
+                        android:layout_width="0dp"
+                        android:layout_height="0.5dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:background="@color/tv_hint"
+                        android:visibility="gone"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/jzvd_video" />
+
+                <TextView
+                        android:id="@+id/tv_first_step"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="16dp"
+
+                        android:drawablePadding="8dp"
+                        android:text="第一步"
+                        android:textColor="@color/tv_black"
+                        android:textSize="@dimen/sp_16"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/topLine" />
+
+                <TextView
+                        android:id="@+id/tv_first_tip"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginRight="16dp"
+                        android:text="请在充电器输入复位密码，并等待按键指示灯闪烁一次"
+                        android:textColor="@color/tv_color"
+                        android:textSize="@dimen/sp_15"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_first_step" />
+
+                <androidx.cardview.widget.CardView
+                        android:id="@+id/card_first_step"
+                        android:layout_width="0dp"
+                        android:layout_height="92dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginRight="16dp"
+                        android:background="@color/white"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_first_tip">
+
+                    <com.xhd.td.view.SpaceTextView
+                            android:id="@+id/tv_reset_code"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@{fragment.resetCode}"
+                            android:textColor="@color/tv_black"
+                            android:textSize="@dimen/sp_30" />
+                </androidx.cardview.widget.CardView>
+
+
+                <TextView
+                        android:id="@+id/tv_second"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="40dp"
+
+                        android:drawablePadding="8dp"
+                        android:text="第二步"
+                        android:textColor="@color/tv_black"
+                        android:textSize="@dimen/sp_16"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/card_first_step" />
+
+                <TextView
+                        android:id="@+id/tv_second_tip"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginRight="16dp"
+                        android:text="请点击确认密码重置按钮，完成设备密码重置"
+                        android:textColor="@color/tv_color"
+                        android:textSize="@dimen/sp_15"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_second" />
+
+                <Button
+                        android:id="@+id/btn_submit"
+                        style="@style/Base.Widget.AppCompat.Button.Borderless"
+                        android:layout_width="120dp"
+                        android:layout_height="42dp"
+                        android:layout_marginTop="16dp"
+                        android:background="@drawable/shape_btn_rect"
+                        android:onClick="@{()->viewModel.confirmReset(fragment.sn)}"
+                        android:text="确认密码重置"
+                        android:textColor="@color/select_text_color"
+                        android:textSize="@dimen/sp_18"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_second_tip" />
+
+                <TextView
+                        android:id="@+id/tv_bottom_tip"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="33dp"
+                        android:gravity="left"
+                        android:paddingLeft="16dp"
+                        android:paddingRight="16dp"
+                        android:text="@string/deviceHint"
+                        android:textColor="#BDBDBD"
+                        android:textSize="@dimen/sp_14"
+                        app:layout_constraintTop_toBottomOf="@+id/btn_submit" />
+
+                <TextView
+                        android:id="@+id/tv_customer_service"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="60dp"
+                        android:layout_marginBottom="16dp"
+                        android:text="如需更多帮助，请联系客服"
+                        android:textColor="@color/tv_color"
+                        android:textSize="@dimen/sp_15"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_bottom_tip" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="64dp"
+                android:visibility="@{!fragment.resetSuccess?View.GONE:View.VISIBLE}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/toolBar"
+                tools:visibility="visible">
+
+            <ImageView
+                    android:id="@+id/img_success"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/ic_result_success"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    />
+
+            <TextView
+                    android:id="@+id/tv_success_tip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="复位操作已完成"
+                    android:textColor="@color/tv_color"
+                    android:textSize="@dimen/sp_16"
+                    app:layout_constraintLeft_toLeftOf="@+id/img_success"
+                    app:layout_constraintRight_toRightOf="@+id/img_success"
+                    app:layout_constraintTop_toBottomOf="@+id/img_success" />
+
+            <TextView
+                    android:id="@+id/tv_sn_tip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="@{@string/current_device+fragment.sn}"
+                    android:textColor="@color/tv_black"
+                    android:textSize="@dimen/sp_16"
+                    app:layout_constraintLeft_toLeftOf="@+id/tv_success_tip"
+                    app:layout_constraintRight_toRightOf="@+id/tv_success_tip"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_success_tip" />
+
+            <TextView
+                    android:id="@+id/tv_success_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginRight="32dp"
+                    android:gravity="start"
+                    android:textColor="@color/tv_color"
+                    android:textSize="@dimen/sp_15"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_sn_tip"
+                    app:layout_constraintVertical_bias="0.3" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <include layout="@layout/layout_pb"
+                 tools:pbEnable="@{viewModel.isLoading}"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

@@ -1,0 +1,126 @@
+/* pages/money/withdrawalSuccess/withdrawalSuccess.wxss */
+.result {
+  height: 100vh;
+  overflow: hidden;
+}
+.result-head {
+  display: flex;
+}
+
+.result-head .head-item {
+  flex: 1;
+  padding-top: 28rpx;
+  text-align: center;
+  color: #bdbdbd;
+  position: relative;
+}
+
+.result-head .head-item:after {
+  content: '';
+  position: absolute;
+  width: 110rpx;
+  height: 4rpx;
+  right: -55rpx;
+  top: 62rpx;
+  background: #dedede;
+}
+
+.result-head .head-item:last-child::after {
+  background: transparent;
+}
+
+.result-head .item-active {
+  color: #757685;
+}
+
+.result-head .item-current {
+  color: #353648;
+}
+
+.result-head .item-icon image {
+  width: 80rpx;
+  height: 80rpx;
+}
+
+.result-head .item-content {
+  margin-top: 10rpx;
+  line-height: 42rpx;
+  font-size: 30rpx;
+}
+
+.result-info {
+  box-shadow: 2rpx 4rpx 20rpx 0 #DEDEDE;
+  border-radius: 4rpx;
+  border: 2rpx solid #F4F4F6;
+  width: 690rpx;
+  margin: 42rpx auto 0;
+  padding: 0 30rpx;
+  height: 1120rpx;
+  position: relative;
+}
+
+.result-info .info-title {
+  padding: 32rpx 0 36rpx;
+  text-align: center;
+  line-height: 44rpx;
+  font-size: 32rpx;
+  font-weight: 500;
+}
+
+.result-info .info-list {
+  border-top: 1rpx dashed #dedede;
+  padding-top: 15rpx;
+}
+
+.result-info .info-item {
+  padding: 15rpx 0;
+  line-height: 42rpx;
+  font-size: 30rpx;
+  display: flex;
+}
+
+.result-info .item-name {
+  flex-basis: 160rpx;
+  flex-shrink: 0; 
+}
+
+.result-info .item-value {
+  flex: 1;
+  text-align: right;
+}
+
+.result-history {
+  margin-top: 260rpx;
+  text-align: center;
+  font-size: 30rpx;
+  line-height: 42rpx;
+}
+
+.result-history text {
+  vertical-align: middle;
+}
+
+.result-history image {
+  margin-left: 10rpx;
+  position: relative;
+  top: 2rpx;
+}
+
+.circle {
+  position: absolute;
+  top: 96rpx;
+  width: 32rpx;
+  height: 32rpx;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.circle-left {
+  left: -16rpx;
+  box-shadow: inset -8rpx 0 6rpx 0 #DEDEDE;
+}
+
+.circle-right {
+  right: -16rpx;
+  box-shadow: inset 8rpx 0 6rpx 0 #DEDEDE;
+}

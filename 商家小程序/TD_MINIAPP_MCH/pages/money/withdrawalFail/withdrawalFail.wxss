@@ -1,0 +1,41 @@
+/* pages/money/withdrawalFail/withdrawalFail.wxss */
+.withdrawal {
+  text-align: center;
+}
+
+.withdrawal .image {
+  width: 200rpx;
+  height: 200rpx;
+  margin-top: 152rpx;
+}
+
+.withdrawal .withdrawal-tip-result {
+  margin-top: 30rpx;
+  font-size: 32rpx;
+  line-height: 44rpx;
+}
+
+.withdrawal .withdrawal-tip-reason {
+  margin-top: 20rpx;
+  font-size: 28rpx;
+  line-height: 40rpx;
+}
+
+.withdrawal .contact {
+  position: fixed;
+  bottom: 180rpx;
+  left: 0;
+  text-align: center;
+  width: 100%;
+  line-height: 42rpx;
+  font-size: 30rpx;
+}
+
+.withdrawal .contact image {
+  width: 26rpx;
+  height: 26rpx;
+  position: relative;
+  top: 3rpx;
+  margin-left: 10rpx;
+}
+

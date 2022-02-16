@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "退款",
+  "usingComponents": {
+    "Card": "/components/Card/Card",
+    "MyButton": "/components/MyButton/MyButton",
+    "LoginModal": "/components/LoginModal/LoginModal"
+  },
+  "backgroundColor": "#f4f4f6"
+}

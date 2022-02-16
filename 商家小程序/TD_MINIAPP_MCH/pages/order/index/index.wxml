@@ -1,0 +1,18 @@
+<!--pages/order/index.wxml-->
+<view>
+  <Tabs title="订单" tabsArray="{{tabsArray}}" active="{{tabActive}}" bind:changeTab="changeTab" />
+  <view class="list-loading light-font-color">加载中...</view>
+  <view class="order-list base-bg-color {{tabActive === '3' ? 'finish-top' : ''}}" wx:if="{{list.length}}">
+    <view class="refund-tip light-font-color" wx:if="{{tabActive === '3'}}">提示：订单超过48小时后不支持退款</view>
+    <view class="card-wrap" wx:for="{{list}}" wx:key="{{index}}" bindtap="handleItemTap" data-id="{{item.orderData.orderId}}">
+      <OrderCard orderData="{{item.orderData}}" profit="{{item.profit}}" hasRefund="{{item.hasRefund}}" bind:btnTap="handleBtnTap" />
+    </view>
+    <Loadmore wx:if="{{!init || (init && list.length)}}" init="{{init}}" hasMore="{{hasMore}}" hasData="{{list.length}}"></Loadmore>
+  </view>
+  <view class="no-data light-font-color" wx:if="{{init && isLoaded && !list.length}}">
+    <image src="../../../images/no_order.png"></image>
+    <view>您当前还没有订单</view>
+  </view>
+
+</view>
+<LoginModal />

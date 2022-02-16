@@ -1,0 +1,22 @@
+<!--pages/mine/detail/detail.wxml-->
+<view class="detail-wrap">
+  <view class="card-margin-bottom-30" wx:if="{{accountData}}">
+    <Card dataSource="{{accountData}}"/>
+  </view>
+  <view class="card-margin-bottom-30" wx:if="{{numberData}}">
+    <Card dataSource="{{numberData}}">
+      <view class="phone-wrap" bindtap="handleContact">
+        <view class="light-font-color">如手机号有误，请联系业务员更改</view>
+        <image src="../../../images/i_phone.png"></image>
+      </view>
+    </Card>
+  </view>
+  <view class="card-margin-bottom-30" wx:if="{{profitData}}">
+    <Card dataSource="{{profitData}}" />
+  </view>
+  <view class="card-margin-bottom-30" wx:if="{{deviceData}}">
+    <Card dataSource="{{deviceData}}" />
+  </view>
+</view>
+
+<LoginModal />

@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "LoginModal": "/components/LoginModal/LoginModal",
+    "Card": "/components/Card/Card"
+  },
+  "backgroundColor": "#f4f4f6"
+}

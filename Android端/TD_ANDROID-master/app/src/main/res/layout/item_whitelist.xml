@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tool="http://schemas.android.com/tools"
+        android:id="@+id/topCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="10dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardElevation="1dp"
+        app:cardUseCompatPadding="true">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="16dp">
+
+
+        <ImageView
+                android:id="@+id/img_portrait"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tool:background="#111"
+        />
+
+
+        <TextView
+                android:id="@+id/tv_nickname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:textSize="@dimen/sp_16"
+                android:fontFamily="Medium"
+                android:textStyle="bold"
+                android:textColor="#353648"
+                app:layout_constraintStart_toEndOf="@id/img_portrait"
+                app:layout_constraintTop_toTopOf="@id/img_portrait"
+                tool:text="清风徐来"
+        />
+
+
+        <TextView
+                android:id="@+id/tv_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:textSize="@dimen/sp_15"
+                android:fontFamily="Regular"
+                android:textColor="#757685"
+                android:text="状态："
+                app:layout_constraintStart_toStartOf="@id/tv_nickname"
+                app:layout_constraintTop_toBottomOf="@id/tv_nickname"
+        />
+
+        <TextView
+                android:id="@+id/tv_status_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/sp_15"
+                android:fontFamily="Regular"
+                android:textColor="#757685"
+                android:text="正常"
+                app:layout_constraintStart_toEndOf="@id/tv_status"
+                app:layout_constraintTop_toTopOf="@id/tv_status"/>
+
+
+        <ImageView
+                android:id="@+id/img_status"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_margin="10dp"
+
+                android:src="@drawable/ic_whitelist_enable"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+
+        <com.xhd.td.view.TextImageView
+                android:id="@+id/tv_open_whitelist"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:textSize="@dimen/sp_15"
+                android:fontFamily="Regular"
+                android:textColor="#353648"
+                android:drawableStart="@drawable/ic_open_whitelist"
+                android:drawablePadding="5dp"
+                app:drawableStartHeight="15dp"
+                app:drawableStartWidth="15dp"
+                android:text="启用"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/img_portrait"/>
+
+
+        <com.xhd.td.view.TextImageView
+                android:id="@+id/tv_scope_whitelist"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:textSize="@dimen/sp_15"
+                android:fontFamily="Regular"
+                android:textColor="#353648"
+                android:drawableStart="@drawable/ic_edit_whitelist"
+                android:drawablePadding="5dp"
+                app:drawableStartHeight="14dp"
+                app:drawableStartWidth="14dp"
+                android:text="编辑"
+                app:layout_constraintStart_toEndOf="@+id/tv_open_whitelist"
+                app:layout_constraintTop_toTopOf="@+id/tv_open_whitelist"
+        />
+
+        <com.xhd.td.view.TextImageView
+                android:id="@+id/tv_copy_whitelist"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/sp_15"
+                android:fontFamily="Regular"
+                android:textColor="#353648"
+                android:drawableStart="@drawable/ic_whitelist_copy"
+                android:drawablePadding="5dp"
+                app:drawableStartHeight="14dp"
+                app:drawableStartWidth="14dp"
+                android:text="复制"
+                app:layout_constraintEnd_toEndOf="@id/img_status"
+                app:layout_constraintTop_toTopOf="@+id/tv_open_whitelist"
+        />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

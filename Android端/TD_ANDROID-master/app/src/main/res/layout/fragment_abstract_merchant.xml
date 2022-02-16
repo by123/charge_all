@@ -1,0 +1,1042 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <import type="com.xhd.td.ui.home.AbstractAddModifyFragment.Companion" />
+
+        <import type="com.xhd.td.ui.home.AbstractAddModifyFragment" />
+
+        <import type="com.xhd.td.vm.home.AbstractMerchantVM" />
+
+        <import type="com.xhd.td.ui.home.AddMerchantFragment" />
+
+        <import type="com.xhd.td.vm.home.MerchantVM" />
+
+        <variable
+                name="companion"
+                type="Companion" />
+
+        <variable
+                name="fragment"
+                type="AbstractAddModifyFragment" />
+
+        <variable
+                name="viewModelAbstract"
+                type="AbstractMerchantVM" />
+
+        <variable
+                name="viewModel"
+                type="AbstractMerchantVM" />
+
+        <variable
+                name="is_progress"
+                type="Boolean" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/item_back">
+
+        <include layout="@layout/title_bar" />
+
+        <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="@color/white"
+                android:fillViewport="true"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toTopOf="@+id/tv_save"
+                app:layout_constraintTop_toBottomOf="@+id/toolBar"
+                app:layout_goneMarginBottom="74dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                <TextView
+                        android:id="@+id/tv_merchant_info"
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp"
+                        android:background="@color/item_back"
+                        android:gravity="bottom"
+                        android:paddingStart="8dp"
+                        android:paddingBottom="8dp"
+                        android:text="商户信息"
+                        android:textColor="@color/tv_black"
+                        android:textSize="@dimen/sp_14"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                <TextView
+                        android:id="@+id/tv_chain_store"
+                        style="@style/info_item"
+                        android:gravity="center_vertical"
+                        android:text="所属连锁门店"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_merchant_info" />
+
+                <!--<ImageView-->
+                <!--android:id="@+id/img_chain_drop_down"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginEnd="@dimen/sp_15"-->
+                <!--android:src="@drawable/spinner_down"-->
+                <!--app:layout_constraintBottom_toBottomOf="@+id/tv_chain_store"-->
+                <!--app:layout_constraintEnd_toEndOf="parent"-->
+                <!--app:layout_constraintTop_toTopOf="@+id/tv_chain_store"-->
+                <!--/>-->
+
+                <TextView
+                        android:id="@+id/tv_chain_store_value"
+                        style="@style/info_item_value"
+                        android:drawableEnd="@drawable/spinner_down"
+                        android:drawablePadding="3dp"
+                        android:hint="无"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_chain_store"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/tv_chain_store" />
+
+                <View
+                        android:id="@+id/line_chain_store"
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:background="@color/tv_hint"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_chain_store" />
+
+
+                <TextView
+                        android:id="@+id/tv_merchant_name"
+                        style="@style/info_item"
+                        android:gravity="center_vertical"
+                        android:text="商户名称"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_chain_store" />
+
+                <EditText
+                        android:id="@+id/edit_merchant_name"
+                        style="@style/info_item_value"
+                        android:layout_marginLeft="90dp"
+                        android:background="@null"
+                        android:hint="请输入商户名称"
+                        android:inputType="text"
+                        android:lines="1"
+                        android:maxLength="96"
+                        android:maxLines="1"
+                        android:textColor="@color/tv_black"
+                        android:textColorHint="@color/tv_hint"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_merchant_name"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/tv_merchant_name" />
+
+                <View
+                        android:id="@+id/line_merchant_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:background="@color/tv_hint"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_merchant_name" />
+
+
+                <TextView
+                        android:id="@+id/tv_agent_level"
+                        style="@style/info_item"
+                        android:gravity="center_vertical"
+                        android:text="代理商级别"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/line_merchant_name" />
+
+                <!--<org.angmarch.views.NiceSpinner-->
+                <!--android:id="@+id/spinner_agent_level"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textColor="@color/tv_black"-->
+                <!--app:layout_constraintBottom_toBottomOf="@+id/tv_agent_level"-->
+                <!--app:layout_constraintEnd_toEndOf="parent"-->
+                <!--app:layout_constraintTop_toTopOf="@+id/tv_agent_level"/>-->
+
+                <TextView
+                        android:id="@+id/spinner_agent_level"
+                        style="@style/info_item_value"
+                        android:drawableEnd="@drawable/spinner_down"
+                        android:drawablePadding="3dp"
+                        android:hint="无"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_agent_level"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/tv_agent_level" />
+
+                <View
+                        android:id="@+id/line_agent_level"
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:background="@color/tv_hint"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_agent_level" />
+
+                <TextView
+                        android:id="@+id/tv_industry"
+                        style="@style/info_item"
+                        android:gravity="center_vertical"
+                        android:text="所属行业"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_agent_level" />
+
+
+                <TextView
+                        android:id="@+id/spinner_industry"
+                        style="@style/info_item_value"
+                        android:drawableEnd="@drawable/spinner_down"
+                        android:drawablePadding="3dp"
+                        android:hint="请选择行业"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_industry"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/tv_industry" />
+
+                <View
+                        android:id="@+id/line_industry"
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:background="@color/tv_hint"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_industry" />
+
+                <TextView
+                        android:id="@+id/tv_contact_name"
+                        style="@style/info_item"
+                        android:gravity="center_vertical"
+                        android:text="联系人姓名"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_industry" />
+
+                <EditText
+                        android:id="@+id/edit_contact_name"
+                        style="@style/info_item_value"
+                        android:layout_marginStart="90dp"
+                        android:background="@null"
+                        android:hint="请输入姓名"
+                        android:inputType="text"
+                        android:lines="1"
+                        android:maxLength="32"
+                        android:maxLines="1"
+                        android:textColor="@color/tv_black"
+                        android:textColorHint="@color/tv_hint"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_contact_name"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/tv_contact_name" />
+
+                <View
+                        android:id="@+id/line_contact_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:background="@color/tv_hint"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_contact_name" />
+
+                <TextView
+                        android:id="@+id/tv_contact_phone"
+                        style="@style/info_item"
+                        android:gravity="center_vertical"
+                        android:text="联系人电话"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_contact_name" />
+
+                <EditText
+                        android:id="@+id/edit_contact_phone"
+                        style="@style/info_item_value"
+                        android:layout_marginStart="90dp"
+                        android:background="@null"
+                        android:hint="请输入手机号码"
+                        android:inputType="phone"
+                        android:lines="1"
+                        android:maxLength="11"
+                        android:textColor="@color/tv_black"
+                        android:textColorHint="@color/tv_hint"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_contact_phone"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/tv_contact_phone" />
+
+                <View
+                        android:id="@+id/line_contact_phone"
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:background="@color/tv_hint"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_contact_phone" />
+
+                <TextView
+                        android:id="@+id/tv_phone_hint"
+                        style="@style/info_item"
+                        android:drawableStart="@drawable/ic_hint"
+                        android:drawablePadding="8dp"
+                        android:gravity="center_vertical"
+                        android:text="此号码可用来找回账号"
+                        android:textSize="@dimen/sp_14"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_contact_phone" />
+
+                <TextView
+                        android:id="@+id/tv_freeze_amount_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp"
+                        android:background="@color/item_back"
+                        android:gravity="bottom"
+                        android:paddingStart="8dp"
+                        android:paddingBottom="8dp"
+                        android:text="冻结金额(非必填)"
+                        android:textColor="@color/tv_black"
+                        android:textSize="@dimen/sp_14"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_phone_hint" />
+
+
+                <View
+                        android:id="@+id/line_freeze_amount"
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:background="@color/tv_hint"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_freeze_amount_title" />
+
+                <TextView
+                        android:id="@+id/tv_freeze_amount"
+                        style="@style/info_item"
+                        android:gravity="center_vertical"
+                        android:text="设置冻结金额"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/line_freeze_amount" />
+
+
+                <EditText
+                        android:id="@+id/edit_freeze_amount"
+                        style="@style/info_item_value"
+                        android:layout_width="wrap_content"
+                        android:layout_marginEnd="1dp"
+                        android:background="@null"
+                        android:hint="请输入冻结金额"
+                        android:inputType="numberDecimal"
+                        android:textColor="@color/tv_black"
+                        android:textColorHint="@color/tv_hint"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_freeze_amount"
+                        app:layout_constraintEnd_toStartOf="@+id/tv_freeze_amount_unit"
+                        app:layout_constraintTop_toTopOf="@+id/tv_freeze_amount" />
+
+                <TextView
+                        android:id="@+id/tv_freeze_amount_unit"
+                        style="@style/info_item_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="元"
+                        android:textColor="@color/tv_black"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_freeze_amount"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/tv_freeze_amount" />
+
+                <View
+                        android:id="@+id/line_freeze_amount_tip"
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:background="@color/tv_hint"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_freeze_amount" />
+
+                <TextView
+                        android:id="@+id/tv_freeze_amount_tip"
+                        style="@style/info_item"
+                        android:drawableStart="@drawable/ic_hint"
+                        android:drawablePadding="8dp"
+                        android:gravity="center_vertical"
+                        android:text="设置后，账户收入超过此金额才可提现"
+                        android:textSize="@dimen/sp_14"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/line_freeze_amount_tip" />
+
+
+                <TextView
+                        android:id="@+id/tv_profit_share_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:background="@color/item_back"
+                        android:gravity="bottom"
+                        android:paddingStart="16dp"
+                        android:paddingBottom="8dp"
+                        android:text="商户分润"
+                        android:textColor="@color/tv_black"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_freeze_amount_tip" />
+
+                <com.xhd.td.view.TextImageView
+                        android:id="@+id/tv_profit_type"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/item_back"
+                        android:drawableEnd="@drawable/ic_switch_profit_type"
+                        android:drawablePadding="5dp"
+                        android:gravity="bottom"
+                        android:paddingEnd="16dp"
+                        android:paddingBottom="8dp"
+                        android:text="@string/profit_relatively"
+                        android:textColor="@color/hyperlink"
+                        android:visibility="gone"
+                        app:drawableEndHeight="13dp"
+                        app:drawableEndWidth="13dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_profit_share_title"
+                        app:layout_constraintRight_toRightOf="parent" />
+
+                <androidx.constraintlayout.widget.Group
+                        android:id="@+id/group_absolute_profit_type"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:constraint_referenced_ids="tv_profit_share,edit_profit_percent,tv_percent_sign,line_percent_sign" />
+
+
+                <TextView
+                        android:id="@+id/tv_profit_share"
+                        style="@style/info_item"
+                        android:gravity="center_vertical"
+                        android:text="设置商户分润比例"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_profit_share_title" />
+
+                <EditText
+                        android:id="@+id/edit_profit_percent"
+                        style="@style/info_item_value"
+                        android:layout_width="wrap_content"
+                        android:layout_marginEnd="1dp"
+                        android:background="@null"
+                        android:hint="分润百分比"
+                        android:inputType="numberDecimal"
+                        android:textColor="@color/tv_black"
+                        android:textColorHint="@color/tv_hint"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_profit_share"
+                        app:layout_constraintEnd_toStartOf="@+id/tv_percent_sign"
+                        app:layout_constraintTop_toTopOf="@+id/tv_profit_share" />
+
+                <TextView
+                        android:id="@+id/tv_percent_sign"
+                        style="@style/info_item_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="%"
+                        android:textColor="@color/tv_black"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_profit_share"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/tv_profit_share" />
+
+                <View
+                        android:id="@+id/line_percent_sign"
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:background="@color/tv_hint"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_profit_share" />
+
+                <androidx.constraintlayout.widget.Group
+                        android:id="@+id/group_relatively_profit_type"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        app:constraint_referenced_ids="tv_relatively_profit_total,edit_relatively_profit_pool,tv_relatively_profit_total_sign,line_relatively_profit_total,tv_relatively_profit,edit_relatively_profit_percent,tv_relatively_profit_sign,line_relatively_profit,tv_actual_profit,tv_actual_profit_value,tv_actual_profit_sign" />
+
+
+                <TextView
+                        android:id="@+id/tv_relatively_profit_total"
+                        style="@style/info_item"
+                        android:gravity="center_vertical"
+                        android:text="设置分润池"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_profit_share" />
+
+                <EditText
+                        android:id="@+id/edit_relatively_profit_pool"
+                        style="@style/info_item_value"
+                        android:layout_width="wrap_content"
+                        android:layout_marginEnd="1dp"
+                        android:background="@null"
+                        android:hint="分润百分比"
+                        android:inputType="numberDecimal"
+                        android:textColor="@color/tv_black"
+                        android:textColorHint="@color/tv_hint"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_relatively_profit_total"
+                        app:layout_constraintEnd_toStartOf="@+id/tv_relatively_profit_total_sign"
+                        app:layout_constraintTop_toTopOf="@+id/tv_relatively_profit_total" />
+
+                <TextView
+                        android:id="@+id/tv_relatively_profit_total_sign"
+                        style="@style/info_item_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="%"
+                        android:textColor="@color/tv_black"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_relatively_profit_total"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/tv_relatively_profit_total" />
+
+                <View
+                        android:id="@+id/line_relatively_profit_total"
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:background="@color/tv_hint"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_relatively_profit_total" />
+
+
+                <TextView
+                        android:id="@+id/tv_relatively_profit"
+                        style="@style/info_item"
+                        android:gravity="center_vertical"
+                        android:text="设置相对分润比例"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_relatively_profit_total" />
+
+                <EditText
+                        android:id="@+id/edit_relatively_profit_percent"
+                        style="@style/info_item_value"
+                        android:layout_width="wrap_content"
+                        android:layout_marginEnd="1dp"
+                        android:background="@null"
+                        android:hint="分润百分比"
+                        android:inputType="numberDecimal"
+                        android:textColor="@color/tv_black"
+                        android:textColorHint="@color/tv_hint"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_relatively_profit"
+                        app:layout_constraintEnd_toStartOf="@+id/tv_relatively_profit_sign"
+                        app:layout_constraintTop_toTopOf="@+id/tv_relatively_profit" />
+
+                <TextView
+                        android:id="@+id/tv_relatively_profit_sign"
+                        style="@style/info_item_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="%"
+                        android:textColor="@color/tv_black"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_relatively_profit"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/tv_relatively_profit" />
+
+                <View
+                        android:id="@+id/line_relatively_profit"
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:background="@color/tv_hint"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_relatively_profit" />
+
+
+                <TextView
+                        android:id="@+id/tv_actual_profit"
+                        style="@style/info_item"
+                        android:gravity="center_vertical"
+                        android:text="商户实际分润比例"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_relatively_profit" />
+
+                <TextView
+                        android:id="@+id/tv_actual_profit_value"
+                        style="@style/info_item_value"
+                        android:layout_width="wrap_content"
+                        android:layout_marginEnd="1dp"
+                        android:background="@null"
+                        android:textColor="@color/tv_black"
+                        android:textColorHint="@color/tv_hint"
+                        android:textSize="@dimen/sp_20"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_actual_profit"
+                        app:layout_constraintEnd_toStartOf="@+id/tv_actual_profit_sign"
+                        app:layout_constraintTop_toTopOf="@+id/tv_actual_profit" />
+
+                <TextView
+                        android:id="@+id/tv_actual_profit_sign"
+                        style="@style/info_item_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="%"
+                        android:textColor="@color/tv_black"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_actual_profit"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/tv_actual_profit" />
+
+
+                <TextView
+                        android:id="@+id/tv_profit_share_hint"
+                        style="@style/info_item"
+                        android:drawableStart="@drawable/ic_hint"
+                        android:drawablePadding="8dp"
+                        android:gravity="center_vertical"
+                        android:text="您的总利润比例为：0%，剩余分润：0%"
+                        android:textSize="@dimen/sp_14"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_actual_profit_sign" />
+
+                <TextView
+                        android:id="@+id/tv_title_billing"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:background="@color/item_back"
+                        android:gravity="bottom"
+                        android:paddingLeft="16dp"
+                        android:paddingBottom="8dp"
+                        android:text="计费规则"
+                        android:textColor="@color/tv_black"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_profit_share_hint" />
+
+                <TextView
+                        android:id="@+id/tv_service"
+                        style="@style/info_item"
+                        android:gravity="center_vertical"
+                        android:text="使用计费规则"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_title_billing" />
+
+
+                <TextView
+                        android:id="@+id/spinner_service"
+                        style="@style/info_item_value"
+                        android:drawableEnd="@drawable/spinner_down"
+                        android:drawablePadding="3dp"
+                        android:hint="请选择"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_service"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/tv_service" />
+
+
+                <View
+                        android:id="@+id/line_service"
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:background="@color/tv_hint"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_service"
+                        tools:ignore="MissingConstraints" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/view_pre"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@+id/line_service">
+
+
+                    <TextView
+                            android:id="@+id/tv_pre_amount"
+                            style="@style/info_item"
+                            android:gravity="center_vertical"
+                            android:text="预付金额"
+                            app:layout_constraintStart_toStartOf="parent"
+                            />
+
+
+                    <EditText
+                            android:id="@+id/edit_pre_amount"
+                            style="@style/info_item_value"
+                            android:layout_width="wrap_content"
+                            android:layout_marginEnd="1dp"
+                            android:background="@null"
+                            android:hint="请输入"
+                            android:inputType="numberDecimal"
+                            android:textColor="@color/tv_black"
+                            android:textColorHint="@color/tv_hint"
+                            app:layout_constraintBottom_toBottomOf="@+id/tv_pre_amount"
+                            app:layout_constraintEnd_toStartOf="@+id/tv_pre_amount_unit"
+                            app:layout_constraintTop_toTopOf="@+id/tv_pre_amount" />
+
+                    <TextView
+                            android:id="@+id/tv_pre_amount_unit"
+                            style="@style/info_item_value"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="元"
+                            android:textColor="@color/tv_black"
+                            app:layout_constraintBottom_toBottomOf="@+id/tv_pre_amount"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/tv_pre_amount" />
+
+
+                    <View
+                            android:id="@+id/line_pre_amount"
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginRight="16dp"
+                            android:background="@color/tv_hint"
+                            app:layout_constraintTop_toBottomOf="@+id/tv_pre_amount"
+                            tools:ignore="MissingConstraints" />
+
+                    <TextView
+                            android:id="@+id/tv_max_amount"
+                            style="@style/info_item"
+                            android:gravity="center_vertical"
+                            android:text="封顶金额"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/line_pre_amount" />
+
+
+                    <EditText
+                            android:id="@+id/edit_max_amount"
+                            style="@style/info_item_value"
+                            android:layout_width="wrap_content"
+                            android:layout_marginEnd="1dp"
+                            android:background="@null"
+                            android:hint="请输入"
+                            android:inputType="numberDecimal"
+                            android:textColor="@color/tv_black"
+                            android:textColorHint="@color/tv_hint"
+                            app:layout_constraintBottom_toBottomOf="@+id/tv_max_amount"
+                            app:layout_constraintEnd_toStartOf="@+id/tv_max_amount_unit"
+                            app:layout_constraintTop_toTopOf="@+id/tv_max_amount" />
+
+                    <TextView
+                            android:id="@+id/tv_max_amount_unit"
+                            style="@style/info_item_value"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="元"
+                            android:textColor="@color/tv_black"
+                            app:layout_constraintBottom_toBottomOf="@+id/tv_max_amount"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/tv_max_amount" />
+
+                    <View
+                            android:id="@+id/line_max_amount"
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginRight="16dp"
+                            android:background="@color/tv_hint"
+                            app:layout_constraintTop_toBottomOf="@+id/tv_max_amount"
+                            tools:ignore="MissingConstraints" />
+
+                    <TextView
+                            android:id="@+id/tv_min_amount"
+                            style="@style/info_item2"
+                            android:gravity="center_vertical"
+                            android:text="首次"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/line_max_amount" />
+
+
+                    <EditText
+                            android:id="@+id/edit_min_hour"
+                            style="@style/info_item_value2"
+                            android:layout_width="100dp"
+                            android:layout_marginEnd="1dp"
+                            android:background="@null"
+                            android:hint="请输入"
+                            android:inputType="numberDecimal"
+                            android:textColor="@color/tv_black"
+                            android:textColorHint="@color/tv_hint"
+                            app:layout_constraintStart_toEndOf="@+id/tv_min_amount"
+                            app:layout_constraintBottom_toBottomOf="@+id/tv_min_amount"
+                            app:layout_constraintTop_toTopOf="@+id/tv_min_amount" />
+
+
+                    <TextView
+                            android:id="@+id/tv_min_hour_unit"
+                            style="@style/info_item_value2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="小时"
+                            android:textColor="@color/tv_black"
+                            app:layout_constraintBottom_toBottomOf="@+id/tv_min_amount"
+                            app:layout_constraintStart_toEndOf="@+id/edit_min_hour"
+                            app:layout_constraintTop_toTopOf="@+id/tv_min_amount" />
+
+
+                    <EditText
+                            android:id="@+id/edit_min_amount"
+                            style="@style/info_item_value2"
+                            android:layout_width="wrap_content"
+                            android:layout_marginEnd="1dp"
+                            android:background="@null"
+                            android:hint="请输入"
+                            android:inputType="numberDecimal"
+                            android:textColor="@color/tv_black"
+                            android:textColorHint="@color/tv_hint"
+                            app:layout_constraintEnd_toStartOf="@+id/tv_min_amount_unit"
+                            app:layout_constraintBottom_toBottomOf="@+id/tv_min_amount"
+                            app:layout_constraintTop_toTopOf="@+id/tv_min_amount" />
+
+                    <TextView
+                            android:id="@+id/tv_min_amount_unit"
+                            style="@style/info_item_value2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="元"
+                            android:textColor="@color/tv_black"
+                            app:layout_constraintBottom_toBottomOf="@+id/tv_min_amount"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/tv_min_amount" />
+
+                    <View
+                            android:id="@+id/line_min_amount"
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginRight="16dp"
+                            android:background="@color/tv_hint"
+                            app:layout_constraintTop_toBottomOf="@+id/tv_min_amount"
+                            tools:ignore="MissingConstraints" />
+
+                    <TextView
+                            android:id="@+id/tv_upper_amount"
+                            style="@style/info_item2"
+                            android:gravity="center_vertical"
+                            android:text="超过每"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/line_min_amount" />
+
+
+                    <EditText
+                            android:id="@+id/edit_upper_hour"
+                            style="@style/info_item_value2"
+                            android:layout_width="100dp"
+                            android:layout_marginEnd="1dp"
+                            android:background="@null"
+                            android:hint="请输入"
+                            android:inputType="numberDecimal"
+                            android:textColor="@color/tv_black"
+                            android:textColorHint="@color/tv_hint"
+                            app:layout_constraintStart_toEndOf="@+id/tv_upper_amount"
+                            app:layout_constraintBottom_toBottomOf="@+id/tv_upper_amount"
+                            app:layout_constraintTop_toTopOf="@+id/tv_upper_amount" />
+
+                    <TextView
+                            android:id="@+id/tv_upper_hour_unit"
+                            style="@style/info_item_value2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="小时"
+                            android:textColor="@color/tv_black"
+                            app:layout_constraintBottom_toBottomOf="@+id/tv_upper_amount"
+                            app:layout_constraintStart_toEndOf="@+id/edit_upper_hour"
+                            app:layout_constraintTop_toTopOf="@+id/tv_upper_amount" />
+
+                    <EditText
+                            android:id="@+id/edit_upper_amount"
+                            style="@style/info_item_value2"
+                            android:layout_width="wrap_content"
+                            android:layout_marginEnd="1dp"
+                            android:background="@null"
+                            android:hint="请输入"
+                            android:inputType="numberDecimal"
+                            android:textColor="@color/tv_black"
+                            android:textColorHint="@color/tv_hint"
+                            app:layout_constraintEnd_toStartOf="@+id/tv_upper_amount_unit"
+                            app:layout_constraintBottom_toBottomOf="@+id/tv_upper_amount"
+                            app:layout_constraintTop_toTopOf="@+id/tv_upper_amount" />
+
+
+
+                    <TextView
+                            android:id="@+id/tv_upper_amount_unit"
+                            style="@style/info_item_value2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="元"
+                            android:textColor="@color/tv_black"
+                            app:layout_constraintBottom_toBottomOf="@+id/tv_upper_amount"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/tv_upper_amount" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_billing"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:background="@color/white"
+                        app:billingAdapter="@{viewModel.mBillingRuleLiveData}"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        app:layout_constraintBottom_toTopOf="@+id/tv_add_billing"
+                        app:layout_constraintTop_toBottomOf="@+id/view_pre" />
+
+                <TextView
+                        android:id="@+id/tv_add_billing"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="76dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="32dp"
+                        android:drawableStart="@drawable/ic_add_billing"
+                        android:drawablePadding="4dp"
+                        android:gravity="center"
+                        android:text="增加计费档"
+                        android:textColor="@color/tv_black"
+                        android:textSize="@dimen/sp_16"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/rv_billing" />
+
+                <TextView
+                        android:id="@+id/tv_billing_hint"
+                        style="@style/info_item"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:drawableStart="@drawable/ic_hint"
+                        android:drawablePadding="6dp"
+                        android:gravity="center_vertical"
+                        android:paddingRight="16dp"
+                        android:text="备注：商户已激活设备和将来激活的设备，都将按照修改后的价格计费"
+                        android:textSize="@dimen/sp_12"
+                        android:visibility="gone"
+                        app:layout_constrainedHeight="true"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_add_billing" />
+
+
+                <TextView
+                        android:id="@+id/tv_address_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp"
+                        android:background="@color/item_back"
+                        android:gravity="bottom"
+                        android:paddingStart="8dp"
+                        android:paddingBottom="8dp"
+                        android:text="区域位置"
+                        android:textColor="@color/tv_black"
+                        android:textSize="@dimen/sp_14"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_billing_hint" />
+
+                <TextView
+                        android:id="@+id/tv_address"
+                        style="@style/info_item"
+                        android:gravity="center_vertical"
+                        android:text="省市区"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_address_title" />
+
+                <TextView
+                        android:id="@+id/tv_address_value"
+                        style="@style/info_item_value"
+                        android:layout_width="260dp"
+                        android:layout_marginEnd="10dp"
+                        android:background="@null"
+                        android:drawableEnd="@drawable/spinner_down"
+                        android:drawablePadding="3dp"
+                        android:hint="请选择省/市/区县"
+                        android:maxLines="3"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_address"
+                        app:layout_constraintEnd_toStartOf="@+id/img_location"
+                        app:layout_constraintTop_toTopOf="@+id/tv_address" />
+
+                <ImageView
+                        android:id="@+id/img_location"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginEnd="10dp"
+                        android:src="@drawable/ic_to_location"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_address"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/tv_address" />
+
+                <View
+                        android:id="@+id/line_chuchuaddress_value"
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:background="@color/tv_hint"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_address" />
+
+
+                <TextView
+                        android:id="@+id/tv_detail_address"
+                        style="@style/info_item"
+                        android:gravity="center_vertical"
+                        android:text="详细地址"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_address" />
+
+                <EditText
+                        android:id="@+id/edit_detail_address"
+                        style="@style/info_item_value"
+                        android:layout_width="260dp"
+                        android:background="@null"
+                        android:hint="请输入详细地址"
+                        android:maxLines="3"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_detail_address"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/tv_detail_address" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <TextView
+                android:id="@+id/tv_cancel"
+                android:layout_width="120dp"
+                android:layout_height="42dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/shape_billing"
+                android:gravity="center"
+                android:onClick="@{()->fragment.close()}"
+                android:text="取消"
+                android:textColor="@color/tv_black"
+                android:textSize="@dimen/sp_18"
+                android:visibility="@{fragment.isEdit?View.VISIBLE:View.GONE}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/tv_confirm"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+                android:id="@+id/tv_confirm"
+                android:layout_width="120dp"
+                android:layout_height="42dp"
+                android:layout_marginStart="16dp"
+                android:background="@{fragment.isSave?@drawable/merchant_enable:@drawable/merchant_disable}"
+                android:gravity="center"
+                android:onClick="@{()->fragment.submitChange()}"
+                android:text="确定"
+                android:textColor="@{fragment.isSave?@color/text_enable:@color/text_disable}"
+                android:textSize="@dimen/sp_18"
+                android:visibility="@{fragment.isEdit?View.VISIBLE:View.GONE}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tv_cancel"
+                app:layout_constraintTop_toTopOf="@+id/tv_cancel" />
+
+        <TextView
+                android:id="@+id/tv_save"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@{fragment.isSave?@drawable/merchant_enable:@drawable/merchant_disable}"
+                android:gravity="center"
+                android:onClick="@{()->fragment.addOne()}"
+                android:text="保存"
+                android:textColor="@{fragment.isSave?@color/text_enable:@color/text_disable}"
+                android:textSize="@dimen/sp_18"
+                android:visibility="@{fragment.isEdit?View.GONE:View.VISIBLE}"
+                app:layout_constraintBottom_toBottomOf="parent"
+
+                tools:visibility="visible" />
+
+        <ProgressBar
+                android:id="@+id/progress_bar"
+                style="@android:style/Widget.DeviceDefault.Light.ProgressBar.Large"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="@{viewModel.isLoading?View.VISIBLE:View.GONE}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:visibility="visible" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

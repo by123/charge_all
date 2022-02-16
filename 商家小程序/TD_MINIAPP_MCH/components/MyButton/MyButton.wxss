@@ -1,0 +1,74 @@
+/* components/MyButton/MyButton.wxss */
+
+/*  */
+
+.btn {
+  text-align: center;
+  border-radius: 4rpx;
+  font-size: 32rpx;
+  display: inline-block;
+  background: #ffce00;
+  color: #353648;
+  margin: 0 auto;
+  transition: opacity .1s;
+  border: 1rpx solid #ffce00;
+}
+
+button:after {
+  border: none;
+}
+
+.size-small {
+  width: 180rpx;
+  height: 70rpx;
+  line-height: 68rpx;
+}
+
+.size-large {
+  height: 100rpx;
+  line-height: 98rpx;
+  font-size: 36rpx;
+}
+
+.size-normal {
+  height: 80rpx;
+  line-height: 78rpx;
+  font-size: 32rpx;
+}
+
+.size-mini {
+  height: 60rpx;
+  line-height: 58rpx;
+}
+
+.size-big {
+  height: 110rpx;
+  line-height: 108rpx;
+}
+
+.disable {
+  background-color: #dedede;
+  color: #fff;
+  border-color: #dedede;
+}
+
+.btn-full {
+  width: 100%;
+}
+
+.btn-hover {
+  opacity: .7;
+}
+
+.button-hover {
+  background-color: red;
+}
+
+.btn-hollow {
+  background: #fff;
+  border: 1rpx solid #353648;
+}
+
+.hover-class {
+  opacity: .7;
+}

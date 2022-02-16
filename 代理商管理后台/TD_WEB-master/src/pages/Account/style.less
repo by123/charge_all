@@ -1,0 +1,43 @@
+@import '../../styles/font.less';
+
+.account-wrap {
+
+  .bank-card {
+    width: 400px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    float: left;
+    .ant-card-body {
+      padding: 0;
+    }
+
+    .bank-card-status {
+      padding: 10px 0 10px 60px;
+      color: @blue-font-color;
+      border-top: 1px solid #e8e8e8;
+      position: relative;
+      &::after {
+        content: '.';
+        position: absolute;
+        color: @blue-font-color;
+        left: 50px;
+        top: -4px;
+        font-size: 30px;
+        line-height: 1;
+      }
+    }  
+  }
+
+  .add-card {
+    text-align: center;
+    font-size: 26px;
+    color: @secondary-font-color;
+    padding: 60px;
+    cursor: pointer;
+
+    .anticon-plus svg {
+      width: 50px;
+      height: 50px;
+    }
+  }
+}

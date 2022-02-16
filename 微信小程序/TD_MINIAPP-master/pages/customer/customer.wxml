@@ -1,0 +1,52 @@
+<view class='question_container' bindtap="onPageTap">
+  <view class='question_password_wrap'>
+    <view class="{{product == 0 ? 'question_password' : 'question_password_red'}}" wx:if='{{showRefresh}}'>
+      <view class='password_content1' wx:if="{{!password}}">
+        <view class="{{product == 0 ? 'content1_text' : 'content1_text_red'}}">如果输入密码无法充电，请再次输入充电密码，多次输入仍无法充电，请点击获取一个新密码</view>
+        <button class="content1_btn" bindtap='refreshPwd'>获取新密码</button>
+      </view>
+      <view class="{{product == 0 ? 'password_content2' : 'password_content2_red'}}" wx:else>
+        <view class="content2_pwd">
+          <text wx:for='{{password}}' wx:key='{{item}}'>{{item}}</text>
+        </view>
+        <view class="content2_text">如果输入新密码还是不能充电，请致电客服</view>
+      </view>
+    </view>
+  </view>
+
+  <view class='question_title'>常见问题</view>
+  <view class='list_box' wx:for='{{list}}' wx:key='this' wx:for-item='parentItem' wx:for-index='parentIndex'>
+    <view class='list_warp'>
+      <view class='list'>
+        <view class='list_name_box' catchtap='listTap' data-parentindex='{{parentIndex}}'>
+          <text class='list_item_titie'>{{parentItem.title}}</text>
+          <image src="{{img_arrow}}" class='icon_down {{parentItem.show && "icon_down_rotate"}}'></image>
+        </view>
+        <view class='list_item_box' wx:if='{{parentItem.show}}'>
+          <view class='list_item_name_box'>
+            <text class='list_item_content'>{{parentItem.content}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class='btnview'>
+    <view class='item item-border' bindtap='onCallTap'>
+      <image src="{{img_call}}" class='img_call' mode='aspectFill'></image>
+      <view class='view_call'>
+        <view class='txt1'>致电客服</view>
+        <view class='txt2'>9:00-次日02:00</view>
+      </view>
+    </view>
+    <view class='item' bindtap='onQuestionTap'>
+      <image src="{{img_question}}" class='img_question' mode='aspectFill'></image>
+      <view class='txt_question'>反馈问题</view>
+    </view>
+  </view>
+
+</view>
+
+  <!-- <view style="width:100%;  position: fixed;bottom:0;">
+    <ad-view data-id="adview" id="adview"></ad-view>
+  </view> -->

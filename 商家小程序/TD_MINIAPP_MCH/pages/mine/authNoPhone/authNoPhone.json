@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "MyButton": "/components/MyButton/MyButton"
+  },
+  "navigationBarTitleText": "管理员认证"
+}

@@ -1,0 +1,7 @@
+<!--components/Icon/Icon.wxml-->
+<image class="icon icon-tip" src="../../images/i_tip.png" wx:if="{{icon === 'tip'}}"></image>
+
+<image class="icon icon-arrow" src="../../images/i_arrow_right.png" wx:if="{{icon === 'arrow'}}"></image>
+
+<image class="icon icon-location" src="../../images/i_location.png" wx:if="{{icon === 'location'}}"></image>
+

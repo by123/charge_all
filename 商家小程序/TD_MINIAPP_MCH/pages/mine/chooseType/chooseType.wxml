@@ -1,0 +1,35 @@
+<!--pages/mine/chooseType/chooseType.wxml-->
+<view>
+  <view class="account-list base-font-color">
+
+    <view class="account-item" bindtap="changeType" data-category="wechat" wx:if="{{canAddWechat}}">
+      <image class="item-icon" src="../../../images/i_wechat.png"></image>
+      <view class="item-content">
+        <view>微信钱包</view>
+        <view class="item-content-rule light-font-color">{{startMoney}}元起提，实时到账</view>
+      </view>
+      <image class="item-toggle" src="../../../images/i_toggle{{category === 'wechat' ? '_active' : ''}}.png"></image>
+    </view>
+
+    <view class="account-item" bindtap="changeType" data-category="private" wx:if="{{canAddPrivite}}">
+      <image class="item-icon" src="../../../images/i_private.png"></image>
+      <view class="item-content">
+        <view>个人银行账户</view>
+        <view class="item-content-rule light-font-color">{{startMoney}}元起提，3个工作日内到账</view>
+      </view>
+      <image class="item-toggle" src="../../../images/i_toggle{{category === 'private' ? '_active' : ''}}.png"></image>
+    </view>
+
+    <view class="account-item" bindtap="changeType" data-category="public" wx:if="{{canAddPublic}}">
+      <image class="item-icon" src="../../../images/i_public.png"></image>
+      <view class="item-content">
+        <view>对公银行账户</view>
+        <view class="item-content-rule light-font-color">{{startMoney}}元起提，3个工作日内到账</view>
+      </view>
+    <image class="item-toggle" src="../../../images/i_toggle{{category === 'public' ? '_active' : ''}}.png"></image>
+  </view>
+</view>
+<view class="account-btn">
+  <MyButton size="large" bind:btnTap="goNext" full="{{true}}">下一步</MyButton>
+</view>
+</view>
